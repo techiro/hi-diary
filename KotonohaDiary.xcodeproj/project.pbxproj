@@ -14,8 +14,10 @@
 		03A33A8B269042B300A1CB38 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03A33A8A269042B300A1CB38 /* Preview Assets.xcassets */; };
 		03A33A8E269042B300A1CB38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03A33A8C269042B300A1CB38 /* LaunchScreen.storyboard */; };
 		03A33A97269062EF00A1CB38 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 03A33A96269062EF00A1CB38 /* .swiftlint.yml */; };
+		03AE89EF2692F66300F8DA64 /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AE89EE2692F66300F8DA64 /* NavigationBarModifier.swift */; };
 		03BFA42A2692B05300283868 /* FloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BFA4292692B05300283868 /* FloatingActionButton.swift */; };
 		03BFA4312692DA0100283868 /* PreviewCheat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BFA4302692DA0100283868 /* PreviewCheat.swift */; };
+		03BFA4332692DDB700283868 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BFA4322692DDB700283868 /* InputView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +30,10 @@
 		03A33A8D269042B300A1CB38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03A33A8F269042B300A1CB38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03A33A96269062EF00A1CB38 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		03AE89EE2692F66300F8DA64 /* NavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModifier.swift; sourceTree = "<group>"; };
 		03BFA4292692B05300283868 /* FloatingActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingActionButton.swift; sourceTree = "<group>"; };
 		03BFA4302692DA0100283868 /* PreviewCheat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCheat.swift; sourceTree = "<group>"; };
+		03BFA4322692DDB700283868 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,10 +68,13 @@
 			isa = PBXGroup;
 			children = (
 				03A33A81269042B100A1CB38 /* AppDelegate.swift */,
+				03BFA4322692DDB700283868 /* InputView.swift */,
 				03A33A83269042B100A1CB38 /* SceneDelegate.swift */,
 				03A33A85269042B100A1CB38 /* ContentView.swift */,
+				03AE89ED2692F64300F8DA64 /* NavigationView */,
 				03BFA42F2692D9C700283868 /* CheatCode */,
 				03BFA4292692B05300283868 /* FloatingActionButton.swift */,
+				03AE89F02692F6BE00F8DA64 /* Extension */,
 				03A33A87269042B300A1CB38 /* Assets.xcassets */,
 				03A33A8C269042B300A1CB38 /* LaunchScreen.storyboard */,
 				03A33A8F269042B300A1CB38 /* Info.plist */,
@@ -82,6 +89,21 @@
 				03A33A8A269042B300A1CB38 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		03AE89ED2692F64300F8DA64 /* NavigationView */ = {
+			isa = PBXGroup;
+			children = (
+				03AE89EE2692F66300F8DA64 /* NavigationBarModifier.swift */,
+			);
+			path = NavigationView;
+			sourceTree = "<group>";
+		};
+		03AE89F02692F6BE00F8DA64 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		03BFA42F2692D9C700283868 /* CheatCode */ = {
@@ -186,8 +208,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				03BFA4312692DA0100283868 /* PreviewCheat.swift in Sources */,
+				03AE89EF2692F66300F8DA64 /* NavigationBarModifier.swift in Sources */,
 				03A33A82269042B100A1CB38 /* AppDelegate.swift in Sources */,
 				03A33A84269042B100A1CB38 /* SceneDelegate.swift in Sources */,
+				03BFA4332692DDB700283868 /* InputView.swift in Sources */,
 				03A33A86269042B100A1CB38 /* ContentView.swift in Sources */,
 				03BFA42A2692B05300283868 /* FloatingActionButton.swift in Sources */,
 			);

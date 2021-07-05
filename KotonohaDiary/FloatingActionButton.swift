@@ -9,15 +9,16 @@ import Foundation
 import SwiftUI
 struct FloatingActionButton: View {
     var bottomPadding: CGFloat = 0
-    
+    @State private var showingSheet = false
     var body: some View {
         VStack {
             Spacer()
             HStack {
                 Spacer()
                 Button(action: {
-                    // TODO: Implement Open Edit View
-                    print("Tapped!!")
+                    
+                    self.showingSheet.toggle()
+                    
                 }, label: {
                     Image(systemName: "plus")
                         .foregroundColor(.white)
@@ -28,6 +29,9 @@ struct FloatingActionButton: View {
                     .cornerRadius(35.0)
                 .shadow(color: .gray, radius: 3, x: 2, y: 2)
                 .padding(EdgeInsets(top: 0, leading: 0, bottom: bottomPadding, trailing: 16.0)) // --- 5
+                .sheet(isPresented: $showingSheet) {
+                    InputView()
+                }
 
             }
         }

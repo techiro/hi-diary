@@ -39,7 +39,7 @@ excluded:
 - Carthage/
 
 # 1行あたりの文字数制限変更
-line_length: 120
+line_length: 160
 
 # 変数名に関する制約
 identifier_name:
