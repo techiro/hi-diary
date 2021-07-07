@@ -1,0 +1,64 @@
+# Created by https://www.toptal.com/developers/gitignore/api/xcode
+# Edit at https://www.toptal.com/developers/gitignore?templates=xcode
+
+### Xcode ###
+# Xcode
+#
+# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+
+## User settings
+### プロジェクトのカスタムschemeが保存されるディレクトリ
+xcuserdata/
+
+## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
+### gitなどのVCSに関するメタデータが含まれる。
+### あるキーの値が開発機ごとのVCSのユーザーネームに値が切り替わったりするので、複数人で開発をする場合コミットに含めるとコンフリクトする。
+### https://stackoverflow.com/questions/18340453/should-xccheckout-files-in-xcode5-be-ignored-under-vcs#comment29617170_19260712
+*.xccheckout
+### 詳細不明だが上記のファイルと同様にVCSに関する設定値が含まれている
+### https://stackoverflow.com/questions/31584297/xcode-7-ignore-xcscmblueprint-in-repository
+*.xcscmblueprint
+
+## compatibility with Xcode 3 and earlier (ignoring not required starting Xcode 4)
+### Xcodeのビルドファイル
+### https://gist.github.com/adamgit/3786883
+build/
+DerivedData/
+
+### 手動で廃止（deprecate）したクラスのファイルがここへ移動する（同じ名前のクラスを定義しようとしたときなど）
+### http://stackoverflow.com/questions/1153211/whats-that-classes-1-moved-aside-directory-in-my-classes-directory
+*.moved-aside
+
+### Xcodeのプライベート設定（ウィンドウサイズ、ブックマーク、ブレイクポイントなど）
+### .pbxuser:       http://lists.apple.com/archives/xcode-users/2004/Jan/msg00193.html
+### .mode1v3:       http://lists.apple.com/archives/xcode-users/2007/Oct/msg00465.html
+### .mode2v3:       http://lists.apple.com/archives/xcode-users/2007/Oct/msg00465.html
+### .perspectivev3: http://stackoverflow.com/questions/5223297/xcode-projects-what-is-a-perspectivev3-file
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+### 上記4項目のデフォルト設定ファイル。これらは除外せずに追加（除外の除外）をする。
+!default.pbxuser
+!default.mode1v3
+!default.mode2v3
+!default.perspectivev3
+
+### Xcode Patch ###
+### プロジェクトファイルのパッケージ（ディレクトリ）の全体を除外し、必要なものだけ追加（除外からの除外）をしていきます
+*.xcodeproj/*
+### プロジェクトの構成情報を格納するファイル
+!*.xcodeproj/project.pbxproj
+### XcodeのプロジェクトのビルドSchemeを格納するファイル
+!*.xcodeproj/xcshareddata/
+### プロジェクトのワークスペースのデータを格納するXMLファイル
+!*.xcworkspace/contents.xcworkspacedata
+
+### 「File > Workspace Settings」で設定できるワークスペースの設定値。
+**/xcshareddata/WorkspaceSettings.xcsettings
+
+## Gcc Patch
+### コードカバレッジの計測を有効化（GCC_GENERATE_TEST_COVERAGE_FILES = YES）していると生成される。
+### 他のケースでも生成されるかもしれないが分からなかった
+### https://developer.apple.com/library/archive/qa/qa1514/_index.html
+/*.gcno

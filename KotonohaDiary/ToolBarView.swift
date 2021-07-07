@@ -27,7 +27,7 @@ struct ToolBarView: View {
                 #endif
             }) {
                 Image(systemName: "camera")
-                    
+                
             }.padding([.trailing], 16)
             Spacer()
             Button(action: {

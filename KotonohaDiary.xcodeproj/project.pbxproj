@@ -20,7 +20,7 @@
 		03AE8A1A26942E5F00F8DA64 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AE8A1926942E5F00F8DA64 /* Color+Extension.swift */; };
 		03AE8A1C26943C0100F8DA64 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AE8A1B26943C0100F8DA64 /* KeyboardView.swift */; };
 		03AE8A1E2695375400F8DA64 /* ToolBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AE8A1D2695375400F8DA64 /* ToolBarView.swift */; };
-		03AE8A2026953A6C00F8DA64 /* EdgeInsets+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AE8A1F26953A6C00F8DA64 /* EdgeInsets+Extension.swift */; };
+		03AE8A222695417300F8DA64 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 03AE8A212695417300F8DA64 /* .gitignore */; };
 		03BFA42A2692B05300283868 /* FloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BFA4292692B05300283868 /* FloatingActionButton.swift */; };
 		03BFA4312692DA0100283868 /* PreviewCheat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BFA4302692DA0100283868 /* PreviewCheat.swift */; };
 		03BFA4332692DDB700283868 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BFA4322692DDB700283868 /* InputView.swift */; };
@@ -42,7 +42,7 @@
 		03AE8A1926942E5F00F8DA64 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		03AE8A1B26943C0100F8DA64 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 		03AE8A1D2695375400F8DA64 /* ToolBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarView.swift; sourceTree = "<group>"; };
-		03AE8A1F26953A6C00F8DA64 /* EdgeInsets+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EdgeInsets+Extension.swift"; sourceTree = "<group>"; };
+		03AE8A212695417300F8DA64 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		03BFA4292692B05300283868 /* FloatingActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingActionButton.swift; sourceTree = "<group>"; };
 		03BFA4302692DA0100283868 /* PreviewCheat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCheat.swift; sourceTree = "<group>"; };
 		03BFA4322692DDB700283868 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
@@ -62,6 +62,7 @@
 		03A33A75269042B100A1CB38 = {
 			isa = PBXGroup;
 			children = (
+				03AE8A212695417300F8DA64 /* .gitignore */,
 				03A33A96269062EF00A1CB38 /* .swiftlint.yml */,
 				03A33A80269042B100A1CB38 /* KotonohaDiary */,
 				03A33A7F269042B100A1CB38 /* Products */,
@@ -119,7 +120,6 @@
 			isa = PBXGroup;
 			children = (
 				03AE8A1926942E5F00F8DA64 /* Color+Extension.swift */,
-				03AE8A1F26953A6C00F8DA64 /* EdgeInsets+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -190,6 +190,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03AE8A222695417300F8DA64 /* .gitignore in Resources */,
 				03A33A97269062EF00A1CB38 /* .swiftlint.yml in Resources */,
 				03A33A8E269042B300A1CB38 /* LaunchScreen.storyboard in Resources */,
 				03A33A8B269042B300A1CB38 /* Preview Assets.xcassets in Resources */,
@@ -232,7 +233,6 @@
 				03AE8A1C26943C0100F8DA64 /* KeyboardView.swift in Sources */,
 				03A33A84269042B100A1CB38 /* SceneDelegate.swift in Sources */,
 				03AE8A1E2695375400F8DA64 /* ToolBarView.swift in Sources */,
-				03AE8A2026953A6C00F8DA64 /* EdgeInsets+Extension.swift in Sources */,
 				03BFA4332692DDB700283868 /* InputView.swift in Sources */,
 				03AE89F42693014A00F8DA64 /* MultilineTextView.swift in Sources */,
 				03A33A86269042B100A1CB38 /* ContentView.swift in Sources */,

@@ -12,13 +12,13 @@ struct TextEditingView: View {
     
     var body: some View {
         KeyboardView {
-        TextEditor(text: $fullText)
-            .font(.custom("HelveticaNeue", size: 20))
-            .lineSpacing(5)
-            .accentColor(.action)
+            TextEditor(text: $fullText)
+                .font(.custom("HelveticaNeue", size: 20))
+                .lineSpacing(5)
+                .accentColor(.action)
         } toolBar: {
             ToolBarView()
-                
+            
         }
     }
 }
