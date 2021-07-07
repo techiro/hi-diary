@@ -15,6 +15,12 @@
 		03A33A8E269042B300A1CB38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03A33A8C269042B300A1CB38 /* LaunchScreen.storyboard */; };
 		03A33A97269062EF00A1CB38 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 03A33A96269062EF00A1CB38 /* .swiftlint.yml */; };
 		03AE89EF2692F66300F8DA64 /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AE89EE2692F66300F8DA64 /* NavigationBarModifier.swift */; };
+		03AE89F42693014A00F8DA64 /* MultilineTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AE89F32693014A00F8DA64 /* MultilineTextView.swift */; };
+		03AE8A182694285800F8DA64 /* TextEditingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AE8A172694285800F8DA64 /* TextEditingView.swift */; };
+		03AE8A1A26942E5F00F8DA64 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AE8A1926942E5F00F8DA64 /* Color+Extension.swift */; };
+		03AE8A1C26943C0100F8DA64 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AE8A1B26943C0100F8DA64 /* KeyboardView.swift */; };
+		03AE8A1E2695375400F8DA64 /* ToolBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AE8A1D2695375400F8DA64 /* ToolBarView.swift */; };
+		03AE8A2026953A6C00F8DA64 /* EdgeInsets+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AE8A1F26953A6C00F8DA64 /* EdgeInsets+Extension.swift */; };
 		03BFA42A2692B05300283868 /* FloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BFA4292692B05300283868 /* FloatingActionButton.swift */; };
 		03BFA4312692DA0100283868 /* PreviewCheat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BFA4302692DA0100283868 /* PreviewCheat.swift */; };
 		03BFA4332692DDB700283868 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BFA4322692DDB700283868 /* InputView.swift */; };
@@ -31,6 +37,12 @@
 		03A33A8F269042B300A1CB38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03A33A96269062EF00A1CB38 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		03AE89EE2692F66300F8DA64 /* NavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModifier.swift; sourceTree = "<group>"; };
+		03AE89F32693014A00F8DA64 /* MultilineTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineTextView.swift; sourceTree = "<group>"; };
+		03AE8A172694285800F8DA64 /* TextEditingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditingView.swift; sourceTree = "<group>"; };
+		03AE8A1926942E5F00F8DA64 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		03AE8A1B26943C0100F8DA64 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
+		03AE8A1D2695375400F8DA64 /* ToolBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarView.swift; sourceTree = "<group>"; };
+		03AE8A1F26953A6C00F8DA64 /* EdgeInsets+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EdgeInsets+Extension.swift"; sourceTree = "<group>"; };
 		03BFA4292692B05300283868 /* FloatingActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingActionButton.swift; sourceTree = "<group>"; };
 		03BFA4302692DA0100283868 /* PreviewCheat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCheat.swift; sourceTree = "<group>"; };
 		03BFA4322692DDB700283868 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
@@ -68,9 +80,13 @@
 			isa = PBXGroup;
 			children = (
 				03A33A81269042B100A1CB38 /* AppDelegate.swift */,
-				03BFA4322692DDB700283868 /* InputView.swift */,
-				03A33A83269042B100A1CB38 /* SceneDelegate.swift */,
 				03A33A85269042B100A1CB38 /* ContentView.swift */,
+				03BFA4322692DDB700283868 /* InputView.swift */,
+				03AE8A172694285800F8DA64 /* TextEditingView.swift */,
+				03AE8A1D2695375400F8DA64 /* ToolBarView.swift */,
+				03AE8A1B26943C0100F8DA64 /* KeyboardView.swift */,
+				03A33A83269042B100A1CB38 /* SceneDelegate.swift */,
+				03AE89F32693014A00F8DA64 /* MultilineTextView.swift */,
 				03AE89ED2692F64300F8DA64 /* NavigationView */,
 				03BFA42F2692D9C700283868 /* CheatCode */,
 				03BFA4292692B05300283868 /* FloatingActionButton.swift */,
@@ -102,6 +118,8 @@
 		03AE89F02692F6BE00F8DA64 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				03AE8A1926942E5F00F8DA64 /* Color+Extension.swift */,
+				03AE8A1F26953A6C00F8DA64 /* EdgeInsets+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -208,11 +226,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				03BFA4312692DA0100283868 /* PreviewCheat.swift in Sources */,
+				03AE8A1A26942E5F00F8DA64 /* Color+Extension.swift in Sources */,
 				03AE89EF2692F66300F8DA64 /* NavigationBarModifier.swift in Sources */,
 				03A33A82269042B100A1CB38 /* AppDelegate.swift in Sources */,
+				03AE8A1C26943C0100F8DA64 /* KeyboardView.swift in Sources */,
 				03A33A84269042B100A1CB38 /* SceneDelegate.swift in Sources */,
+				03AE8A1E2695375400F8DA64 /* ToolBarView.swift in Sources */,
+				03AE8A2026953A6C00F8DA64 /* EdgeInsets+Extension.swift in Sources */,
 				03BFA4332692DDB700283868 /* InputView.swift in Sources */,
+				03AE89F42693014A00F8DA64 /* MultilineTextView.swift in Sources */,
 				03A33A86269042B100A1CB38 /* ContentView.swift in Sources */,
+				03AE8A182694285800F8DA64 /* TextEditingView.swift in Sources */,
 				03BFA42A2692B05300283868 /* FloatingActionButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
