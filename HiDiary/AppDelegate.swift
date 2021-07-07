@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  KotonohaDiary
+//  HiDiary
 //
 //  Created by TanakaHirokazu on 2021/07/03.
 //
