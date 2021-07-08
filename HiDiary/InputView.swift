@@ -28,17 +28,17 @@ struct InputView: View {
                                                 #if DEBUG
                                                 print("return Home")
                                                 #endif
-                                            }, label: {
+                                            }) {
                                                 Image(systemName: "chevron.backward")
-                                            }),
+                                            },
                                         trailing:
                                             HStack {
                                                 Button(action: {
                                                     // TODO: Post Journal
                                                     print("post Journal")
-                                                }, label: {
+                                                }) {
                                                     Image(systemName: "square.and.pencil")
-                                                })
+                                                }
                                             }
                     )
                 
