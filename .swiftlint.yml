@@ -11,6 +11,8 @@ disabled_rules:
 # closureが返す値を明示しておきたい場合があるため
 - unused_closure_parameter
 
+- force_try
+
 # デフォルト無効のルールのうち、有効にするもの
 opt_in_rules:
 - closure_end_indentation
