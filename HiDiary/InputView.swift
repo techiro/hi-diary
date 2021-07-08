@@ -9,7 +9,7 @@ import SwiftUI
 
 struct InputView: View {
     @State var text: String = ""
-    
+    @Environment(\.presentationMode) var presentation
     var body: some View {
         
         GeometryReader { geometry in
@@ -24,21 +24,21 @@ struct InputView: View {
                     })
                     .navigationBarItems(leading:
                                             Button(action: {
-                                                // TODO: return HomePage
+                                                self.presentation.wrappedValue.dismiss()
                                                 #if DEBUG
                                                 print("return Home")
                                                 #endif
-                                            }) {
+                                            }, label: {
                                                 Image(systemName: "chevron.backward")
-                                            },
+                                            }),
                                         trailing:
                                             HStack {
                                                 Button(action: {
                                                     // TODO: Post Journal
                                                     print("post Journal")
-                                                }) {
+                                                }, label: {
                                                     Image(systemName: "square.and.pencil")
-                                                }
+                                                })
                                             }
                     )
                 

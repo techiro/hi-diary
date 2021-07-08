@@ -37,7 +37,7 @@ final class KeyboardResponder: ObservableObject {
     }
 }
 
-struct KeyboardView<Content, ToolBar> : View where Content : View, ToolBar: View {
+struct KeyboardView<Content, ToolBar>: View where Content: View, ToolBar: View {
     @StateObject private var keyboard: KeyboardResponder = KeyboardResponder()
     let toolbarFrame: CGSize = CGSize(width: UIScreen.main.bounds.width, height: 40.0)
     var content: () -> Content
