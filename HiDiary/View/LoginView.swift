@@ -5,10 +5,10 @@
 //  Created by TanakaHirokazu on 2021/07/11.
 //
 
-
 import SwiftUI
 
 struct LoginView: View {
+    @EnvironmentObject var session: Session
     @State var inputEmail: String = ""
     @State var inputPassword: String = ""
     
@@ -33,6 +33,10 @@ struct LoginView: View {
 
                 Button(action: {
                    print("Login処理")
+                    session.user = User(id: inputPassword, name: inputEmail)
+                    session.isLogin = true
+                    
+                    print(session.isLogin)
                 },
                 label: {
                     Text("Login")
@@ -49,7 +53,6 @@ struct LoginView: View {
         }
     }
 }
-
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {

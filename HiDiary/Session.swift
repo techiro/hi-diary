@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Combine
 
 final class Session: ObservableObject {
     @Published var isLogin: Bool

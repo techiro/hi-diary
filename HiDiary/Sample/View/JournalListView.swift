@@ -61,7 +61,7 @@ struct JournalListView: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("追加") {
-                        if (isJournalTextFieldPresented) {
+                        if isJournalTextFieldPresented {
                             viewModel.journalTextField = journalTextField
                             journalTextField = ""
                         }
@@ -81,8 +81,6 @@ struct JournalListView: View {
         }
     }
 }
-
-
 
 struct JournalListView_Previews: PreviewProvider {
     static var previews: some View {
