@@ -18,7 +18,6 @@ struct TextEditingView: View {
                 .accentColor(.action)
         } toolBar: {
             ToolBarView()
-            
         }
     }
 }
