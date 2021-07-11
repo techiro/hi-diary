@@ -18,7 +18,7 @@ struct JournalListView: View {
     var body: some View {
         NavigationView {
             VStack {
-                if (isJournalTextFieldPresented) {
+                if isJournalTextFieldPresented {
                     TextField("メモを入力してください", text: $journalTextField)
                         .textFieldStyle(DefaultTextFieldStyle())
                         .keyboardType(.asciiCapable)

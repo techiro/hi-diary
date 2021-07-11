@@ -21,7 +21,7 @@ class JournalViewModel: ObservableObject {
 
     init() {
         addJournalTask = self.$journalTextField
-            .sink() { text in
+            .sink { text in
                 guard !text.isEmpty else {
                     return
                 }
@@ -31,7 +31,7 @@ class JournalViewModel: ObservableObject {
                 Journal.add(journal)
             }
         deleteJournalTask = self.$deleteJournal
-            .sink() { journal in
+            .sink { journal in
                 guard let journal = journal else {
                     return
                 }
@@ -41,8 +41,8 @@ class JournalViewModel: ObservableObject {
                 }
             }
         deleteAlljournalTask = self.$isDeleteAllTapped
-            .sink() { isDeleteAllTapped in
-                if (isDeleteAllTapped) {
+            .sink { isDeleteAllTapped in
+                if isDeleteAllTapped {
                     Journal.delete(self.journals)
                     self.journals.removeAll()
                     self.isDeleteAllTapped = false
