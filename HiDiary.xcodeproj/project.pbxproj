@@ -99,8 +99,7 @@
 		038B86CD269AC53A00DE08B8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				038B86C7269AB5CF00DE08B8 /* LoginView.swift */,
-				03DCB935269C7B2E0064420B /* LoginViewModel.swift */,
+				03DCB937269C84220064420B /* Login */,
 				03DCB92A269AD7BC0064420B /* Home */,
 				03A33A85269042B100A1CB38 /* ContentView.swift */,
 				03BFA4292692B05300283868 /* FloatingActionButton.swift */,
@@ -155,8 +154,6 @@
 			children = (
 				038B86CE269ACDE200DE08B8 /* Model */,
 				038B86CD269AC53A00DE08B8 /* View */,
-				03DCB92B269AD7D70064420B /* Controller */,
-				03DCB925269AD5EB0064420B /* ViewModel */,
 				03BFA42F2692D9C700283868 /* Utils */,
 				03A33A81269042B100A1CB38 /* AppDelegate.swift */,
 				03A33A83269042B100A1CB38 /* SceneDelegate.swift */,
@@ -272,13 +269,6 @@
 			path = Model/View;
 			sourceTree = "<group>";
 		};
-		03DCB925269AD5EB0064420B /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		03DCB92A269AD7BC0064420B /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,19 +278,21 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		03DCB92B269AD7D70064420B /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		03DCB92C269ADB380064420B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				03DCB92D269ADB5B0064420B /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		03DCB937269C84220064420B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				038B86C7269AB5CF00DE08B8 /* LoginView.swift */,
+				03DCB935269C7B2E0064420B /* LoginViewModel.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -555,6 +547,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;

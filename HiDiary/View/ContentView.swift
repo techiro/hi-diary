@@ -12,13 +12,18 @@ struct ContentView: View {
     @State var selectedView = 1
     @State private var tabViewOffset: CGFloat = 0
     var body: some View {
+        #if DEBUG
+        HomeView().environmentObject(self.session)
+        #elseif RELEASE
         if self.session.isLogin {
             HomeView().environmentObject(self.session)
         } else {
+            
             LoginView()
                 .environmentObject(self.session)
         }
-
+        #endif
+        
     }
     
 }
