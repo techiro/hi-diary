@@ -7,6 +7,13 @@
 - Swift 5.4
 
 
+## 環境構築と実行方法
+
+1. `git clone https://github.com/techiro/hi-diary.git`
+2. `cd hi-diary`
+3. `open HiDiary.xcodeproj`
+
+
 ## 開発方法
 
 1. `develop` ブランチから開発用のブランチを切る。（ブランチ名については下のブランチ命名規則を参照）
