@@ -4,20 +4,30 @@
 //
 //  Created by TanakaHirokazu on 2021/07/11.
 //
-
+import Combine
 import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var session: Session
     @State var selectedViewNum = 0
+    @ObservedObject private var vm = HomeViewModel()
+    @State var subscriptions = Set<AnyCancellable>()
     var body: some View {
         VStack {
             Text(self.session.user?.name ?? "")
             Text(self.session.user?.id ?? "")
             Button("Logout") {
-                self.session.isLogin = false
+                
+                self.vm.logout()
+                    .sink(receiveCompletion: { err in
+                            self.session.user = nil
+                        self.session.isLogin = false
+                        print("logout")
+                    }, receiveValue: {})
+                    .store(in: &subscriptions)
                 
             }
+            .disabled(!vm.canLogin)
             
             TabView(selection: $selectedViewNum) {
                 

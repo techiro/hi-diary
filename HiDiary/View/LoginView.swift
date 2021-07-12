@@ -4,14 +4,15 @@
 //
 //  Created by TanakaHirokazu on 2021/07/11.
 //
-
+import Combine
 import SwiftUI
 
 struct LoginView: View {
     @EnvironmentObject var session: Session
     @State var inputEmail: String = ""
     @State var inputPassword: String = ""
-    
+    @ObservedObject private var vm = LoginViewModel()
+    @State var subscriptions = Set<AnyCancellable>()
     var body: some View {
         NavigationView {
             VStack(alignment: .center) {
@@ -20,11 +21,11 @@ struct LoginView: View {
                                   weight: .heavy))
 
                 VStack(spacing: 24) {
-                    TextField("Mail address", text: $inputEmail)
+                    TextField("Mail address", text: $vm.userId)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .frame(maxWidth: 280)
 
-                    SecureField("Password", text: $inputPassword)
+                    SecureField("Password", text: $vm.password)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .frame(maxWidth: 280)
 
@@ -33,9 +34,18 @@ struct LoginView: View {
 
                 Button(action: {
                    print("Login処理")
-                    session.user = User(id: inputPassword, name: inputEmail)
-                    session.isLogin = true
                     
+                    self.vm.login()
+                        .sink(receiveCompletion: { completion in
+                            print("receiveCompletion:", completion)
+                            
+                        }) { user in
+                            print("userId:", user.id)
+                            self.session.user = User(id: vm.userId, name: vm.password)
+                            self.session.isLogin = true
+                        }
+                        .store(in: &subscriptions)
+                        
                     print(session.isLogin)
                 },
                 label: {
@@ -47,7 +57,8 @@ struct LoginView: View {
                         .background(Color.accentColor)
                         .cornerRadius(8)
                 })
-
+                .disabled(!vm.canLogin)
+                Text(vm.validationText)
                 Spacer()
             }
         }
