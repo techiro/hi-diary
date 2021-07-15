@@ -40,6 +40,9 @@
 		03DCB936269C7B2E0064420B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DCB935269C7B2E0064420B /* LoginViewModel.swift */; };
 		03DCB941269C98A60064420B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03DCB940269C97280064420B /* GoogleService-Info.plist */; };
 		03DCB949269D02DB0064420B /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DCB948269D02DB0064420B /* Memo.swift */; };
+		03DCB94E269D049C0064420B /* MemoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DCB94D269D049C0064420B /* MemoViewModel.swift */; };
+		03DCB951269D0EFD0064420B /* MemoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DCB950269D0EFD0064420B /* MemoListView.swift */; };
+		03DCB953269D0F300064420B /* MemoRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DCB952269D0F300064420B /* MemoRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +89,9 @@
 		03DCB940269C97280064420B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		03DCB942269C9D2F0064420B /* Command.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Command.md; sourceTree = "<group>"; };
 		03DCB948269D02DB0064420B /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
+		03DCB94D269D049C0064420B /* MemoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewModel.swift; sourceTree = "<group>"; };
+		03DCB950269D0EFD0064420B /* MemoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListView.swift; sourceTree = "<group>"; };
+		03DCB952269D0F300064420B /* MemoRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,10 +112,9 @@
 			children = (
 				03DCB937269C84220064420B /* Login */,
 				03DCB92A269AD7BC0064420B /* Home */,
+				03DCB94F269D04A50064420B /* Memo */,
 				03A33A85269042B100A1CB38 /* ContentView.swift */,
 				03BFA4292692B05300283868 /* FloatingActionButton.swift */,
-				03BFA4322692DDB700283868 /* InputView.swift */,
-				03AE8A172694285800F8DA64 /* TextEditingView.swift */,
 				03AE8A1B26943C0100F8DA64 /* KeyboardView.swift */,
 				03AE8A1D2695375400F8DA64 /* ToolBarView.swift */,
 			);
@@ -311,6 +316,18 @@
 			path = Configs;
 			sourceTree = "<group>";
 		};
+		03DCB94F269D04A50064420B /* Memo */ = {
+			isa = PBXGroup;
+			children = (
+				03BFA4322692DDB700283868 /* InputView.swift */,
+				03AE8A172694285800F8DA64 /* TextEditingView.swift */,
+				03DCB94D269D049C0064420B /* MemoViewModel.swift */,
+				03DCB950269D0EFD0064420B /* MemoListView.swift */,
+				03DCB952269D0F300064420B /* MemoRowView.swift */,
+			);
+			path = Memo;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -424,6 +441,7 @@
 				03A33A84269042B100A1CB38 /* SceneDelegate.swift in Sources */,
 				03AE8A1E2695375400F8DA64 /* ToolBarView.swift in Sources */,
 				03BFA4332692DDB700283868 /* InputView.swift in Sources */,
+				03DCB951269D0EFD0064420B /* MemoListView.swift in Sources */,
 				03CEE105269690BB00557BD0 /* Journal.swift in Sources */,
 				03CEE107269692AF00557BD0 /* JournalsViewModel.swift in Sources */,
 				03A33A86269042B100A1CB38 /* ContentView.swift in Sources */,
@@ -433,8 +451,10 @@
 				038B86C6269AB4F300DE08B8 /* User.swift in Sources */,
 				03CEE10B2696977000557BD0 /* JournalRowView.swift in Sources */,
 				038B86C8269AB5CF00DE08B8 /* LoginView.swift in Sources */,
+				03DCB953269D0F300064420B /* MemoRowView.swift in Sources */,
 				03DCB929269AD6320064420B /* AuthProvider.swift in Sources */,
 				03DCB936269C7B2E0064420B /* LoginViewModel.swift in Sources */,
+				03DCB94E269D049C0064420B /* MemoViewModel.swift in Sources */,
 				03AE8A182694285800F8DA64 /* TextEditingView.swift in Sources */,
 				03DCB932269C1E1E0064420B /* LoginSampleView.swift in Sources */,
 				03BFA42A2692B05300283868 /* FloatingActionButton.swift in Sources */,

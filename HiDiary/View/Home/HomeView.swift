@@ -11,6 +11,7 @@ struct HomeView: View {
     @EnvironmentObject var session: Session
     @State var selectedViewNum = 0
     @ObservedObject private var vm = HomeViewModel()
+    
     @State var subscriptions = Set<AnyCancellable>()
     var body: some View {
         VStack {
@@ -30,15 +31,18 @@ struct HomeView: View {
             .disabled(!vm.canLogin)
             
             TabView(selection: $selectedViewNum) {
-                
-                Button("Show Second View") {
-                    selectedViewNum = 1
+                MemoListView()
+                VStack {
+                    
+                    Button("Show Second View") {
+                        selectedViewNum = 1
+                    }
+                    .padding()
+                    .tabItem {
+                        Label("Diary", systemImage: "book")
+                    }
+                    .tag(0)
                 }
-                .padding()
-                .tabItem {
-                    Label("Diary", systemImage: "book")
-                }
-                .tag(0)
                 
                 Button("Show First View") {
                     selectedViewNum = 0

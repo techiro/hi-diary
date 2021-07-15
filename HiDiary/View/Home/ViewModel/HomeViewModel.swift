@@ -10,9 +10,10 @@ import Foundation
 final class HomeViewModel: ObservableObject {
     // MARK: Private
     private let authProvider: AuthProviderProtocol
-    
+   
     // MARK: Output
     @Published private(set) var canLogin: Bool = true
+    @Published private(set) var memos: [Memo] = Array(Memo.findAll())
     
     // MARK: Action
     func logout() -> AnyPublisher<Void, Error> {
