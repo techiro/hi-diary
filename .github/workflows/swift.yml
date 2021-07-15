@@ -17,3 +17,13 @@ jobs:
       run: swift build -v
     - name: Run tests
       run: swift test -v
+      
+- name: Setup Cocoapods
+  # You may pin to the exact commit or the version.
+  # uses: maxim-lobanov/setup-cocoapods@d66547b1b8cc1d342527a50a39f425281442afd5
+  uses: maxim-lobanov/setup-cocoapods@v1
+  with:
+    # Version of Cocoapods to install
+    version: # optional
+    # Path to Podfile.lock file to determine Cocoapods version
+    podfile-path: # optional
