@@ -19,7 +19,7 @@ class MemoViewModel: ObservableObject {
 
     init() {
          self.$memoTextField
-            .sink() { text in
+            .sink { text in
                 guard !text.isEmpty else {
                     return
                 }
@@ -31,7 +31,7 @@ class MemoViewModel: ObservableObject {
             .store(in: &subscriptions)
         
         self.$deleteMemo
-            .sink() { memo in
+            .sink { memo in
                 guard let memo = memo else {
                     return
                 }
@@ -43,8 +43,8 @@ class MemoViewModel: ObservableObject {
             .store(in: &subscriptions)
         
         self.$isDeleteAllTapped
-            .sink() { isDeleteAllTapped in
-                if (isDeleteAllTapped) {
+            .sink { isDeleteAllTapped in
+                if isDeleteAllTapped {
                     Memo.delete(self.memos)
                     self.memos.removeAll()
                     self.isDeleteAllTapped = false
