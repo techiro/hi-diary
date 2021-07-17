@@ -11,10 +11,10 @@ disabled_rules:
 # closureが返す値を明示しておきたい場合があるため
 - unused_closure_parameter
 
-# 慣例として，Realmをインスタンス化する際に必ずforce tryを使う．
+# 場合によってforce_tryを使うため
 - force_try
 
-#　buttonでよく用いるため
+#　SwiftUIのbuttonでよく用いるため
 - multiple_closures_with_trailing_closure
 
 # デフォルト無効のルールのうち、有効にするもの
@@ -42,7 +42,6 @@ opt_in_rules:
 # 追加したOSSライブラリは対象に含めない
 excluded:
 - Pods/
-- Carthage/
 
 # 1行あたりの文字数制限変更
 line_length: 160
