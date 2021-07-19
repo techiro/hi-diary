@@ -48,6 +48,7 @@
 		03DCB951269D0EFD0064420B /* MemoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DCB950269D0EFD0064420B /* MemoListView.swift */; };
 		03DCB953269D0F300064420B /* MemoRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DCB952269D0F300064420B /* MemoRowView.swift */; };
 		03E3913D26A5A7400084FAF6 /* FirebaseAuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E3913C26A5A7400084FAF6 /* FirebaseAuthProvider.swift */; };
+		03E3914326A5BA1E0084FAF6 /* LogOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E3914226A5BA1E0084FAF6 /* LogOutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +102,7 @@
 		03DCB950269D0EFD0064420B /* MemoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListView.swift; sourceTree = "<group>"; };
 		03DCB952269D0F300064420B /* MemoRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoRowView.swift; sourceTree = "<group>"; };
 		03E3913C26A5A7400084FAF6 /* FirebaseAuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthProvider.swift; sourceTree = "<group>"; };
+		03E3914226A5BA1E0084FAF6 /* LogOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 		038B86CD269AC53A00DE08B8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				03E3914126A5BA0B0084FAF6 /* Setting */,
 				03DCB937269C84220064420B /* Login */,
 				03DCB92A269AD7BC0064420B /* Home */,
 				03DCB94F269D04A50064420B /* Memo */,
@@ -342,6 +345,14 @@
 			path = Memo;
 			sourceTree = "<group>";
 		};
+		03E3914126A5BA0B0084FAF6 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				03E3914226A5BA1E0084FAF6 /* LogOutView.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -451,6 +462,7 @@
 				03DCB92E269ADB5B0064420B /* HomeViewModel.swift in Sources */,
 				03BFA4312692DA0100283868 /* LandscapeModifier.swift in Sources */,
 				03AE8A1A26942E5F00F8DA64 /* Color+Extension.swift in Sources */,
+				03E3914326A5BA1E0084FAF6 /* LogOutView.swift in Sources */,
 				03AE89EF2692F66300F8DA64 /* NavigationBarModifier.swift in Sources */,
 				03A33A82269042B100A1CB38 /* AppDelegate.swift in Sources */,
 				03AE8A1C26943C0100F8DA64 /* KeyboardView.swift in Sources */,
