@@ -5,13 +5,14 @@
 //  Created by TanakaHirokazu on 2021/07/11.
 //
 import Combine
+import FirebaseAuth
 import SwiftUI
 
 struct LoginView: View {
     @EnvironmentObject var session: Session
     @State var inputEmail: String = ""
     @State var inputPassword: String = ""
-    @ObservedObject private var vm = LoginViewModel()
+    //    @ObservedObject private var vm = LoginViewModel()
     @State var subscriptions = Set<AnyCancellable>()
     var body: some View {
         NavigationView {
@@ -19,22 +20,31 @@ struct LoginView: View {
                 Text("SwiftUI App")
                     .font(.system(size: 48,
                                   weight: .heavy))
-
+                
                 VStack(spacing: 24) {
-                    TextField("Mail address", text: $vm.userId)
+                    TextField("Mail address", text: $inputEmail)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .frame(maxWidth: 280)
-
-                    SecureField("Password", text: $vm.password)
+                    
+                    SecureField("Password", text: $inputPassword)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .frame(maxWidth: 280)
-
+                    
                 }
                 .frame(height: 200)
-
-                Button(action: {
-                   print("Login処理")
                 
+                Button(action: {
+                    print("Login処理")
+                    
+                    Auth.auth().signIn(withEmail: inputEmail, password: inputPassword) { result, error in
+                        if let error = error {
+                            print(error.localizedDescription)
+                            
+                        } else {
+                            print(result.debugDescription)
+                        }
+                        
+                    }
                 },
                 label: {
                     Text("Login")
@@ -45,8 +55,7 @@ struct LoginView: View {
                         .background(Color.accentColor)
                         .cornerRadius(8)
                 })
-                .disabled(!vm.canLogin)
-                Text(vm.validationText)
+                .disabled(inputEmail.isEmpty || inputPassword.isEmpty)
                 Spacer()
             }
         }
