@@ -25,6 +25,9 @@
 		03AE8A1E2695375400F8DA64 /* ToolBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AE8A1D2695375400F8DA64 /* ToolBarView.swift */; };
 		03AE8A222695417300F8DA64 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 03AE8A212695417300F8DA64 /* .gitignore */; };
 		03AFF1BE26A44534001D5A27 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 03AFF1BD26A44534001D5A27 /* FirebaseAuth */; };
+		03AFF1D326A507CF001D5A27 /* FirebaseAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AFF1D226A507CF001D5A27 /* FirebaseAuthViewModel.swift */; };
+		03AFF1D526A50BFC001D5A27 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AFF1D426A50BFC001D5A27 /* SignInView.swift */; };
+		03AFF1D726A5138D001D5A27 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AFF1D626A5138D001D5A27 /* SignUpView.swift */; };
 		03BFA42A2692B05300283868 /* FloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BFA4292692B05300283868 /* FloatingActionButton.swift */; };
 		03BFA4312692DA0100283868 /* LandscapeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BFA4302692DA0100283868 /* LandscapeModifier.swift */; };
 		03BFA4332692DDB700283868 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BFA4322692DDB700283868 /* InputView.swift */; };
@@ -44,6 +47,7 @@
 		03DCB94E269D049C0064420B /* MemoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DCB94D269D049C0064420B /* MemoViewModel.swift */; };
 		03DCB951269D0EFD0064420B /* MemoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DCB950269D0EFD0064420B /* MemoListView.swift */; };
 		03DCB953269D0F300064420B /* MemoRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DCB952269D0F300064420B /* MemoRowView.swift */; };
+		03E3914326A5BA1E0084FAF6 /* SignOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E3914226A5BA1E0084FAF6 /* SignOutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +70,9 @@
 		03AE8A1B26943C0100F8DA64 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 		03AE8A1D2695375400F8DA64 /* ToolBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarView.swift; sourceTree = "<group>"; };
 		03AE8A212695417300F8DA64 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		03AFF1D226A507CF001D5A27 /* FirebaseAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthViewModel.swift; sourceTree = "<group>"; };
+		03AFF1D426A50BFC001D5A27 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		03AFF1D626A5138D001D5A27 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		03BFA4292692B05300283868 /* FloatingActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingActionButton.swift; sourceTree = "<group>"; };
 		03BFA4302692DA0100283868 /* LandscapeModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeModifier.swift; sourceTree = "<group>"; };
 		03BFA4322692DDB700283868 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
@@ -93,6 +100,7 @@
 		03DCB94D269D049C0064420B /* MemoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewModel.swift; sourceTree = "<group>"; };
 		03DCB950269D0EFD0064420B /* MemoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListView.swift; sourceTree = "<group>"; };
 		03DCB952269D0F300064420B /* MemoRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoRowView.swift; sourceTree = "<group>"; };
+		03E3914226A5BA1E0084FAF6 /* SignOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +120,7 @@
 		038B86CD269AC53A00DE08B8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				03E3914126A5BA0B0084FAF6 /* Setting */,
 				03DCB937269C84220064420B /* Login */,
 				03DCB92A269AD7BC0064420B /* Home */,
 				03DCB94F269D04A50064420B /* Memo */,
@@ -306,6 +315,9 @@
 			children = (
 				038B86C7269AB5CF00DE08B8 /* LoginView.swift */,
 				03DCB935269C7B2E0064420B /* LoginViewModel.swift */,
+				03AFF1D226A507CF001D5A27 /* FirebaseAuthViewModel.swift */,
+				03AFF1D426A50BFC001D5A27 /* SignInView.swift */,
+				03AFF1D626A5138D001D5A27 /* SignUpView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -328,6 +340,14 @@
 				03DCB952269D0F300064420B /* MemoRowView.swift */,
 			);
 			path = Memo;
+			sourceTree = "<group>";
+		};
+		03E3914126A5BA0B0084FAF6 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				03E3914226A5BA1E0084FAF6 /* SignOutView.swift */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -439,6 +459,7 @@
 				03DCB92E269ADB5B0064420B /* HomeViewModel.swift in Sources */,
 				03BFA4312692DA0100283868 /* LandscapeModifier.swift in Sources */,
 				03AE8A1A26942E5F00F8DA64 /* Color+Extension.swift in Sources */,
+				03E3914326A5BA1E0084FAF6 /* SignOutView.swift in Sources */,
 				03AE89EF2692F66300F8DA64 /* NavigationBarModifier.swift in Sources */,
 				03A33A82269042B100A1CB38 /* AppDelegate.swift in Sources */,
 				03AE8A1C26943C0100F8DA64 /* KeyboardView.swift in Sources */,
@@ -454,9 +475,12 @@
 				03DCB934269C29930064420B /* String+Extension.swift in Sources */,
 				038B86C6269AB4F300DE08B8 /* User.swift in Sources */,
 				03CEE10B2696977000557BD0 /* JournalRowView.swift in Sources */,
+				03AFF1D326A507CF001D5A27 /* FirebaseAuthViewModel.swift in Sources */,
 				038B86C8269AB5CF00DE08B8 /* LoginView.swift in Sources */,
+				03AFF1D726A5138D001D5A27 /* SignUpView.swift in Sources */,
 				03DCB953269D0F300064420B /* MemoRowView.swift in Sources */,
 				03DCB929269AD6320064420B /* AuthProvider.swift in Sources */,
+				03AFF1D526A50BFC001D5A27 /* SignInView.swift in Sources */,
 				03DCB936269C7B2E0064420B /* LoginViewModel.swift in Sources */,
 				03DCB94E269D049C0064420B /* MemoViewModel.swift in Sources */,
 				03AE8A182694285800F8DA64 /* TextEditingView.swift in Sources */,

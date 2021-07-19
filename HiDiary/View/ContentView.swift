@@ -18,8 +18,7 @@ struct ContentView: View {
         if self.session.isLogin {
             HomeView().environmentObject(self.session)
         } else {
-            
-            LoginView()
+            SignInView()
                 .environmentObject(self.session)
         }
         #endif

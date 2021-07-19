@@ -15,34 +15,18 @@ struct HomeView: View {
     @State var subscriptions = Set<AnyCancellable>()
     var body: some View {
         VStack {
-            Text(self.session.user?.name ?? "")
-            Text(self.session.user?.id ?? "")
-            Button("Logout") {
-                
-                self.vm.logout()
-                    .sink(receiveCompletion: { err in
-                            self.session.user = nil
-                        self.session.isLogin = false
-                        print("logout")
-                    }, receiveValue: {})
-                    .store(in: &subscriptions)
-                
-            }
-            .disabled(!vm.canLogin)
+            Text(self.session.user?.email ?? "")
+            Text(self.session.user?.uid ?? "")
             
             TabView(selection: $selectedViewNum) {
-                MemoListView()
-                VStack {
-                    
-                    Button("Show Second View") {
-                        selectedViewNum = 1
-                    }
-                    .padding()
-                    .tabItem {
-                        Label("Diary", systemImage: "book")
-                    }
-                    .tag(0)
+                Button("Show Second View") {
+                    selectedViewNum = 1
                 }
+                .padding()
+                .tabItem {
+                    Label("Diary", systemImage: "book")
+                }
+                .tag(0)
                 
                 Button("Show First View") {
                     selectedViewNum = 0
@@ -62,14 +46,12 @@ struct HomeView: View {
                 }
                 .tag(2)
                 
-                Button("Show First View") {
-                    selectedViewNum = 0
-                }
-                .padding()
-                .tabItem {
-                    Label("Profile", systemImage: "person")
-                }
-                .tag(3)
+                SignOutView()
+                    .padding()
+                    .tabItem {
+                        Label("Profile", systemImage: "person")
+                    }
+                    .tag(3)
             }
             .overlay(FloatingActionButton(bottomPadding: 60), alignment: .bottom)
         }
