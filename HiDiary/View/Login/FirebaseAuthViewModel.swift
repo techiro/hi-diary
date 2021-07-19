@@ -19,17 +19,17 @@ enum FirebaseAuthError: Error {
     
 }
 
-extension FirebaseAuthError:LocalizedError{
-    var errorDescription:String?{
+extension FirebaseAuthError: LocalizedError {
+    var errorDescription: String? {
         switch self {
         case .handleError:
-            return "ハンドルエラー"
+            return NSLocalizedString("Firebase handling Error", comment: "")
         case .signInError:
-            return "サインインエラー"
+            return NSLocalizedString("Firebase signIn Error", comment: "")
         case .signUpError:
-            return "サインアップエラー"
+            return NSLocalizedString("Firebase signUp Error", comment: "")
         case .signOutError:
-           return "サインアウトエラー"
+           return NSLocalizedString("Firebase signOut Error", comment: "")
         }
     }
 }
