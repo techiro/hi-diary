@@ -19,6 +19,21 @@ enum FirebaseAuthError: Error {
     
 }
 
+extension FirebaseAuthError:LocalizedError{
+    var errorDescription:String?{
+        switch self {
+        case .handleError:
+            return "ハンドルエラー"
+        case .signInError:
+            return "サインインエラー"
+        case .signUpError:
+            return "サインアップエラー"
+        case .signOutError:
+           return "サインアウトエラー"
+        }
+    }
+}
+
 final class FirebaseAuthViewModel: ObservableObject {
 
     private let auth = Auth.auth()
