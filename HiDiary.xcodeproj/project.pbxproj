@@ -47,6 +47,7 @@
 		03DCB94E269D049C0064420B /* MemoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DCB94D269D049C0064420B /* MemoViewModel.swift */; };
 		03DCB951269D0EFD0064420B /* MemoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DCB950269D0EFD0064420B /* MemoListView.swift */; };
 		03DCB953269D0F300064420B /* MemoRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DCB952269D0F300064420B /* MemoRowView.swift */; };
+		03E3913D26A5A7400084FAF6 /* FirebaseAuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E3913C26A5A7400084FAF6 /* FirebaseAuthProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +100,7 @@
 		03DCB94D269D049C0064420B /* MemoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewModel.swift; sourceTree = "<group>"; };
 		03DCB950269D0EFD0064420B /* MemoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListView.swift; sourceTree = "<group>"; };
 		03DCB952269D0F300064420B /* MemoRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoRowView.swift; sourceTree = "<group>"; };
+		03E3913C26A5A7400084FAF6 /* FirebaseAuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				03DCB948269D02DB0064420B /* Memo.swift */,
 				038B86C5269AB4F300DE08B8 /* User.swift */,
 				038B86C3269AB4BF00DE08B8 /* Session.swift */,
+				03E3913C26A5A7400084FAF6 /* FirebaseAuthProvider.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				038B86CC269ABA6B00DE08B8 /* HomeView.swift in Sources */,
 				03DCB934269C29930064420B /* String+Extension.swift in Sources */,
 				038B86C6269AB4F300DE08B8 /* User.swift in Sources */,
+				03E3913D26A5A7400084FAF6 /* FirebaseAuthProvider.swift in Sources */,
 				03CEE10B2696977000557BD0 /* JournalRowView.swift in Sources */,
 				03AFF1D326A507CF001D5A27 /* FirebaseAuthViewModel.swift in Sources */,
 				038B86C8269AB5CF00DE08B8 /* LoginView.swift in Sources */,
