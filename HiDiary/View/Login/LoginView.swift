@@ -34,19 +34,7 @@ struct LoginView: View {
 
                 Button(action: {
                    print("Login処理")
-                    
-                    self.vm.login()
-                        .sink(receiveCompletion: { completion in
-                            print("receiveCompletion:", completion)
-                            
-                        }) { user in
-                            print("userId:", user.id)
-                            self.session.user = User(id: vm.userId, name: vm.password)
-                            self.session.isLogin = true
-                        }
-                        .store(in: &subscriptions)
-                        
-                    print(session.isLogin)
+                
                 },
                 label: {
                     Text("Login")

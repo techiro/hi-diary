@@ -58,4 +58,3 @@ struct SignInView_Previews: PreviewProvider {
         SignInView()
     }
 }
-

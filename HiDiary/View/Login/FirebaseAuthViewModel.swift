@@ -7,43 +7,49 @@
 import FirebaseAuth
 import Foundation
 
-final class FirebaseAuthViewModel: ObservableObject {
+enum FirebaseAuthError: Error {
+    /// ハンドルエラー
+    case handleError
+    /// サインインエラー
+    case signInError
+    /// サインアップエラー
+    case signUpError
+    // サインアウトエラー
+    case signOutError
     
-    @Published var signedIn = false
+}
+
+final class FirebaseAuthViewModel: ObservableObject {
 
     private let auth = Auth.auth()
-
-    private var isSignedIn: Bool {
-        return auth.currentUser != nil
-    }
-    
-    init() {
-        self.signedIn = isSignedIn
-    }
     
     func signIn(email: String, password: String) {
-        auth.signIn(withEmail: email, password: password) { [weak self] result, error in
+        auth.signIn(withEmail: email, password: password) { result, error in
             guard result != nil, error == nil else {
-                return
+                if error == nil { print("errorなし") }
+                return print("error")
             }
             print("signIn成功")
             // MARK: success signIn
-            DispatchQueue.main.async {
-                self?.signedIn = true
-            }
         }
     }
     
     func signUp(email: String, password: String) {
-        auth.createUser(withEmail: email, password: password, completion: { [weak self] result, error in
+        auth.createUser(withEmail: email, password: password, completion: { result, error in
             guard result != nil, error == nil else {
-                return
+                if error == nil { print("errorなし") }
+                return print("error")
             }
             print("SignUp成功")
             // MARK: success signUp
-            DispatchQueue.main.async {
-                self?.signedIn = true
-            }
         })
+    }
+    
+    func signOut() throws {
+        do {
+          try auth.signOut()
+        } catch let signOutError as NSError {
+          throw signOutError
+        }
     }
 }

@@ -5,24 +5,22 @@
 //  Created by TanakaHirokazu on 2021/07/19.
 //
 
-import FirebaseAuth
 import SwiftUI
 
-struct LogOutView: View {
-    let firebaseAuth = Auth.auth()
+struct SignOutView: View {
+    private var vm = FirebaseAuthViewModel()
     
     var body: some View {
         
         Button(action: {
-           print("LogOut処理")
             do {
-              try firebaseAuth.signOut()
-            } catch let signOutError as NSError {
-              print("Error signing out: %@", signOutError)
+                try vm.signOut()
+            } catch {
+                print(error)
             }
         },
         label: {
-            Text("Login")
+            Text("LogOut")
                 .fontWeight(.medium)
                 .frame(minWidth: 160)
                 .foregroundColor(.white)
@@ -33,8 +31,8 @@ struct LogOutView: View {
     }
 }
 
-struct LogOutView_Previews: PreviewProvider {
+struct SignOutView_Previews: PreviewProvider {
     static var previews: some View {
-        LogOutView()
+        SignOutView()
     }
 }
