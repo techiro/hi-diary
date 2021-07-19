@@ -48,6 +48,9 @@
 		03DCB951269D0EFD0064420B /* MemoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DCB950269D0EFD0064420B /* MemoListView.swift */; };
 		03DCB953269D0F300064420B /* MemoRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DCB952269D0F300064420B /* MemoRowView.swift */; };
 		03E3914326A5BA1E0084FAF6 /* SignOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E3914226A5BA1E0084FAF6 /* SignOutView.swift */; };
+		03E3914826A5EAF60084FAF6 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 03E3914726A5EAF60084FAF6 /* PopupView */; };
+		03E3914A26A5EC3D0084FAF6 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E3914926A5EC3D0084FAF6 /* Toast.swift */; };
+		03E3914C26A63DA00084FAF6 /* TabVarHeightOffsetViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E3914B26A63DA00084FAF6 /* TabVarHeightOffsetViewModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +104,8 @@
 		03DCB950269D0EFD0064420B /* MemoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListView.swift; sourceTree = "<group>"; };
 		03DCB952269D0F300064420B /* MemoRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoRowView.swift; sourceTree = "<group>"; };
 		03E3914226A5BA1E0084FAF6 /* SignOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutView.swift; sourceTree = "<group>"; };
+		03E3914926A5EC3D0084FAF6 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		03E3914B26A63DA00084FAF6 /* TabVarHeightOffsetViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabVarHeightOffsetViewModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03E3914826A5EAF60084FAF6 /* PopupView in Frameworks */,
 				03CEE10026968C3000557BD0 /* RealmSwift in Frameworks */,
 				03AFF1BE26A44534001D5A27 /* FirebaseAuth in Frameworks */,
 				03CEE0FE26968C3000557BD0 /* Realm in Frameworks */,
@@ -221,6 +227,8 @@
 				03AE89F02692F6BE00F8DA64 /* Extension */,
 				03BFA4302692DA0100283868 /* LandscapeModifier.swift */,
 				03DCB942269C9D2F0064420B /* Command.md */,
+				03E3914926A5EC3D0084FAF6 /* Toast.swift */,
+				03E3914B26A63DA00084FAF6 /* TabVarHeightOffsetViewModifier.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -371,6 +379,7 @@
 				03CEE0FD26968C3000557BD0 /* Realm */,
 				03CEE0FF26968C3000557BD0 /* RealmSwift */,
 				03AFF1BD26A44534001D5A27 /* FirebaseAuth */,
+				03E3914726A5EAF60084FAF6 /* PopupView */,
 			);
 			productName = KotonohaDiary;
 			productReference = 03A33A7E269042B100A1CB38 /* HiDiary.app */;
@@ -402,6 +411,7 @@
 			packageReferences = (
 				03CEE0FC26968C3000557BD0 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 				03AFF1BC26A44534001D5A27 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				03E3914626A5EAF60084FAF6 /* XCRemoteSwiftPackageReference "PopupView" */,
 			);
 			productRefGroup = 03A33A7F269042B100A1CB38 /* Products */;
 			projectDirPath = "";
@@ -473,6 +483,7 @@
 				03DCB949269D02DB0064420B /* Memo.swift in Sources */,
 				038B86CC269ABA6B00DE08B8 /* HomeView.swift in Sources */,
 				03DCB934269C29930064420B /* String+Extension.swift in Sources */,
+				03E3914A26A5EC3D0084FAF6 /* Toast.swift in Sources */,
 				038B86C6269AB4F300DE08B8 /* User.swift in Sources */,
 				03CEE10B2696977000557BD0 /* JournalRowView.swift in Sources */,
 				03AFF1D326A507CF001D5A27 /* FirebaseAuthViewModel.swift in Sources */,
@@ -486,6 +497,7 @@
 				03AE8A182694285800F8DA64 /* TextEditingView.swift in Sources */,
 				03DCB932269C1E1E0064420B /* LoginSampleView.swift in Sources */,
 				03BFA42A2692B05300283868 /* FloatingActionButton.swift in Sources */,
+				03E3914C26A63DA00084FAF6 /* TabVarHeightOffsetViewModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -702,6 +714,14 @@
 				minimumVersion = 10.10.0;
 			};
 		};
+		03E3914626A5EAF60084FAF6 /* XCRemoteSwiftPackageReference "PopupView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/PopupView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -719,6 +739,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 03CEE0FC26968C3000557BD0 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
 			productName = RealmSwift;
+		};
+		03E3914726A5EAF60084FAF6 /* PopupView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 03E3914626A5EAF60084FAF6 /* XCRemoteSwiftPackageReference "PopupView" */;
+			productName = PopupView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

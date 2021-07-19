@@ -6,13 +6,14 @@
 //
 import Combine
 import FirebaseAuth
+import PopupView
 import SwiftUI
 
 struct LoginView: View {
     @EnvironmentObject var session: Session
     @State var inputEmail: String = ""
     @State var inputPassword: String = ""
-    //    @ObservedObject private var vm = LoginViewModel()
+    @State var isError: Bool = false
     @State var subscriptions = Set<AnyCancellable>()
     var body: some View {
         NavigationView {
@@ -39,7 +40,7 @@ struct LoginView: View {
                     Auth.auth().signIn(withEmail: inputEmail, password: inputPassword) { result, error in
                         if let error = error {
                             print(error.localizedDescription)
-                            
+                            isError = true
                         } else {
                             print(result.debugDescription)
                         }
@@ -57,7 +58,15 @@ struct LoginView: View {
                 })
                 .disabled(inputEmail.isEmpty || inputPassword.isEmpty)
                 Spacer()
+                
             }
+            .popup(isPresented: $isError, type: .toast, position: .bottom, animation: .easeIn, autohideIn: 1, dragToDismiss: true, closeOnTap: true, closeOnTapOutside: true) {
+                self.inputPassword = ""
+                
+            } view: {
+                Toast()
+            }
+
         }
     }
 }
