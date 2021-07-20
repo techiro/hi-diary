@@ -26,10 +26,12 @@ struct LoginView: View {
                     TextField("Mail address", text: $inputEmail)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .frame(maxWidth: 280)
+                        .autocapitalization(.none)
                     
                     SecureField("Password", text: $inputPassword)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .frame(maxWidth: 280)
+                        .autocapitalization(.none)
                     
                 }
                 .frame(height: 200)
