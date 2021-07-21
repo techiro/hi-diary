@@ -8,7 +8,8 @@ import Combine
 import SwiftUI
 
 struct HomeView: View {
-    @EnvironmentObject var session: Session
+    @EnvironmentObject var authService: FirebaseAuthenticationService
+    
     @State var selectedViewNum = 0
     @ObservedObject private var vm = HomeViewModel()
     
@@ -57,6 +58,6 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
-            .environmentObject(Session(isLogin: true, user: User(id: "@appgrape", name: "Hirokazu Tanaka")))
+            .environmentObject(Session(isLogin: true, user: User(uid: "LJK+JEJFEW3534KJLFJE", email: "test@gmail.com", displayName: "@hiro")))
     }
 }
