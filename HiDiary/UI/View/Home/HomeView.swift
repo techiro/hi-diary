@@ -10,46 +10,46 @@ import SwiftUI
 struct HomeView: View {
     @EnvironmentObject var authService: FirebaseAuthenticationService
     
-    @State var selectedViewNum = 0
-    @ObservedObject private var vm = HomeViewModel()
+    @State var tabSelection: Tabs = Tabs.diary
     
     @State var subscriptions = Set<AnyCancellable>()
     var body: some View {
-        TabView(selection: $selectedViewNum) {
+        TabView(selection: $tabSelection) {
             Button("Show Second View") {
-                selectedViewNum = 1
+                tabSelection = Tabs.correct
             }
             .padding()
             .tabItem {
-                Label("Diary", systemImage: "book")
+                Label(Tabs.diary.description, systemImage: Tabs.diary.systemimage)
             }
-            .tag(0)
+            .tag(Tabs.diary)
+            
+            Button("Show Third View") {
+                tabSelection = Tabs.notifications
+            }
+            .padding()
+            .tabItem {
+                Label(Tabs.correct.description, systemImage: Tabs.correct.systemimage)
+            }
+            .tag(Tabs.correct)
             
             Button("Show First View") {
-                selectedViewNum = 0
+                tabSelection = Tabs.diary
             }
             .padding()
             .tabItem {
-                Label("Correct", systemImage: "quote.bubble")
+                Label(Tabs.notifications.description, systemImage: Tabs.notifications.systemimage)
             }
-            .tag(1)
-            
-            Button("Show First View") {
-                selectedViewNum = 0
-            }
-            .padding()
-            .tabItem {
-                Label("Notifications", systemImage: "bell")
-            }
-            .tag(2)
+            .tag(Tabs.notifications)
             
             SignOutView()
                 .padding()
                 .tabItem {
-                    Label("Profile", systemImage: "person")
+                    Label(Tabs.settings.description, systemImage: Tabs.settings.systemimage)
                 }
-                .tag(3)
+                .tag(Tabs.settings)
         }
+        
         .overlay(FloatingActionButton(bottomPadding: 60), alignment: .bottom)
         
     }
@@ -61,3 +61,7 @@ struct HomeView_Previews: PreviewProvider {
             .environmentObject(Session(isLogin: true, user: User(uid: "LJK+JEJFEW3534KJLFJE", email: "test@gmail.com", displayName: "@hiro")))
     }
 }
+
+
+
+

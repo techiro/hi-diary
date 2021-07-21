@@ -52,6 +52,7 @@
 		03E3914A26A5EC3D0084FAF6 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E3914926A5EC3D0084FAF6 /* Toast.swift */; };
 		03E3914C26A63DA00084FAF6 /* TabVarHeightOffsetViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E3914B26A63DA00084FAF6 /* TabVarHeightOffsetViewModifier.swift */; };
 		03E3915726A6D9F00084FAF6 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E3915626A6D9EF0084FAF6 /* FirebaseAuthService.swift */; };
+		03E3915A26A8072C0084FAF6 /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E3915926A8072C0084FAF6 /* Tabs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +109,7 @@
 		03E3914926A5EC3D0084FAF6 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		03E3914B26A63DA00084FAF6 /* TabVarHeightOffsetViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabVarHeightOffsetViewModifier.swift; sourceTree = "<group>"; };
 		03E3915626A6D9EF0084FAF6 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
+		03E3915926A8072C0084FAF6 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				03DCB948269D02DB0064420B /* Memo.swift */,
+				03E3915926A8072C0084FAF6 /* Tabs.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -538,6 +541,7 @@
 				03E3914A26A5EC3D0084FAF6 /* Toast.swift in Sources */,
 				038B86C6269AB4F300DE08B8 /* User.swift in Sources */,
 				03CEE10B2696977000557BD0 /* JournalRowView.swift in Sources */,
+				03E3915A26A8072C0084FAF6 /* Tabs.swift in Sources */,
 				03AFF1D326A507CF001D5A27 /* FirebaseAuthViewModel.swift in Sources */,
 				038B86C8269AB5CF00DE08B8 /* LoginView.swift in Sources */,
 				03AFF1D726A5138D001D5A27 /* SignUpView.swift in Sources */,

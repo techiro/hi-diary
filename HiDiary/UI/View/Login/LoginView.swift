@@ -17,7 +17,6 @@ struct LoginView: View {
     @State var subTitle = ""
     @State var subscriptions = Set<AnyCancellable>()
     var body: some View {
-        NavigationView {
             VStack(alignment: .center) {
                 Text("SwiftUI App")
                     .font(.system(size: 48,
@@ -67,7 +66,7 @@ struct LoginView: View {
                 Toast(title: "ログインエラー", subTitle: subTitle, image: Image(systemName: "xmark.circle"))
             }
 
-        }
+        
     }
 }
 
