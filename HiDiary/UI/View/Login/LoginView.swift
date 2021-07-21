@@ -10,10 +10,11 @@ import PopupView
 import SwiftUI
 
 struct LoginView: View {
-    @EnvironmentObject var session: Session
+    @EnvironmentObject var authService: FirebaseAuthenticationService
     @State var inputEmail: String = ""
     @State var inputPassword: String = ""
     @State var isError: Bool = false
+    @State var subTitle = ""
     @State var subscriptions = Set<AnyCancellable>()
     var body: some View {
         NavigationView {
@@ -26,28 +27,25 @@ struct LoginView: View {
                     TextField("Mail address", text: $inputEmail)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .frame(maxWidth: 280)
-                        .autocapitalization(.none)
                     
                     SecureField("Password", text: $inputPassword)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .frame(maxWidth: 280)
-                        .autocapitalization(.none)
                     
                 }
                 .frame(height: 200)
                 
                 Button(action: {
                     print("Login処理")
-                    
-                    Auth.auth().signIn(withEmail: inputEmail, password: inputPassword) { result, error in
-                        if let error = error {
-                            print(error.localizedDescription)
-                            isError = true
-                        } else {
-                            print(result.debugDescription)
-                        }
+                    authService.signIn(email: inputEmail, password: inputPassword) { result, error in
                         
+                        if let error = error {
+                            subTitle = error.localizedDescription
+                            isError = true
+                        }
+                                                
                     }
+                    
                 },
                 label: {
                     Text("Login")
@@ -62,11 +60,11 @@ struct LoginView: View {
                 Spacer()
                 
             }
-            .popup(isPresented: $isError, type: .toast, position: .bottom, animation: .easeIn, autohideIn: 1, dragToDismiss: true, closeOnTap: true, closeOnTapOutside: true) {
+            .popup(isPresented: $isError, type: .toast, position: .bottom, animation: .easeIn, autohideIn: 1.5, dragToDismiss: true, closeOnTap: true, closeOnTapOutside: true) {
                 self.inputPassword = ""
                 
             } view: {
-                Toast()
+                Toast(title: "ログインエラー", subTitle: subTitle, image: Image(systemName: "xmark.circle"))
             }
 
         }

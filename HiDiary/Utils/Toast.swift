@@ -8,17 +8,21 @@
 import SwiftUI
 
 struct Toast: View {
+    var title: String = ""
+    var subTitle: String = ""
+    var image: Image = Image(systemName: "sun.min")
+    
     var body: some View {
         ZStack {
             HStack {
-                Image(systemName: "xmark.circle")
+                image
                     .resizable()
                     .frame(width: 35, height: 35, alignment: .center)
                     .padding()
                 VStack {
-                    Text("ログインエラー")
+                    Text(title)
                         .fontWeight(.bold)
-                    Text("パスワードかメールアドレスが無効です")
+                    Text(subTitle)
                 }
                 
             }
@@ -28,7 +32,7 @@ struct Toast: View {
         }
         .cornerRadius(12)
         .padding()
-
+        
     }
 }
 
@@ -36,7 +40,7 @@ struct Toast_Previews: PreviewProvider {
     static var previews: some View {
         
         VStack {
-            Toast()
+            Toast(title: "タイトル", subTitle: "サブタイトル", image: Image(systemName: "bookmark.fill"))
         }
     }
 }

@@ -51,6 +51,7 @@
 		03E3914826A5EAF60084FAF6 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 03E3914726A5EAF60084FAF6 /* PopupView */; };
 		03E3914A26A5EC3D0084FAF6 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E3914926A5EC3D0084FAF6 /* Toast.swift */; };
 		03E3914C26A63DA00084FAF6 /* TabVarHeightOffsetViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E3914B26A63DA00084FAF6 /* TabVarHeightOffsetViewModifier.swift */; };
+		03E3915726A6D9F00084FAF6 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E3915626A6D9EF0084FAF6 /* FirebaseAuthService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +107,7 @@
 		03E3914226A5BA1E0084FAF6 /* SignOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutView.swift; sourceTree = "<group>"; };
 		03E3914926A5EC3D0084FAF6 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		03E3914B26A63DA00084FAF6 /* TabVarHeightOffsetViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabVarHeightOffsetViewModifier.swift; sourceTree = "<group>"; };
+		03E3915626A6D9EF0084FAF6 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +132,6 @@
 				03DCB937269C84220064420B /* Login */,
 				03DCB92A269AD7BC0064420B /* Home */,
 				03DCB94F269D04A50064420B /* Memo */,
-				03A33A85269042B100A1CB38 /* ContentView.swift */,
 				03BFA4292692B05300283868 /* FloatingActionButton.swift */,
 				03AE8A1B26943C0100F8DA64 /* KeyboardView.swift */,
 				03AE8A1D2695375400F8DA64 /* ToolBarView.swift */,
@@ -141,10 +142,7 @@
 		038B86CE269ACDE200DE08B8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				03DCB928269AD6320064420B /* AuthProvider.swift */,
 				03DCB948269D02DB0064420B /* Memo.swift */,
-				038B86C5269AB4F300DE08B8 /* User.swift */,
-				038B86C3269AB4BF00DE08B8 /* Session.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -180,16 +178,17 @@
 		03A33A80269042B100A1CB38 /* HiDiary */ = {
 			isa = PBXGroup;
 			children = (
+				03E3915126A68E230084FAF6 /* Data */,
+				03E3915526A68E960084FAF6 /* UI */,
 				03DCB93F269C971D0064420B /* Configs */,
-				038B86CE269ACDE200DE08B8 /* Model */,
-				038B86CD269AC53A00DE08B8 /* View */,
 				03BFA42F2692D9C700283868 /* Utils */,
+				03A33A85269042B100A1CB38 /* ContentView.swift */,
 				03A33A81269042B100A1CB38 /* AppDelegate.swift */,
 				03A33A83269042B100A1CB38 /* SceneDelegate.swift */,
-				03CEE10C26969D0000557BD0 /* Sample */,
 				03A33A87269042B300A1CB38 /* Assets.xcassets */,
 				03A33A8C269042B300A1CB38 /* LaunchScreen.storyboard */,
 				03A33A8F269042B300A1CB38 /* Info.plist */,
+				03CEE10C26969D0000557BD0 /* Sample */,
 				03A33A89269042B300A1CB38 /* Preview Content */,
 			);
 			path = HiDiary;
@@ -261,6 +260,7 @@
 		03CEE10C26969D0000557BD0 /* Sample */ = {
 			isa = PBXGroup;
 			children = (
+				03E3915826A7F41A0084FAF6 /* Provider */,
 				038B86DC269AD04100DE08B8 /* MVVM */,
 				03CEE10326968E4700557BD0 /* ViewModel */,
 				03CEE10226968E3F00557BD0 /* View */,
@@ -323,7 +323,6 @@
 			children = (
 				038B86C7269AB5CF00DE08B8 /* LoginView.swift */,
 				03DCB935269C7B2E0064420B /* LoginViewModel.swift */,
-				03AFF1D226A507CF001D5A27 /* FirebaseAuthViewModel.swift */,
 				03AFF1D426A50BFC001D5A27 /* SignInView.swift */,
 				03AFF1D626A5138D001D5A27 /* SignUpView.swift */,
 			);
@@ -356,6 +355,58 @@
 				03E3914226A5BA1E0084FAF6 /* SignOutView.swift */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		03E3915126A68E230084FAF6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				03E3915326A68E490084FAF6 /* Service */,
+				03E3915426A68E7C0084FAF6 /* Model */,
+				03E3915226A68E3E0084FAF6 /* API */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		03E3915226A68E3E0084FAF6 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		03E3915326A68E490084FAF6 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				03E3915626A6D9EF0084FAF6 /* FirebaseAuthService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		03E3915426A68E7C0084FAF6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				038B86C5269AB4F300DE08B8 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		03E3915526A68E960084FAF6 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				038B86CE269ACDE200DE08B8 /* Model */,
+				038B86CD269AC53A00DE08B8 /* View */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		03E3915826A7F41A0084FAF6 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				03AFF1D226A507CF001D5A27 /* FirebaseAuthViewModel.swift */,
+				03DCB928269AD6320064420B /* AuthProvider.swift */,
+				038B86C3269AB4BF00DE08B8 /* Session.swift */,
+			);
+			path = Provider;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -474,6 +525,7 @@
 				03A33A82269042B100A1CB38 /* AppDelegate.swift in Sources */,
 				03AE8A1C26943C0100F8DA64 /* KeyboardView.swift in Sources */,
 				03A33A84269042B100A1CB38 /* SceneDelegate.swift in Sources */,
+				03E3915726A6D9F00084FAF6 /* FirebaseAuthService.swift in Sources */,
 				03AE8A1E2695375400F8DA64 /* ToolBarView.swift in Sources */,
 				03BFA4332692DDB700283868 /* InputView.swift in Sources */,
 				03DCB951269D0EFD0064420B /* MemoListView.swift in Sources */,

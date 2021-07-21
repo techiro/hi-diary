@@ -8,20 +8,27 @@ import PopupView
 import SwiftUI
 
 struct SignOutView: View {
-    @EnvironmentObject var session: Session
+    @EnvironmentObject var authService: FirebaseAuthenticationService
     private var vm = FirebaseAuthViewModel()
+    @State var subTitle = ""
     // MARK: テスト用プロパティー
     @State var isShowToast = false
     var body: some View {
         
         VStack {
-            Text(self.session.user?.email ?? "sample email")
-            Text(self.session.user?.uid ?? "sample user")
+            Text(self.authService.user?.displayName ?? "sample Name")
+            Text(self.authService.user?.email ?? "sample email")
+            Text(self.authService.user?.uid ?? "sample uid")
+            Text(subTitle)
+
             Button(action: {
                 do {
-                    try vm.signOut()
+                    try authService.signOut()
+                    
                 } catch {
-                    print(error)
+                    
+                    subTitle = error.localizedDescription
+                    isShowToast = true
                 }
             },
             label: {
@@ -49,7 +56,7 @@ struct SignOutView: View {
             .popup(isPresented: $isShowToast, type: .toast, position: .bottom, animation: .easeIn, autohideIn: 1, dragToDismiss: true, closeOnTap: true, closeOnTapOutside: true) {
                 
             } view: {
-                Toast()
+                Toast(title: "サインアウト", subTitle: subTitle, image: Image(systemName: "xmark.circle"))
             }
         }
     }

@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var session: Session
+    @EnvironmentObject var authService: FirebaseAuthenticationService
     @State var selectedView = 1
     @State private var tabViewOffset: CGFloat = 0
     var body: some View {
         #if DEBUG
-        HomeView().environmentObject(self.session)
+        HomeView().environmentObject(self.authService)
+        
         #elseif RELEASE
-        if self.session.isLogin {
-            HomeView().environmentObject(self.session)
+        if self.authService.user != nil {
+            HomeView().environmentObject(self.authService)
         } else {
-            LoginView()
-                .environmentObject(self.session)
+            LoginView().environmentObject(self.authService)
         }
         #endif
         
@@ -29,6 +29,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        return ContentView().previewDevice("iPhone 8").landscape()
+        return ContentView().previewDevice("iPhone 8").landscape().environmentObject(FirebaseAuthenticationService())
     }
 }
