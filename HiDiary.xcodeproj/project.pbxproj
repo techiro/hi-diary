@@ -58,6 +58,7 @@
 		03E3915726A6D9F00084FAF6 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E3915626A6D9EF0084FAF6 /* FirebaseAuthService.swift */; };
 		03E3915A26A8072C0084FAF6 /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E3915926A8072C0084FAF6 /* Tabs.swift */; };
 		03E3915C26A907340084FAF6 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 03E3915B26A907340084FAF6 /* Makefile */; };
+		7390A38726A96E83004E2FD8 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7390A38626A96E83004E2FD8 /* ChatView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,6 +121,7 @@
 		03E3915626A6D9EF0084FAF6 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
 		03E3915926A8072C0084FAF6 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
 		03E3915B26A907340084FAF6 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		7390A38626A96E83004E2FD8 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 		03A33A80269042B100A1CB38 /* HiDiary */ = {
 			isa = PBXGroup;
 			children = (
+				7390A38526A96E63004E2FD8 /* Chat */,
 				03E3915126A68E230084FAF6 /* Data */,
 				03E3915526A68E960084FAF6 /* UI */,
 				03DCB93F269C971D0064420B /* Configs */,
@@ -435,6 +438,14 @@
 			path = Provider;
 			sourceTree = "<group>";
 		};
+		7390A38526A96E63004E2FD8 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				7390A38626A96E83004E2FD8 /* ChatView.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -545,6 +556,7 @@
 				038B86C4269AB4BF00DE08B8 /* Session.swift in Sources */,
 				03DCB92E269ADB5B0064420B /* HomeViewModel.swift in Sources */,
 				03BFA4312692DA0100283868 /* LandscapeModifier.swift in Sources */,
+				7390A38726A96E83004E2FD8 /* ChatView.swift in Sources */,
 				03AE8A1A26942E5F00F8DA64 /* Color+Extension.swift in Sources */,
 				03E3914326A5BA1E0084FAF6 /* SignOutView.swift in Sources */,
 				03C8000526A94BE9000D5612 /* FirebaseStoreService.swift in Sources */,
