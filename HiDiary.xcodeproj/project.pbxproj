@@ -53,6 +53,7 @@
 		03E3914C26A63DA00084FAF6 /* TabVarHeightOffsetViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E3914B26A63DA00084FAF6 /* TabVarHeightOffsetViewModifier.swift */; };
 		03E3915726A6D9F00084FAF6 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E3915626A6D9EF0084FAF6 /* FirebaseAuthService.swift */; };
 		03E3915A26A8072C0084FAF6 /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E3915926A8072C0084FAF6 /* Tabs.swift */; };
+		03E3915C26A907340084FAF6 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 03E3915B26A907340084FAF6 /* Makefile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +111,7 @@
 		03E3914B26A63DA00084FAF6 /* TabVarHeightOffsetViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabVarHeightOffsetViewModifier.swift; sourceTree = "<group>"; };
 		03E3915626A6D9EF0084FAF6 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
 		03E3915926A8072C0084FAF6 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
+		03E3915B26A907340084FAF6 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 		03A33A75269042B100A1CB38 = {
 			isa = PBXGroup;
 			children = (
+				03E3915B26A907340084FAF6 /* Makefile */,
 				03AE8A212695417300F8DA64 /* .gitignore */,
 				03A33A96269062EF00A1CB38 /* .swiftlint.yml */,
 				03A33A80269042B100A1CB38 /* HiDiary */,
@@ -524,6 +527,7 @@
 				03BFA4312692DA0100283868 /* LandscapeModifier.swift in Sources */,
 				03AE8A1A26942E5F00F8DA64 /* Color+Extension.swift in Sources */,
 				03E3914326A5BA1E0084FAF6 /* SignOutView.swift in Sources */,
+				03E3915C26A907340084FAF6 /* Makefile in Sources */,
 				03AE89EF2692F66300F8DA64 /* NavigationBarModifier.swift in Sources */,
 				03A33A82269042B100A1CB38 /* AppDelegate.swift in Sources */,
 				03AE8A1C26943C0100F8DA64 /* KeyboardView.swift in Sources */,

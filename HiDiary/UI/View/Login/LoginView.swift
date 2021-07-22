@@ -65,8 +65,6 @@ struct LoginView: View {
             } view: {
                 Toast(title: "ログインエラー", subTitle: subTitle, image: Image(systemName: "xmark.circle"))
             }
-
-        
     }
 }
 

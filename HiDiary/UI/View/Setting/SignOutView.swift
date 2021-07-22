@@ -24,9 +24,7 @@ struct SignOutView: View {
             Button(action: {
                 do {
                     try authService.signOut()
-                    
                 } catch {
-                    
                     subTitle = error.localizedDescription
                     isShowToast = true
                 }
@@ -57,6 +55,7 @@ struct SignOutView: View {
                 
             } view: {
                 Toast(title: "サインアウト", subTitle: subTitle, image: Image(systemName: "xmark.circle"))
+                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 100, trailing: 0))
             }
         }
     }
@@ -64,6 +63,6 @@ struct SignOutView: View {
 
 struct SignOutView_Previews: PreviewProvider {
     static var previews: some View {
-        SignOutView()
+        SignOutView().environmentObject(FirebaseAuthenticationService())
     }
 }

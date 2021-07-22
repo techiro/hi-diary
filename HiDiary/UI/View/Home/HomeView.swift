@@ -33,8 +33,11 @@ struct HomeView: View {
             }
             .tag(Tabs.correct)
             
-            Button("Show First View") {
-                tabSelection = Tabs.diary
+            ZStack {
+                Color.yellow
+                Button("Show First View") {
+                    tabSelection = Tabs.diary
+                }
             }
             .padding()
             .tabItem {
@@ -48,6 +51,7 @@ struct HomeView: View {
                     Label(Tabs.settings.description, systemImage: Tabs.settings.systemimage)
                 }
                 .tag(Tabs.settings)
+                .edgesIgnoringSafeArea(.all)
         }
         
         .overlay(FloatingActionButton(bottomPadding: 60), alignment: .bottom)
