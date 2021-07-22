@@ -5,36 +5,46 @@
 //  Created by TanakaHirokazu on 2021/07/11.
 //
 import Combine
+import FirebaseAuth
+import PopupView
 import SwiftUI
 
 struct LoginView: View {
-    @EnvironmentObject var session: Session
+    @EnvironmentObject var authService: FirebaseAuthenticationService
     @State var inputEmail: String = ""
     @State var inputPassword: String = ""
-    @ObservedObject private var vm = LoginViewModel()
+    @State var isError: Bool = false
+    @State var subTitle = ""
     @State var subscriptions = Set<AnyCancellable>()
     var body: some View {
-        NavigationView {
             VStack(alignment: .center) {
                 Text("SwiftUI App")
                     .font(.system(size: 48,
                                   weight: .heavy))
-
+                
                 VStack(spacing: 24) {
-                    TextField("Mail address", text: $vm.userId)
+                    TextField("Mail address", text: $inputEmail)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .frame(maxWidth: 280)
-
-                    SecureField("Password", text: $vm.password)
+                    
+                    SecureField("Password", text: $inputPassword)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .frame(maxWidth: 280)
-
+                    
                 }
                 .frame(height: 200)
-
-                Button(action: {
-                   print("Login処理")
                 
+                Button(action: {
+                    print("Login処理")
+                    authService.signIn(email: inputEmail, password: inputPassword) { result, error in
+                        
+                        if let error = error {
+                            subTitle = error.localizedDescription
+                            isError = true
+                        }
+                                                
+                    }
+                    
                 },
                 label: {
                     Text("Login")
@@ -45,11 +55,16 @@ struct LoginView: View {
                         .background(Color.accentColor)
                         .cornerRadius(8)
                 })
-                .disabled(!vm.canLogin)
-                Text(vm.validationText)
+                .disabled(inputEmail.isEmpty || inputPassword.isEmpty)
                 Spacer()
+                
             }
-        }
+            .popup(isPresented: $isError, type: .toast, position: .bottom, animation: .easeIn, autohideIn: 1.5, dragToDismiss: true, closeOnTap: true, closeOnTapOutside: true) {
+                self.inputPassword = ""
+                
+            } view: {
+                Toast(title: "ログインエラー", subTitle: subTitle, image: Image(systemName: "xmark.circle"))
+            }
     }
 }
 

@@ -19,7 +19,6 @@ final class Session: ObservableObject {
                 self?.isLogin = (auth.currentUser != nil) ? true : false
                 self?.user = user
             }
-            
         }
     }
     

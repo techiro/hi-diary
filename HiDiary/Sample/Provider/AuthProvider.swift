@@ -17,7 +17,6 @@ protocol AuthProviderProtocol {
 }
 
 final class AuthProvider: AuthProviderProtocol {
-    
     func login(userId: String, password: String) -> Future<User, Error> {
         
         return Future<User, Error> { promise in
@@ -26,11 +25,11 @@ final class AuthProvider: AuthProviderProtocol {
             DispatchQueue.global().async {
                 // Intended to network communicate
                 Thread.sleep(forTimeInterval: 1.0)
-                 if userId == "A" && password == "A" {
-                     promise(.success(User(id: userId, name: "foobar")))
-                 } else {
-                     promise(.failure(AuthError.invalidIdOrPassword))
-                 }
+                if userId == "A" && password == "A" {
+                    promise(.success(User(uid: "uid", email: "email", displayName: "sample")))
+                } else {
+                    promise(.failure(AuthError.invalidIdOrPassword))
+                }
             }
         }
     }
