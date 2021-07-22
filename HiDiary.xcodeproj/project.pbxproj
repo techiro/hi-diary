@@ -31,6 +31,10 @@
 		03BFA42A2692B05300283868 /* FloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BFA4292692B05300283868 /* FloatingActionButton.swift */; };
 		03BFA4312692DA0100283868 /* LandscapeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BFA4302692DA0100283868 /* LandscapeModifier.swift */; };
 		03BFA4332692DDB700283868 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BFA4322692DDB700283868 /* InputView.swift */; };
+		03C8000126A9335C000D5612 /* NoteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C8000026A9335C000D5612 /* NoteListView.swift */; };
+		03C8000326A93412000D5612 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C8000226A93412000D5612 /* Note.swift */; };
+		03C8000526A94BE9000D5612 /* FirebaseStoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C8000426A94BE8000D5612 /* FirebaseStoreService.swift */; };
+		03C8FFFF26A93331000D5612 /* NoteRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C8FFFE26A93331000D5612 /* NoteRowView.swift */; };
 		03CEE0FE26968C3000557BD0 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 03CEE0FD26968C3000557BD0 /* Realm */; };
 		03CEE10026968C3000557BD0 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 03CEE0FF26968C3000557BD0 /* RealmSwift */; };
 		03CEE105269690BB00557BD0 /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CEE104269690BB00557BD0 /* Journal.swift */; };
@@ -82,6 +86,10 @@
 		03BFA4292692B05300283868 /* FloatingActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingActionButton.swift; sourceTree = "<group>"; };
 		03BFA4302692DA0100283868 /* LandscapeModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeModifier.swift; sourceTree = "<group>"; };
 		03BFA4322692DDB700283868 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		03C8000026A9335C000D5612 /* NoteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListView.swift; sourceTree = "<group>"; };
+		03C8000226A93412000D5612 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		03C8000426A94BE8000D5612 /* FirebaseStoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStoreService.swift; sourceTree = "<group>"; };
+		03C8FFFE26A93331000D5612 /* NoteRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRowView.swift; sourceTree = "<group>"; };
 		03CEE104269690BB00557BD0 /* Journal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
 		03CEE106269692AF00557BD0 /* JournalsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalsViewModel.swift; sourceTree = "<group>"; };
 		03CEE1082696965D00557BD0 /* JournalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalListView.swift; sourceTree = "<group>"; };
@@ -132,6 +140,7 @@
 		038B86CD269AC53A00DE08B8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				03C8FFFD26A932F9000D5612 /* Note */,
 				03E3914126A5BA0B0084FAF6 /* Setting */,
 				03DCB937269C84220064420B /* Login */,
 				03DCB92A269AD7BC0064420B /* Home */,
@@ -148,6 +157,7 @@
 			children = (
 				03DCB948269D02DB0064420B /* Memo.swift */,
 				03E3915926A8072C0084FAF6 /* Tabs.swift */,
+				03C8000226A93412000D5612 /* Note.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -236,6 +246,15 @@
 				03E3914B26A63DA00084FAF6 /* TabVarHeightOffsetViewModifier.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		03C8FFFD26A932F9000D5612 /* Note */ = {
+			isa = PBXGroup;
+			children = (
+				03C8FFFE26A93331000D5612 /* NoteRowView.swift */,
+				03C8000026A9335C000D5612 /* NoteListView.swift */,
+			);
+			path = Note;
 			sourceTree = "<group>";
 		};
 		03CEE10126968E3800557BD0 /* Model */ = {
@@ -384,6 +403,7 @@
 			isa = PBXGroup;
 			children = (
 				03E3915626A6D9EF0084FAF6 /* FirebaseAuthService.swift */,
+				03C8000426A94BE8000D5612 /* FirebaseStoreService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -527,12 +547,14 @@
 				03BFA4312692DA0100283868 /* LandscapeModifier.swift in Sources */,
 				03AE8A1A26942E5F00F8DA64 /* Color+Extension.swift in Sources */,
 				03E3914326A5BA1E0084FAF6 /* SignOutView.swift in Sources */,
+				03C8000526A94BE9000D5612 /* FirebaseStoreService.swift in Sources */,
 				03E3915C26A907340084FAF6 /* Makefile in Sources */,
 				03AE89EF2692F66300F8DA64 /* NavigationBarModifier.swift in Sources */,
 				03A33A82269042B100A1CB38 /* AppDelegate.swift in Sources */,
 				03AE8A1C26943C0100F8DA64 /* KeyboardView.swift in Sources */,
 				03A33A84269042B100A1CB38 /* SceneDelegate.swift in Sources */,
 				03E3915726A6D9F00084FAF6 /* FirebaseAuthService.swift in Sources */,
+				03C8FFFF26A93331000D5612 /* NoteRowView.swift in Sources */,
 				03AE8A1E2695375400F8DA64 /* ToolBarView.swift in Sources */,
 				03BFA4332692DDB700283868 /* InputView.swift in Sources */,
 				03DCB951269D0EFD0064420B /* MemoListView.swift in Sources */,
@@ -543,6 +565,7 @@
 				038B86CC269ABA6B00DE08B8 /* HomeView.swift in Sources */,
 				03DCB934269C29930064420B /* String+Extension.swift in Sources */,
 				03E3914A26A5EC3D0084FAF6 /* Toast.swift in Sources */,
+				03C8000126A9335C000D5612 /* NoteListView.swift in Sources */,
 				038B86C6269AB4F300DE08B8 /* User.swift in Sources */,
 				03CEE10B2696977000557BD0 /* JournalRowView.swift in Sources */,
 				03E3915A26A8072C0084FAF6 /* Tabs.swift in Sources */,
@@ -554,6 +577,7 @@
 				03AFF1D526A50BFC001D5A27 /* SignInView.swift in Sources */,
 				03DCB936269C7B2E0064420B /* LoginViewModel.swift in Sources */,
 				03DCB94E269D049C0064420B /* MemoViewModel.swift in Sources */,
+				03C8000326A93412000D5612 /* Note.swift in Sources */,
 				03AE8A182694285800F8DA64 /* TextEditingView.swift in Sources */,
 				03DCB932269C1E1E0064420B /* LoginSampleView.swift in Sources */,
 				03BFA42A2692B05300283868 /* FloatingActionButton.swift in Sources */,
