@@ -37,3 +37,13 @@
 - コメントの言語（日・英）に関してはとくに定めていません。
 - 頭に、タグ（add:, update:, fix: など）をつけてもらえると非常に見やすいかと思います。
 - コミットの粒度については、なるべく細かめにお願いします。（目安としては、1機能1コミット）
+
+
+## コマンド
+ターミナルで使えるコマンドです。
+
+```bash
+make ccache        Delete cache
+make sort          Sort file dependencies in Xcode Project
+```
+
