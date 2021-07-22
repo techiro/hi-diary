@@ -47,7 +47,10 @@ class FirebaseAuthenticationService: ObservableObject {
     func signOut() throws {
         try Auth.auth().signOut()
         self.user = nil
+        
+        #if DEBUG
         throw FirebaseAuthError.signOutError
+        #endif
     }
     
 }
