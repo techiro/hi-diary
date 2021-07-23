@@ -54,7 +54,7 @@ struct HomeView: View {
                 .edgesIgnoringSafeArea(.all)
         }
 
-        .overlay(FloatingActionButton(bottomPadding: 60), alignment: .bottom)
+        .overlay(FloatingActionButton(bottomPadding: 60), alignment: .bottom).environmentObject(authService)
 
     }
 }

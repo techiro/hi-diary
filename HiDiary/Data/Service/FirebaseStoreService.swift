@@ -14,17 +14,20 @@ protocol FireStoreProtocolProtocol {
     func stopObservingNotes() -> Future<Void, Error>
 }
 
-final class FireStoreService: ObservableObject, FireStoreProtocolProtocol {
+final class FirebaseStoreService: ObservableObject, FireStoreProtocolProtocol {
     let db = Firestore.firestore()
     var ref: DocumentReference?
 
-    func saveNotes(user: User, data: Note) {
+    func saveNotes(user: User, data: Note, handler: @escaping (Error?) -> Void) {
+
         ref = db.collection("users").document(user.uid).collection("history").addDocument(data: [
             "id": data.id,
-            "timestamp": data.postedDate,
-            "content": data.content,
-            "isPublic": data.isPublic
-        ])
+            "timestamp": data.postedDate!,
+            "content": data.content!,
+            "isPublic": data.isPublic!
+        ]) { error in
+            handler(error)
+        }
     }
     func observeNotes() -> Future<[Note], Error> {
         return Future<[Note], Error> { promise in

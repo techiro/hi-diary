@@ -16,6 +16,7 @@ struct LoginView: View {
     @State var isError: Bool = false
     @State var subTitle = ""
     @State var subscriptions = Set<AnyCancellable>()
+    let password = "password"
     var body: some View {
         VStack(alignment: .center) {
             Text("SwiftUI App")
@@ -36,11 +37,12 @@ struct LoginView: View {
 
             Button(action: {
                 print("Login処理")
-                authService.signIn(email: inputEmail, password: inputPassword) { result, error in
+                authService.signIn(email: inputEmail, password: password) { result, error in
 
                     if let error = error {
                         subTitle = error.localizedDescription
                         isError = true
+                        print(error)
                     }
 
                 }

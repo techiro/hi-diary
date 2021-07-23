@@ -10,7 +10,11 @@ import SwiftUI
 struct InputView: View {
     @State var text: String = ""
     @Environment(\.presentationMode) var presentation
+    @ObservedObject var storeService: FirebaseStoreService
+    @EnvironmentObject var authService: FirebaseAuthenticationService
+
     @ObservedObject private var vm = MemoViewModel()
+
     var body: some View {
 
         GeometryReader { geometry in
@@ -36,6 +40,15 @@ struct InputView: View {
                                             HStack {
                                                 Button(action: {
                                                     // TODO: Post Journal
+                                                    if let user = authService.user {
+                                                        storeService.saveNotes(
+                                                            user: user,
+                                                            data: Note(id: "hello", title: "title", content: vm.memoTextField, finished: false, postedDate: Date(), modifyDate: nil, isPublic: true)
+                                                        ) { error in
+                                                            print(error)
+                                                        }
+                                                    }
+
                                                     print("post Journal")
 
                                                 }) {
@@ -58,7 +71,7 @@ struct InputView_Previews: PreviewProvider {
     struct PreviewWrapper: View {
         @State var text: String = "test text."
         var body: some View {
-            InputView()
+            InputView(storeService: FirebaseStoreService()).environmentObject(FirebaseAuthenticationService())
         }
     }
 }
