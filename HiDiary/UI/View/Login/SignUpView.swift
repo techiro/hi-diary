@@ -31,9 +31,9 @@ struct SignUpView: View {
                 .frame(height: 200)
 
                 Button(action: {
-                   print("SignUp処理")
+                    print("SignUp処理")
                     vm.signUp(email: email, password: password)
-                    
+
                 },
                 label: {
                     Text("Create Account")
@@ -45,7 +45,7 @@ struct SignUpView: View {
                         .cornerRadius(8)
                 })
                 .disabled(password.isEmpty || email.isEmpty)
-                
+
                 Spacer()
             }
         }

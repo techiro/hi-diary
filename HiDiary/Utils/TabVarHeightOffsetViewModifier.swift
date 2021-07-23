@@ -9,9 +9,9 @@ import SwiftUI
 
 struct TabBarHeighOffsetViewModifier: ViewModifier {
     let action: (CGFloat) -> Void
-    //MARK: this screenSafeArea helps determine the correct tab bar height depending on device version
+    // MARK: this screenSafeArea helps determine the correct tab bar height depending on device version
     private let screenSafeArea = (UIApplication.shared.windows.first { $0.isKeyWindow }?.safeAreaInsets.bottom ?? 34)
-    
+
     func body(content: Content) -> some View {
         GeometryReader { proxy in
             content

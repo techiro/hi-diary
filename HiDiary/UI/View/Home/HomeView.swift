@@ -9,9 +9,9 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var authService: FirebaseAuthenticationService
-    
+
     @State var tabSelection: Tabs = Tabs.diary
-    
+
     @State var subscriptions = Set<AnyCancellable>()
     var body: some View {
         TabView(selection: $tabSelection) {
@@ -23,7 +23,7 @@ struct HomeView: View {
                 Label(Tabs.diary.description, systemImage: Tabs.diary.systemimage)
             }
             .tag(Tabs.diary)
-            
+
             Button("Show Third View") {
                 tabSelection = Tabs.notifications
             }
@@ -32,7 +32,7 @@ struct HomeView: View {
                 Label(Tabs.correct.description, systemImage: Tabs.correct.systemimage)
             }
             .tag(Tabs.correct)
-            
+
             ZStack {
                 Color.yellow
                 Button("Show First View") {
@@ -44,7 +44,7 @@ struct HomeView: View {
                 Label(Tabs.notifications.description, systemImage: Tabs.notifications.systemimage)
             }
             .tag(Tabs.notifications)
-            
+
             SignOutView()
                 .padding()
                 .tabItem {
@@ -53,9 +53,9 @@ struct HomeView: View {
                 .tag(Tabs.settings)
                 .edgesIgnoringSafeArea(.all)
         }
-        
+
         .overlay(FloatingActionButton(bottomPadding: 60), alignment: .bottom)
-        
+
     }
 }
 
@@ -65,7 +65,3 @@ struct HomeView_Previews: PreviewProvider {
             .environmentObject(Session(isLogin: true, user: User(uid: "LJK+JEJFEW3534KJLFJE", email: "test@gmail.com", displayName: "@hiro")))
     }
 }
-
-
-
-

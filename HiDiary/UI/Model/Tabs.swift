@@ -6,9 +6,9 @@
 //
 
 enum Tabs: CustomStringConvertible {
-    
+
     case diary, settings, correct, notifications
-    
+
     var description: String {
         switch self {
         case .diary:

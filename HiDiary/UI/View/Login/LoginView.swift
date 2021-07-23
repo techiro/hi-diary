@@ -17,54 +17,54 @@ struct LoginView: View {
     @State var subTitle = ""
     @State var subscriptions = Set<AnyCancellable>()
     var body: some View {
-            VStack(alignment: .center) {
-                Text("SwiftUI App")
-                    .font(.system(size: 48,
-                                  weight: .heavy))
-                
-                VStack(spacing: 24) {
-                    TextField("Mail address", text: $inputEmail)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .frame(maxWidth: 280)
-                    
-                    SecureField("Password", text: $inputPassword)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .frame(maxWidth: 280)
-                    
-                }
-                .frame(height: 200)
-                
-                Button(action: {
-                    print("Login処理")
-                    authService.signIn(email: inputEmail, password: inputPassword) { result, error in
-                        
-                        if let error = error {
-                            subTitle = error.localizedDescription
-                            isError = true
-                        }
-                                                
+        VStack(alignment: .center) {
+            Text("SwiftUI App")
+                .font(.system(size: 48,
+                              weight: .heavy))
+
+            VStack(spacing: 24) {
+                TextField("Mail address", text: $inputEmail)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .frame(maxWidth: 280)
+
+                SecureField("Password", text: $inputPassword)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .frame(maxWidth: 280)
+
+            }
+            .frame(height: 200)
+
+            Button(action: {
+                print("Login処理")
+                authService.signIn(email: inputEmail, password: inputPassword) { result, error in
+
+                    if let error = error {
+                        subTitle = error.localizedDescription
+                        isError = true
                     }
-                    
-                },
-                label: {
-                    Text("Login")
-                        .fontWeight(.medium)
-                        .frame(minWidth: 160)
-                        .foregroundColor(.white)
-                        .padding(12)
-                        .background(Color.accentColor)
-                        .cornerRadius(8)
-                })
-                .disabled(inputEmail.isEmpty || inputPassword.isEmpty)
-                Spacer()
-                
-            }
-            .popup(isPresented: $isError, type: .toast, position: .bottom, animation: .easeIn, autohideIn: 1.5, dragToDismiss: true, closeOnTap: true, closeOnTapOutside: true) {
-                self.inputPassword = ""
-                
-            } view: {
-                Toast(title: "ログインエラー", subTitle: subTitle, image: Image(systemName: "xmark.circle"))
-            }
+
+                }
+
+            },
+            label: {
+                Text("Login")
+                    .fontWeight(.medium)
+                    .frame(minWidth: 160)
+                    .foregroundColor(.white)
+                    .padding(12)
+                    .background(Color.accentColor)
+                    .cornerRadius(8)
+            })
+            .disabled(inputEmail.isEmpty || inputPassword.isEmpty)
+            Spacer()
+
+        }
+        .popup(isPresented: $isError, type: .toast, position: .bottom, animation: .easeIn, autohideIn: 1.5, dragToDismiss: true, closeOnTap: true, closeOnTapOutside: true) {
+            self.inputPassword = ""
+
+        } view: {
+            Toast(title: "ログインエラー", subTitle: subTitle, image: Image(systemName: "xmark.circle"))
+        }
     }
 }
 

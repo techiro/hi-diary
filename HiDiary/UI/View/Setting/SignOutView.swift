@@ -14,7 +14,7 @@ struct SignOutView: View {
     // MARK: テスト用プロパティー
     @State var isShowToast = false
     var body: some View {
-        
+
         VStack {
             Text(self.authService.user?.displayName ?? "sample Name")
             Text(self.authService.user?.email ?? "sample email")
@@ -38,7 +38,7 @@ struct SignOutView: View {
                     .background(Color.accentColor)
                     .cornerRadius(8)
             })
-            
+
             Button(action: {
                 isShowToast = true
             }, label: {
@@ -50,9 +50,9 @@ struct SignOutView: View {
                     .background(Color.accentColor)
                     .cornerRadius(8)
             })
-            
+
             .popup(isPresented: $isShowToast, type: .toast, position: .bottom, animation: .easeIn, autohideIn: 1, dragToDismiss: true, closeOnTap: true, closeOnTapOutside: true) {
-                
+
             } view: {
                 Toast(title: "サインアウト", subTitle: subTitle, image: Image(systemName: "xmark.circle"))
                     .padding(EdgeInsets(top: 0, leading: 0, bottom: 100, trailing: 0))

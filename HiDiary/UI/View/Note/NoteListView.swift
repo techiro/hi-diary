@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NoteList<T: NoteViewModelProtocol>: View {
     @ObservedObject var viewModel: T
-    
+
     var body: some View {
         List(self.viewModel.list, id: \.id) { note in
             HStack {
@@ -35,17 +35,17 @@ protocol NoteEntityProtocol {
 
 class NoteEntity: Identifiable, NoteEntityProtocol {
     var id: String
-    
+
     var title: String?
-    
+
     var content: String?
-    
+
     var finished: Bool
-    
+
     var postedDate: Date?
-    
+
     var modifyDate: Date?
-    
+
     init(title: String) {
         self.id = String(Int.random(in: 1_000 ..< 10_000))
         self.title = title
@@ -57,10 +57,10 @@ class NoteEntity: Identifiable, NoteEntityProtocol {
 }
 
 struct NoteList_Previews: PreviewProvider {
-    
+
     class NoteViewModelMock: NoteViewModelProtocol {
         @Published var list: [NoteEntity] = [NoteEntity]()
-        
+
         init() {
             (0..<10).forEach { i in
                 self.list.append(NoteEntity(title: "card: \(i)"))

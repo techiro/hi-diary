@@ -12,12 +12,12 @@ struct InputView: View {
     @Environment(\.presentationMode) var presentation
     @ObservedObject private var vm = MemoViewModel()
     var body: some View {
-        
+
         GeometryReader { geometry in
             NavigationView {
-                
+
                 TextEditingView(contents: $vm.memoTextField)
-                    
+
                     .navigationBarTitle("Journal Entry", displayMode: .inline)
                     .background(NavigationConfigurator { navcon in
                         navcon.navigationBar.barTintColor = .white
@@ -37,16 +37,16 @@ struct InputView: View {
                                                 Button(action: {
                                                     // TODO: Post Journal
                                                     print("post Journal")
-                                                    
+
                                                 }) {
                                                     Image(systemName: "square.and.pencil")
                                                 }
                                             }
                     )
-                
+
             }
         }
-        
+
     }
 }
 
@@ -54,7 +54,7 @@ struct InputView_Previews: PreviewProvider {
     static var previews: some View {
         PreviewWrapper()
     }
-    
+
     struct PreviewWrapper: View {
         @State var text: String = "test text."
         var body: some View {

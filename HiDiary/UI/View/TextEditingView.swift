@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TextEditingView: View {
     @State private var fullText: String = ""
-    
+
     var body: some View {
         KeyboardView {
             TextEditor(text: $fullText)

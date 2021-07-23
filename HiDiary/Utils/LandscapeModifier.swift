@@ -10,15 +10,15 @@ import SwiftUI
 struct LandscapeModifier: ViewModifier {
     let height = UIScreen.main.bounds.width
     let width = UIScreen.main.bounds.height
-    
+
     var isPad: Bool {
         return height >= 768
     }
-    
+
     var isRegularWidth: Bool {
         return height >= 414
     }
-    
+
     func body(content: Content) -> some View {
         content
             .previewLayout(.fixed(width: width, height: height))

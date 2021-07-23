@@ -24,7 +24,7 @@ struct NoteRow<T: NoteEntityProtocol>: View {
                     .font(.footnote)
                     .multilineTextAlignment(.trailing)
             }
-        
+
             Divider()
                 .foregroundColor(.white)
             Text(note.content ?? "")
@@ -37,7 +37,7 @@ struct NoteRow<T: NoteEntityProtocol>: View {
             self.isCheck = note.finished
         }
     }
-    
+
     func formatDate(_ date: Date) -> String {
         let formatter = DateFormatter()
         formatter.dateStyle = .long
@@ -54,12 +54,12 @@ struct NoteRowPreviews: PreviewProvider {
             id: "123",
             title: "This is a test note",
             content:
-"""
+                """
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 Fusce gravida nulla tortor, nec sollicitudin tortor.
 """,
             finished: false, postedDate: nil, modifyDate: nil)
-        
+
         return NoteRow(note: testNote)
     }
 }

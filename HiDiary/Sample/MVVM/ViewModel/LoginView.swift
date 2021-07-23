@@ -23,7 +23,7 @@ struct LoginView: View {
 
             SecureField("Password", text: $vm.password)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-            
+
             if !vm.validationText.isEmpty {
                 Text(vm.validationText)
                     .font(.caption)
@@ -43,7 +43,7 @@ struct LoginView: View {
                 Text(/*@START_MENU_TOKEN@*/"Login"/*@END_MENU_TOKEN@*/)
             }
             .disabled(!vm.canLogin)
-            
+
         }.padding()
     }
 }

@@ -14,7 +14,7 @@ struct ContentView: View {
     var body: some View {
         #if DEBUG
         HomeView().environmentObject(self.authService)
-        
+
         #elseif RELEASE
         if self.authService.user != nil {
             HomeView().environmentObject(self.authService)
@@ -22,9 +22,9 @@ struct ContentView: View {
             LoginView().environmentObject(self.authService)
         }
         #endif
-        
+
     }
-    
+
 }
 
 struct ContentView_Previews: PreviewProvider {

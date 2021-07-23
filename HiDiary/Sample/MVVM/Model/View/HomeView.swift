@@ -11,7 +11,7 @@ import SwiftUI
 struct HomeView: View {
     @EnvironmentObject var session: Session
     @ObservedObject private var vm = HomeViewModel()
-    
+
     var body: some View {
         VStack {
             Text("Hello \(self.session.user?.name ?? "")!")

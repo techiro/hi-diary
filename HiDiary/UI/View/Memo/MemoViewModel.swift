@@ -18,7 +18,7 @@ class MemoViewModel: ObservableObject {
     private var subscriptions = Set<AnyCancellable>()
 
     init() {
-         self.$memoTextField
+        self.$memoTextField
             .sink { text in
                 guard !text.isEmpty else {
                     return
@@ -29,7 +29,7 @@ class MemoViewModel: ObservableObject {
                 Memo.add(memo)
             }
             .store(in: &subscriptions)
-        
+
         self.$deleteMemo
             .sink { memo in
                 guard let memo = memo else {
@@ -41,7 +41,7 @@ class MemoViewModel: ObservableObject {
                 }
             }
             .store(in: &subscriptions)
-        
+
         self.$isDeleteAllTapped
             .sink { isDeleteAllTapped in
                 if isDeleteAllTapped {

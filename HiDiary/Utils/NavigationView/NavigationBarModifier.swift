@@ -9,7 +9,7 @@ import UIKit
 
 struct NavigationConfigurator: UIViewControllerRepresentable {
     var configure: (UINavigationController) -> Void = { _ in }
-    
+
     func makeUIViewController(context: UIViewControllerRepresentableContext<NavigationConfigurator>) -> UIViewController {
         UIViewController()
     }

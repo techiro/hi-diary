@@ -11,12 +11,12 @@ struct InputView: View {
     @State var text: String = ""
     @Environment(\.presentationMode) var presentation
     var body: some View {
-        
+
         GeometryReader { geometry in
             NavigationView {
-                
+
                 TextEditingView()
-                    
+
                     .navigationBarTitle("Journal Entry", displayMode: .inline)
                     .background(NavigationConfigurator { navcon in
                         navcon.navigationBar.barTintColor = .white
@@ -41,10 +41,10 @@ struct InputView: View {
                                                 }
                                             }
                     )
-                
+
             }
         }
-        
+
     }
 }
 
@@ -52,7 +52,7 @@ struct InputView_Previews: PreviewProvider {
     static var previews: some View {
         PreviewWrapper()
     }
-    
+
     struct PreviewWrapper: View {
         @State var text: String = "test text."
         var body: some View {
