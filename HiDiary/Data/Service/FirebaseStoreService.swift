@@ -6,6 +6,7 @@
 //
 
 import Combine
+import FirebaseFirestore
 import Foundation
 
 protocol FireStoreProtocolProtocol {
@@ -14,7 +15,17 @@ protocol FireStoreProtocolProtocol {
 }
 
 final class FireStoreService: ObservableObject, FireStoreProtocolProtocol {
+    let db = Firestore.firestore()
+    var ref: DocumentReference?
 
+    func saveNotes(user: User, data: Note) {
+        ref = db.collection("users").document(user.uid).collection("history").addDocument(data: [
+            "id": data.id,
+            "timestamp": data.postedDate,
+            "content": data.content,
+            "isPublic": data.isPublic
+        ])
+    }
     func observeNotes() -> Future<[Note], Error> {
         return Future<[Note], Error> { promise in
 
@@ -35,9 +46,4 @@ final class FireStoreService: ObservableObject, FireStoreProtocolProtocol {
         }
     }
 
-    @Published var notes = [Note]()
-
-    init() {
-        notes = [Note]()
-    }
 }

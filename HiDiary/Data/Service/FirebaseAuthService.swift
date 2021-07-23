@@ -14,7 +14,7 @@ class FirebaseAuthenticationService: ObservableObject {
     var cancellable: AuthStateDidChangeListenerHandle?
 
     init() {
-        cancellable = Auth.auth().addStateDidChangeListener {(_, user) in
+        cancellable = Auth.auth().addStateDidChangeListener { (_, user) in
             if let user = user {
                 self.user = User(
                     uid: user.uid,
