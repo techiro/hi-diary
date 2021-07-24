@@ -32,7 +32,7 @@ struct FloatingActionButton: View {
                 .shadow(color: .gray, radius: 3, x: 2, y: 2)
                 .padding(EdgeInsets(top: 0, leading: 0, bottom: bottomPadding, trailing: 16.0)) // --- 5
                 .sheet(isPresented: $showingSheet) {
-                    InputView().environmentObject(authService)
+                    InputView().environmentObject(authService).environmentObject(FirebaseStoreService())
                 }
 
             }
