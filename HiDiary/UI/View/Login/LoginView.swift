@@ -37,11 +37,12 @@ struct LoginView: View {
 
             Button(action: {
                 print("Login処理")
-                authService.signIn(email: inputEmail, password: password) { result, error in
+                authService.signIn(email: inputEmail, password: inputPassword) { result, error in
 
                     if let error = error {
                         subTitle = error.localizedDescription
                         isError = true
+                        inputPassword = ""
                         print(error)
                     }
 
@@ -62,7 +63,6 @@ struct LoginView: View {
 
         }
         .popup(isPresented: $isError, type: .toast, position: .bottom, animation: .easeIn, autohideIn: 1.5, dragToDismiss: true, closeOnTap: true, closeOnTapOutside: true) {
-            self.inputPassword = ""
 
         } view: {
             Toast(title: "ログインエラー", subTitle: subTitle, image: Image(systemName: "xmark.circle"))
