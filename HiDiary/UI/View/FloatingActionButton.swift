@@ -10,7 +10,6 @@ import SwiftUI
 
 struct FloatingActionButton: View {
     var bottomPadding: CGFloat = 0
-    @EnvironmentObject var authService: FirebaseAuthenticationService
     @State private var showingSheet = false
     var body: some View {
         VStack {
@@ -32,7 +31,7 @@ struct FloatingActionButton: View {
                 .shadow(color: .gray, radius: 3, x: 2, y: 2)
                 .padding(EdgeInsets(top: 0, leading: 0, bottom: bottomPadding, trailing: 16.0)) // --- 5
                 .sheet(isPresented: $showingSheet) {
-                    InputView().environmentObject(authService).environmentObject(FirebaseStoreService())
+                    InputView()
                 }
 
             }
@@ -42,6 +41,12 @@ struct FloatingActionButton: View {
 
 struct FloatingButton_Previews: PreviewProvider {
     static var previews: some View {
-        FloatingActionButton().environmentObject(FirebaseAuthenticationService())
+        FloatingActionButton().environmentObject(FirebaseStoreService()).environmentObject(FirebaseAuthenticationService())
     }
+}
+
+protocol DependencyInjectable {
+    associatedtype DependencyType
+    var di: DependencyType! { get set }
+    func resolveDependencyInstance() -> DependencyType
 }

@@ -8,8 +8,6 @@ import Combine
 import SwiftUI
 
 struct HomeView: View {
-    @EnvironmentObject var authService: FirebaseAuthenticationService
-
     @State var tabSelection: Tabs = Tabs.diary
 
     @State var subscriptions = Set<AnyCancellable>()
@@ -54,7 +52,7 @@ struct HomeView: View {
                 .edgesIgnoringSafeArea(.all)
         }
 
-        .overlay(FloatingActionButton(bottomPadding: 60), alignment: .bottom).environmentObject(authService)
+        .overlay(FloatingActionButton(bottomPadding: 60), alignment: .bottom)
 
     }
 }

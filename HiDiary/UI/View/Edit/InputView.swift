@@ -39,13 +39,21 @@ struct InputView: View {
                                         trailing:
                                             HStack {
                                                 Button(action: {
-                                                    // TODO: Post Journal
                                                     if let user = authService.user {
                                                         storeService.saveNotes(
                                                             user: user,
-                                                            data: Note(id: "hello", title: "title", content: vm.memoTextField, finished: false, postedDate: Date(), modifyDate: nil, isPublic: true)
+                                                            data: Note(id: "hello",
+                                                                       title: "title",
+                                                                       content: vm.memoTextField,
+                                                                       finished: false,
+                                                                       postedDate: Date(),
+                                                                       modifyDate: nil,
+                                                                       isPublic: true
+                                                            )
                                                         ) { error in
-                                                            print(error)
+                                                            guard error != nil else { return print("成功") }
+
+                                                            fatalError()
                                                         }
                                                     }
 

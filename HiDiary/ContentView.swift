@@ -14,7 +14,6 @@ struct ContentView: View {
     var body: some View {
         #if DEBUG
         HomeView()
-
         #elseif RELEASE
         if self.authService.user != nil {
             HomeView()
@@ -22,7 +21,6 @@ struct ContentView: View {
             LoginView()
         }
         #endif
-
     }
 
 }

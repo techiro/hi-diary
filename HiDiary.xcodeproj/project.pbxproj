@@ -39,6 +39,7 @@
 		03AF29A626ABDD9000F52B88 /* AuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DCB90E269AD0610064420B /* AuthProvider.swift */; };
 		03AF29A826ABE0DA00F52B88 /* EditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AF29A726ABE0DA00F52B88 /* EditViewModel.swift */; };
 		03AF29AA26ABE89600F52B88 /* FIrebaseAuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AF29A926ABE89600F52B88 /* FIrebaseAuthError.swift */; };
+		03AF29AC26AC098000F52B88 /* Test-EnvironmentObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AF29AB26AC097F00F52B88 /* Test-EnvironmentObject.swift */; };
 		03AFF1D326A507CF001D5A27 /* FirebaseAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AFF1D226A507CF001D5A27 /* FirebaseAuthViewModel.swift */; };
 		03AFF1D526A50BFC001D5A27 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AFF1D426A50BFC001D5A27 /* SignInView.swift */; };
 		03AFF1D726A5138D001D5A27 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AFF1D626A5138D001D5A27 /* SignUpView.swift */; };
@@ -94,6 +95,7 @@
 		03AF299E26ABD75200F52B88 /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
 		03AF29A726ABE0DA00F52B88 /* EditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewModel.swift; sourceTree = "<group>"; };
 		03AF29A926ABE89600F52B88 /* FIrebaseAuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIrebaseAuthError.swift; sourceTree = "<group>"; };
+		03AF29AB26AC097F00F52B88 /* Test-EnvironmentObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Test-EnvironmentObject.swift"; sourceTree = "<group>"; };
 		03AFF1D226A507CF001D5A27 /* FirebaseAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthViewModel.swift; sourceTree = "<group>"; };
 		03AFF1D426A50BFC001D5A27 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		03AFF1D626A5138D001D5A27 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 		03CEE10C26969D0000557BD0 /* Sample */ = {
 			isa = PBXGroup;
 			children = (
+				03AF29AB26AC097F00F52B88 /* Test-EnvironmentObject.swift */,
 				03E3915826A7F41A0084FAF6 /* Provider */,
 				03CEE10326968E4700557BD0 /* ViewModel */,
 				03CEE10226968E3F00557BD0 /* View */,
@@ -554,6 +557,7 @@
 				03AF29A826ABE0DA00F52B88 /* EditViewModel.swift in Sources */,
 				03C8000126A9335C000D5612 /* NoteListView.swift in Sources */,
 				038B86C6269AB4F300DE08B8 /* User.swift in Sources */,
+				03AF29AC26AC098000F52B88 /* Test-EnvironmentObject.swift in Sources */,
 				03CEE10B2696977000557BD0 /* JournalRowView.swift in Sources */,
 				03E3915A26A8072C0084FAF6 /* Tabs.swift in Sources */,
 				03AFF1D326A507CF001D5A27 /* FirebaseAuthViewModel.swift in Sources */,

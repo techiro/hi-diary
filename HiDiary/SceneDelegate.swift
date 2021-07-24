@@ -15,7 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession,
                options connectionOptions: UIScene.ConnectionOptions) {
 
-        let contentView = ContentView().environmentObject(FirebaseAuthenticationService())
+        let contentView = ContentView().environmentObject(FirebaseAuthenticationService()).environmentObject(FirebaseStoreService())
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
