@@ -15,52 +15,58 @@ struct LoginView: View {
     @State var inputPassword: String = ""
     @State var isError: Bool = false
     @State var subTitle = ""
-    @State var subscriptions = Set<AnyCancellable>()
+
     let password = "password"
     var body: some View {
-        VStack(alignment: .center) {
-            Text("SwiftUI App")
-                .font(.system(size: 48,
-                              weight: .heavy))
+        NavigationView {
 
-            VStack(spacing: 24) {
-                TextField("Mail address", text: $inputEmail)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .frame(maxWidth: 280)
+            VStack(alignment: .center) {
+                Text("SwiftUI App")
+                    .font(.system(size: 48,
+                                  weight: .heavy))
 
-                SecureField("Password", text: $inputPassword)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .frame(maxWidth: 280)
+                VStack(spacing: 24) {
+                    TextField("Mail address", text: $inputEmail)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .frame(maxWidth: 280)
 
-            }
-            .frame(height: 200)
-
-            Button(action: {
-                print("Login処理")
-                authService.signIn(email: inputEmail, password: inputPassword) { result, error in
-
-                    if let error = error {
-                        subTitle = error.localizedDescription
-                        isError = true
-                        inputPassword = ""
-                        print(error)
-                    }
+                    SecureField("Password", text: $inputPassword)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .frame(maxWidth: 280)
 
                 }
+                .frame(height: 200)
 
-            },
-            label: {
-                Text("Login")
-                    .fontWeight(.medium)
-                    .frame(minWidth: 160)
-                    .foregroundColor(.white)
-                    .padding(12)
-                    .background(Color.accentColor)
-                    .cornerRadius(8)
-            })
-            .disabled(inputEmail.isEmpty || inputPassword.isEmpty)
-            Spacer()
+                Button(action: {
+                    print("Login処理")
+                    authService.signIn(email: inputEmail, password: inputPassword) { result, error in
 
+                        if let error = error {
+                            subTitle = error.localizedDescription
+                            isError = true
+                            inputPassword = ""
+                            print(error)
+                        }
+
+                    }
+
+                },
+                label: {
+                    Text("Login")
+                        .fontWeight(.medium)
+                        .frame(minWidth: 160)
+                        .foregroundColor(.white)
+                        .padding(12)
+                        .background(Color.accentColor)
+                        .cornerRadius(8)
+                })
+                .disabled(inputEmail.isEmpty || inputPassword.isEmpty)
+
+                NavigationLink("アカウントをお持ちでない方はこちら >", destination: SignUpView().environmentObject(authService))
+
+                Spacer()
+
+            }
         }
         .popup(isPresented: $isError, type: .toast, position: .bottom, animation: .easeIn, autohideIn: 1.5, dragToDismiss: true, closeOnTap: true, closeOnTapOutside: true) {
 

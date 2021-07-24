@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct SignUpView: View {
-    @ObservedObject private var vm = FirebaseAuthViewModel()
-    @State var email = ""
-    @State var password = ""
+    @EnvironmentObject var authService: FirebaseAuthenticationService
+    @State var inputEmail = ""
+    @State var inputPassword = ""
+    @State var isError: Bool = false
+    @State var subTitle = ""
     var body: some View {
         NavigationView {
             VStack(alignment: .center) {
@@ -19,11 +21,11 @@ struct SignUpView: View {
                                   weight: .heavy))
 
                 VStack(spacing: 24) {
-                    TextField("Mail Address", text: $email)
+                    TextField("Mail Address", text: $inputEmail)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .frame(maxWidth: 280)
 
-                    SecureField("Password", text: $password)
+                    SecureField("Password", text: $inputPassword)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .frame(maxWidth: 280)
 
@@ -32,7 +34,15 @@ struct SignUpView: View {
 
                 Button(action: {
                     print("SignUp処理")
-                    vm.signUp(email: email, password: password)
+                    authService.signUp(email: inputEmail, password: inputPassword) { result, error in
+
+                        if let error = error {
+                            subTitle = error.localizedDescription
+                            isError = true
+                            inputPassword = ""
+                            print(error)
+                        }
+                    }
 
                 },
                 label: {
@@ -44,10 +54,15 @@ struct SignUpView: View {
                         .background(Color.accentColor)
                         .cornerRadius(8)
                 })
-                .disabled(password.isEmpty || email.isEmpty)
+                .disabled(inputPassword.isEmpty || inputEmail.isEmpty)
 
                 Spacer()
             }
+        }
+        .popup(isPresented: $isError, type: .toast, position: .bottom, animation: .easeIn, autohideIn: 1.5, dragToDismiss: true, closeOnTap: true, closeOnTapOutside: true) {
+
+        } view: {
+            Toast(title: "アカウント新規作成エラー", subTitle: subTitle, image: Image(systemName: "xmark.circle"))
         }
     }
 }
