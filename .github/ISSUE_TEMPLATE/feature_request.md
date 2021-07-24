@@ -7,14 +7,19 @@ assignees: ''
 
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+<!-- あくまでテンプレートなので必ずしもすべての項目を埋めなくてよい -->
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+# 概要
+<!-- 変更の目的 もしくは 関連する Issue 番号 -->
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+# 変更内容
+<!-- ビューの変更がある場合はスクショによる比較などがあるとわかりやすい -->
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+# 影響範囲
+<!-- この関数を変更したのでこの機能にも影響がある、など -->
+
+# 動作要件
+<!-- 動作に必要な 環境変数 / 依存関係 / DBの更新 など -->
+
+# 補足
+<!-- レビューをする際に見てほしい点、ローカル環境で試す際の注意点、など -->
