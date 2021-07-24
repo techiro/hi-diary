@@ -29,6 +29,7 @@ final class FirebaseStoreService: ObservableObject, FireStoreProtocolProtocol {
             handler(error)
         }
     }
+
     func observeNotes() -> Future<[Note], Error> {
         return Future<[Note], Error> { promise in
 

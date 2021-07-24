@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import RealmSwift
+// import RealmSwift
 
 class Memo: Object, Identifiable {
     @objc dynamic var text = ""

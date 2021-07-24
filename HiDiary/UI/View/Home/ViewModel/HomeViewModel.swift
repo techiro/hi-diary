@@ -12,6 +12,5 @@ final class HomeViewModel: ObservableObject {
 
     // MARK: Output
     @Published private(set) var canLogin: Bool = true
-    @Published private(set) var memos: [Memo] = Array(Memo.findAll())
 
 }

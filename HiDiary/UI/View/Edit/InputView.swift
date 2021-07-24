@@ -10,10 +10,10 @@ import SwiftUI
 struct InputView: View {
     @State var text: String = ""
     @Environment(\.presentationMode) var presentation
-    @ObservedObject var storeService: FirebaseStoreService
+    @EnvironmentObject var storeService: FirebaseStoreService
     @EnvironmentObject var authService: FirebaseAuthenticationService
 
-    @ObservedObject private var vm = MemoViewModel()
+    @ObservedObject private var vm = EditViewModel()
 
     var body: some View {
 
@@ -71,7 +71,7 @@ struct InputView_Previews: PreviewProvider {
     struct PreviewWrapper: View {
         @State var text: String = "test text."
         var body: some View {
-            InputView(storeService: FirebaseStoreService()).environmentObject(FirebaseAuthenticationService())
+            InputView().environmentObject(FirebaseAuthenticationService()).environmentObject(FirebaseStoreService())
         }
     }
 }
