@@ -8,8 +8,19 @@
 import SwiftUI
 
 struct ToolBarView: View {
+    @Binding var isTappedTranslate: Bool
     var body: some View {
         HStack {
+            Button(action: {
+                isTappedTranslate.toggle()
+            }, label: {
+
+                HStack {
+                    Image(systemName: "t.bubble.fill")
+                    Text("Translate")
+                }
+            })
+
             Spacer()
             Button(action: {
                 UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
@@ -18,13 +29,13 @@ struct ToolBarView: View {
             })
         }
         .padding(.all)
-        .foregroundColor(.gray)
+        .foregroundColor(.blue)
         .background(Color.white)
     }
 }
 
 struct ToolBarView_Previews: PreviewProvider {
     static var previews: some View {
-        ToolBarView()
+        ToolBarView(isTappedTranslate: .constant(true))
     }
 }
