@@ -14,4 +14,5 @@ struct Note: Identifiable, NoteEntityProtocol {
     var finished: Bool
     var postedDate: Date?
     var modifyDate: Date?
+    var isPublic: Bool?
 }

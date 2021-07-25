@@ -8,8 +8,6 @@ import Combine
 import SwiftUI
 
 struct HomeView: View {
-    @EnvironmentObject var authService: FirebaseAuthenticationService
-
     @State var tabSelection: Tabs = Tabs.diary
 
     @State var subscriptions = Set<AnyCancellable>()
@@ -62,6 +60,6 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
-            .environmentObject(Session(isLogin: true, user: User(uid: "LJK+JEJFEW3534KJLFJE", email: "test@gmail.com", displayName: "@hiro")))
+            .environmentObject(FirebaseAuthenticationService())
     }
 }

@@ -8,13 +8,13 @@
 import FirebaseAuth
 import Foundation
 
-class FirebaseAuthenticationService: ObservableObject {
+final class FirebaseAuthenticationService: ObservableObject {
     @Published var user: User?
 
     var cancellable: AuthStateDidChangeListenerHandle?
 
     init() {
-        cancellable = Auth.auth().addStateDidChangeListener {(_, user) in
+        cancellable = Auth.auth().addStateDidChangeListener { (_, user) in
             if let user = user {
                 self.user = User(
                     uid: user.uid,

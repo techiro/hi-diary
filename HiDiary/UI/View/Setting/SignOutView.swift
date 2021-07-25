@@ -9,7 +9,6 @@ import SwiftUI
 
 struct SignOutView: View {
     @EnvironmentObject var authService: FirebaseAuthenticationService
-    private var vm = FirebaseAuthViewModel()
     @State var subTitle = ""
     // MARK: テスト用プロパティー
     @State var isShowToast = false
