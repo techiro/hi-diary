@@ -8,7 +8,7 @@
 import FirebaseAuth
 import Foundation
 
-class FirebaseAuthenticationService: ObservableObject {
+final class FirebaseAuthenticationService: ObservableObject {
     @Published var user: User?
 
     var cancellable: AuthStateDidChangeListenerHandle?
