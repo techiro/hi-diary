@@ -19,6 +19,19 @@ struct TextEditingView: View {
             ZStack {
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack {
+                        HStack {
+                            Image(systemName: "person")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 35.0, height: 35.0)
+                                .clipShape(Circle())
+                            Text("appgrape")
+                                .font(.bold(.subheadline)())
+                            Spacer()
+
+                        }
+                        .padding([.top, .leading])
+
                         TextEditor(text: $contents)
                             .opacity(contents == "Note in Japanese" ? 0.25 : 1)
                             .font(.custom("HelveticaNeue", size: 20))
@@ -36,13 +49,18 @@ struct TextEditingView: View {
                             }
 
                         if isTappedTranslate {
+                            Spacer()
+                                .frame(width: 100, height: 20, alignment: .center)
+
                             HStack {
                                 Image(systemName: "t.bubble.fill")
                                 Text("Translate")
-                                    .font(.title2)
+                                    .font(.bold(.subheadline)())
+                                Spacer()
 
                             }
-                            .frame(height: 50)
+                            .padding(.leading)
+
                             TextEditor(text: $contents)
                                 .font(.custom("HelveticaNeue", size: 20))
                                 .lineSpacing(5)
