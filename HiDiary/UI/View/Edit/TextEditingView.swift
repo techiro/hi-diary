@@ -14,9 +14,10 @@ struct TextEditingView: View {
     var body: some View {
 
         KeyboardView {
-            ScrollView(.vertical) {
+            ScrollView(.vertical, showsIndicators: false) {
                 VStack {
                     TextEditor(text: $contents)
+                        .opacity(contents == "Note in Japanese" ? 0.25 : 1)
                         .font(.custom("HelveticaNeue", size: 20))
                         .lineSpacing(5)
                         .accentColor(.action)
@@ -25,6 +26,11 @@ struct TextEditingView: View {
                             RoundedRectangle(cornerRadius: 16)
                                 .stroke(Color.action, lineWidth: 2.0)
                         )
+                        .onTapGesture {
+                            if contents == "Note in Japanese" {
+                                self.contents = ""
+                            }
+                        }
 
                     if isTappedTranslate {
                         HStack {
@@ -56,7 +62,7 @@ struct TextEditingView: View {
 
 struct TextEditingView_Previews: PreviewProvider {
     static var previews: some View {
-        TextEditingView(contents: .constant("textEditing"), isTappedTranslate: .constant(true))
+        TextEditingView(contents: .constant(""), isTappedTranslate: .constant(true))
             .background(Color.background)
     }
 }

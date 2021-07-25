@@ -9,7 +9,7 @@ import Foundation
 
 class EditViewModel: ObservableObject {
 
-    @Published var memoTextField = ""
+    @Published var memoTextField = "Note in Japanese"
     @Published var editPhase: EditPhase = .writing
 
 }
