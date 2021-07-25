@@ -39,6 +39,16 @@ struct InputView: View {
                                         trailing:
                                             HStack {
                                                 Button(action: {
+                                                    // TODO: Open Action Sheet
+                                                }, label: {
+                                                    HStack {
+                                                        Image(systemName: "lock.open")
+                                                        Text("public")
+                                                    }
+                                                    .padding()
+                                                })
+
+                                                Button(action: {
                                                     if let user = authService.user {
                                                         storeService.saveNotes(
                                                             user: user,
@@ -58,6 +68,7 @@ struct InputView: View {
                                                     }
 
                                                     print("post Journal")
+                                                    self.presentation.wrappedValue.dismiss()
 
                                                 }) {
                                                     Image(systemName: "square.and.pencil")
