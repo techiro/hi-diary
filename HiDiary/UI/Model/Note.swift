@@ -15,4 +15,7 @@ struct Note: Identifiable, NoteEntityProtocol {
     var postedDate: Date?
     var modifyDate: Date?
     var isPublic: Bool?
+    var like: String?
+    var icon: String?
+    var comments: String?
 }

@@ -14,8 +14,13 @@ struct NoteRow<T: NoteEntityProtocol>: View {
         VStack {
             VStack(alignment: .trailing) {
                 HStack(alignment: .center, spacing: 16, content: {
-                    Text(note.title ?? "")
-                        .font(.title)
+                    Image("user_icon")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .background(Color.white)
+                        .clipShape(Circle())
+                    Text(note.id)
+                        .font(.title2)
                     Spacer()
                     Image(systemName: "checkmark.circle.fill")
                         .foregroundColor(isCheck ? .green : .gray)
@@ -28,9 +33,26 @@ struct NoteRow<T: NoteEntityProtocol>: View {
             Divider()
                 .foregroundColor(.white)
             Text(note.content ?? "")
+            
+            HStack{
+                Image("heart")
+                    .resizable()
+                    .frame(width: 30, height: 30)
+                Text("いいね")
+                Text(note.like ?? "")
+                    .foregroundColor(.black)
+                Spacer()
+                    .frame(width: 30)
+                Image("comments")
+                    .resizable()
+                    .frame(width: 30, height: 30)
+                Text("コメント")
+                Text(note.comments ?? "")
+                    .foregroundColor(.black)
+                Spacer()
+            }
         }
         .padding(20)
-        .background(Color.blue)
         .cornerRadius(12.0)
         .padding()
         .onAppear {
@@ -52,13 +74,13 @@ struct NoteRowPreviews: PreviewProvider {
     static var previews: some View {
         let testNote = Note(
             id: "123",
-            title: "This is a test note",
+            title: "This is a test notehk",
             content:
                 """
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 Fusce gravida nulla tortor, nec sollicitudin tortor.
 """,
-            finished: false, postedDate: nil, modifyDate: nil)
+            finished: false, postedDate: nil, modifyDate: nil, like: "2", icon: "user_icon", comments: "3")
 
         return NoteRow(note: testNote)
     }
