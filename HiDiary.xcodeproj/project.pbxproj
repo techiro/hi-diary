@@ -162,7 +162,6 @@
 				03E3914126A5BA0B0084FAF6 /* Setting */,
 				03BFA4292692B05300283868 /* FloatingActionButton.swift */,
 				03AE8A1B26943C0100F8DA64 /* KeyboardView.swift */,
-				03AE8A1D2695375400F8DA64 /* ToolBarView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -352,6 +351,7 @@
 				03AF29A726ABE0DA00F52B88 /* EditViewModel.swift */,
 				03BFA4322692DDB700283868 /* InputView.swift */,
 				03AE8A172694285800F8DA64 /* TextEditingView.swift */,
+				03AE8A1D2695375400F8DA64 /* ToolBarView.swift */,
 			);
 			path = Edit;
 			sourceTree = "<group>";
