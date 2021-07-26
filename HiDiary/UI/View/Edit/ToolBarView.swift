@@ -37,6 +37,6 @@ struct ToolBarView: View {
 
 struct ToolBarView_Previews: PreviewProvider {
     static var previews: some View {
-        ToolBarView(isTappedTranslate: .constant(true), isTagMode: .constant(false))
+        ToolBarView(isTappedTranslate: .constant(true))
     }
 }
