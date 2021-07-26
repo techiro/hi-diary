@@ -38,13 +38,13 @@ struct TextEditingView: View {
                                 .font(.custom("HelveticaNeue", size: 15))
                             VStack {
                                 Spacer()
-                                Text(String(500-contents.count))
+                                Text(String(500 - contents.count))
                                     .font(.caption)
                                     .padding([.bottom, .trailing], 3.0)
                                     .frame(width: 26)
 
                             }
-                            
+
                         }
                         .background(Color.white)
                         .lineSpacing(5)

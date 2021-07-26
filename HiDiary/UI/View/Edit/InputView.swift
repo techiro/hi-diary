@@ -39,7 +39,7 @@ struct InputView: View {
                                     trailing:
                                         HStack {
                                             Button(action: {
-                                                // TODO: Open Action Sheet
+                                                // TODO: Open Action Sheet 公開範囲の指定View
                                             }, label: {
                                                 HStack {
                                                     Image(systemName: "lock.open")
@@ -63,7 +63,7 @@ struct InputView: View {
                                                     ) { error in
                                                         guard error != nil else { return print("成功") }
 
-                                                        fatalError()
+                                                        fatalError("save失敗")
                                                     }
                                                 }
 

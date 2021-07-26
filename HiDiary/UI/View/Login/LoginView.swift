@@ -68,9 +68,17 @@ struct LoginView: View {
 
             }
         }
-        .popup(isPresented: $isError, type: .toast, position: .bottom, animation: .easeIn, autohideIn: 1.5, dragToDismiss: true, closeOnTap: true, closeOnTapOutside: true) {
-
-        } view: {
+        .popup(
+            isPresented: $isError,
+            type: .toast,
+            position: .bottom,
+            animation: .easeIn,
+            autohideIn: 1.5,
+            dragToDismiss: true,
+            closeOnTap: true,
+            closeOnTapOutside: true) {
+            // MARK: dismisscallback
+            } view: {
             Toast(title: "ログインエラー", subTitle: subTitle, image: Image(systemName: "xmark.circle"))
         }
     }

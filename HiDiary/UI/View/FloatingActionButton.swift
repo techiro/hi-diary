@@ -44,9 +44,3 @@ struct FloatingButton_Previews: PreviewProvider {
         FloatingActionButton().environmentObject(FirebaseStoreService()).environmentObject(FirebaseAuthenticationService())
     }
 }
-
-protocol DependencyInjectable {
-    associatedtype DependencyType
-    var di: DependencyType! { get set }
-    func resolveDependencyInstance() -> DependencyType
-}
