@@ -20,7 +20,7 @@ struct InputView: View {
 
         NavigationView {
 
-            TextEditingView(contents: $vm.memoTextField, isTappedTranslate: $isTappedTranslate)
+            TextEditingView(contents: $vm.memoTextField, isTappedTranslate: $isTappedTranslate, question: $vm.questionString)
 
                 .navigationBarTitle("Journal Entry", displayMode: .inline)
                 .background(NavigationConfigurator { navcon in

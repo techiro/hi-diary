@@ -12,13 +12,30 @@ struct TextEditingView: View {
     @State var isTagMode = false
     @Binding var contents: String
     @Binding var isTappedTranslate: Bool
-
+    @Binding var question: String
     var body: some View {
 
         KeyboardView {
             ZStack {
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack {
+
+                        HStack {
+                            Image(systemName: "scribble.variable")
+                            Text(question)
+                            Spacer()
+                            Image(systemName: "xmark.circle")
+                        }
+                        .frame(width: UIScreen.main.bounds.width * 0.8, alignment: .center)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 8)
+                                .stroke(Color.action, lineWidth: 2.0)
+                        )
+                        .padding()
+                        .background(Color.action)
+                        .compositingGroup()        // Viewの要素をグループ化
+                        .shadow(color: .gray, radius: 2, x: 3, y: 3)
+
                         HStack {
                             Image(systemName: "person")
                                 .resizable()
@@ -100,7 +117,9 @@ struct TextEditingView: View {
 struct TextEditingView_Previews: PreviewProvider {
     static var previews: some View {
         TextEditingView(contents: .constant(
-                            "今日は、久しぶりに友達と一緒に食事に行って楽しかった。\n来週の金曜日に最近流行りの映画を見に行く予定！楽しみだなー。"), isTappedTranslate: .constant(true))
+                            "今日は、久しぶりに友達と一緒に食事に行って楽しかった。\n来週の金曜日に最近流行りの映画を見に行く予定！楽しみだなー。"),
+                        isTappedTranslate: .constant(true),
+                        question: .constant("どこか外出しましたか？"))
             .background(Color.background)
     }
 }

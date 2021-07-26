@@ -11,7 +11,7 @@ class EditViewModel: ObservableObject {
 
     @Published var memoTextField = "Note in Japanese"
     @Published var editPhase: EditPhase = .writing
-
+    @Published var questionString = "どこか外出しましたか？"
 }
 
 enum EditPhase {
