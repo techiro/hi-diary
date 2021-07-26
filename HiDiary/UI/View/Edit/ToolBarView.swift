@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ToolBarView: View {
     @Binding var isTappedTranslate: Bool
-    @Binding var isTagMode: Bool
     var body: some View {
         HStack {
             Button(action: {
@@ -22,22 +21,12 @@ struct ToolBarView: View {
             })
             Spacer()
                 .frame(width: 10)
-            Button(action: {
-                // TODO: Open serect Tag View
-                isTagMode.toggle()
-            }, label: {
-                HStack {
-                    Image(systemName: "tag.fill")
-                    Text("tag")
-                }
-
-            })
 
             Spacer()
             Button(action: {
                 UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
             }, label: {
-                Text("Done")
+                Text("Next")
             })
         }
         .padding(.all)
