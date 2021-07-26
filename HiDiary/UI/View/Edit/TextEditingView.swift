@@ -32,21 +32,33 @@ struct TextEditingView: View {
                         }
                         .padding([.top, .leading])
 
-                        TextEditor(text: $contents)
-                            .opacity(contents == "Note in Japanese" ? 0.25 : 1)
-                            .font(.custom("HelveticaNeue", size: 20))
-                            .lineSpacing(5)
-                            .accentColor(.action)
-                            .frame(width: UIScreen.main.bounds.width * 0.8, height: 200)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 16)
-                                    .stroke(Color.action, lineWidth: 2.0)
-                            )
-                            .onTapGesture {
-                                if contents == "Note in Japanese" {
-                                    self.contents = ""
-                                }
+                        HStack {
+                            TextEditor(text: $contents)
+                                .opacity(contents == "Note in Japanese" ? 0.25 : 1)
+                                .font(.custom("HelveticaNeue", size: 15))
+                            VStack {
+                                Spacer()
+                                Text(String(500-contents.count))
+                                    .font(.caption)
+                                    .padding([.bottom, .trailing], 3.0)
+                                    .frame(width: 26)
+
                             }
+                            
+                        }
+                        .background(Color.white)
+                        .lineSpacing(5)
+                        .accentColor(.action)
+                        .frame(width: UIScreen.main.bounds.width * 0.9, height: 200)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 8)
+                                .stroke(Color.action, lineWidth: 2.0)
+                        )
+                        .onTapGesture {
+                            if contents == "Note in Japanese" {
+                                self.contents = ""
+                            }
+                        }
 
                         if isTappedTranslate {
                             Spacer()
@@ -62,12 +74,12 @@ struct TextEditingView: View {
                             .padding(.leading)
 
                             TextEditor(text: $contents)
-                                .font(.custom("HelveticaNeue", size: 20))
+                                .font(.custom("HelveticaNeue", size: 15))
                                 .lineSpacing(5)
                                 .accentColor(.action)
-                                .frame(width: UIScreen.main.bounds.width * 0.8, height: 200)
+                                .frame(width: UIScreen.main.bounds.width * 0.9, height: 200)
                                 .overlay(
-                                    RoundedRectangle(cornerRadius: 16)
+                                    RoundedRectangle(cornerRadius: 8)
                                         .stroke(Color.action, lineWidth: 2.0)
                                 )
                         }
@@ -79,7 +91,7 @@ struct TextEditingView: View {
                 }
             }
         } toolBar: {
-            ToolBarView(isTappedTranslate: $isTappedTranslate, isTagMode: $isTagMode)
+            ToolBarView(isTappedTranslate: $isTappedTranslate)
         }
 
     }
@@ -87,7 +99,8 @@ struct TextEditingView: View {
 
 struct TextEditingView_Previews: PreviewProvider {
     static var previews: some View {
-        TextEditingView(contents: .constant(""), isTappedTranslate: .constant(true))
+        TextEditingView(contents: .constant(
+                            "今日は、久しぶりに友達と一緒に食事に行って楽しかった。\n来週の金曜日に最近流行りの映画を見に行く予定！楽しみだなー。"), isTappedTranslate: .constant(true))
             .background(Color.background)
     }
 }
