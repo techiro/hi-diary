@@ -21,7 +21,7 @@ struct TextEditingView: View {
                     VStack {
 
                         HStack {
-                            Image(systemName: "scribble.variable")
+                            Image(systemName: "lasso.sparkles")
                             Text(question)
                             Spacer()
                             Image(systemName: "xmark.circle")
@@ -101,6 +101,7 @@ struct TextEditingView: View {
                                 )
                         }
                     }
+                    .padding(.top)
                 }
 
                 if isTagMode {

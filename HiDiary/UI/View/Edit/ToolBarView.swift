@@ -19,8 +19,18 @@ struct ToolBarView: View {
                     Text("Translate")
                 }
             })
+
             Spacer()
                 .frame(width: 10)
+
+            Button(action: {
+                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+            }, label: {
+                HStack {
+                    Image(systemName: "lasso.sparkles")
+                    Text("Suggestion")
+                }
+            })
 
             Spacer()
             Button(action: {
