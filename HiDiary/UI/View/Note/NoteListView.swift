@@ -26,31 +26,26 @@ protocol NoteViewModelProtocol: ObservableObject {
 }
 protocol NoteEntityProtocol {
     var id: String { get set }
-    var title: String? { get set }
     var content: String? { get set }
-    var finished: Bool { get set }
+    var finished: EditState { get set }
     var postedDate: Date? { get set }
     var modifyDate: Date? { get set }
 }
 
 class NoteEntity: Identifiable, NoteEntityProtocol {
-    var id: String
-
-    var title: String?
+    var id: String = UUID().uuidString
 
     var content: String?
 
-    var finished: Bool
+    var finished: EditState
 
     var postedDate: Date?
 
     var modifyDate: Date?
 
     init(title: String) {
-        self.id = String(Int.random(in: 1_000 ..< 10_000))
-        self.title = title
         self.content = "content"
-        self.finished = Bool.random()
+        self.finished = .draft
         self.postedDate = Date()
         self.modifyDate = nil
     }

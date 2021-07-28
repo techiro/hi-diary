@@ -8,11 +8,25 @@
 import Foundation
 
 struct Note: Identifiable, NoteEntityProtocol {
-    var id: String
-    var title: String?
+    var id: String = UUID().uuidString
     var content: String?
-    var finished: Bool
+    var finished: EditState = .draft
     var postedDate: Date?
     var modifyDate: Date?
     var isPublic: Bool?
+}
+
+enum EditState {
+    case finish
+    case draft
+
+    var isFinish: Bool {
+        switch self {
+        case .finish:
+            return true
+        case .draft:
+            return false
+        }
+    }
+
 }

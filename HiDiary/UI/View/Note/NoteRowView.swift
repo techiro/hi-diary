@@ -14,7 +14,7 @@ struct NoteRow<T: NoteEntityProtocol>: View {
         VStack {
             VStack(alignment: .trailing) {
                 HStack(alignment: .center, spacing: 16, content: {
-                    Text(note.title ?? "")
+                    Text("fff")
                         .font(.title)
                     Spacer()
                     Image(systemName: "checkmark.circle.fill")
@@ -34,7 +34,7 @@ struct NoteRow<T: NoteEntityProtocol>: View {
         .cornerRadius(12.0)
         .padding()
         .onAppear {
-            self.isCheck = note.finished
+            self.isCheck = note.finished.isFinish
         }
     }
 
@@ -52,13 +52,12 @@ struct NoteRowPreviews: PreviewProvider {
     static var previews: some View {
         let testNote = Note(
             id: "123",
-            title: "This is a test note",
             content:
                 """
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 Fusce gravida nulla tortor, nec sollicitudin tortor.
 """,
-            finished: false, postedDate: nil, modifyDate: nil)
+            finished: .draft, postedDate: nil, modifyDate: nil)
 
         return NoteRow(note: testNote)
     }
