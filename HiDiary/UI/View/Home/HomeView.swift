@@ -11,10 +11,12 @@ struct HomeView: View {
     @State var tabSelection: Tabs = Tabs.diary
 
     @State var subscriptions = Set<AnyCancellable>()
+    @EnvironmentObject var storeService: FirebaseStoreService
+
     var body: some View {
         TabView(selection: $tabSelection) {
-            Button("Show Second View") {
-                tabSelection = Tabs.correct
+            Button("Get Public Posts") {
+                storeService.getPublicPosts()
             }
             .padding()
             .tabItem {

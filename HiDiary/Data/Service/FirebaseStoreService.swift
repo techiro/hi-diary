@@ -24,7 +24,7 @@ final class FirebaseStoreService: ObservableObject {
             "id": data.id,
             "timestamp": data.postedDate!,
             "content": data.content!,
-            "isPublic": data.isPublic!
+            "isPublic": data.isPublic
         ]) { error in
             handler(error)
         }
@@ -34,9 +34,10 @@ final class FirebaseStoreService: ObservableObject {
 
         ref = db.collection("posts").addDocument(data: [
             "id": data.id,
+            "auther": user.uid,
             "timestamp": data.postedDate!,
             "content": data.content!,
-            "isPublic": data.isPublic!
+            "isPublic": data.isPublic
         ]) { error in
             handler(error)
         }
@@ -57,9 +58,11 @@ final class FirebaseStoreService: ObservableObject {
     // フィードの情報を取得
     func getPublicPosts() {
         db.collection("posts")
+            .whereField("isPublic", in: [true])
             .getDocuments { (snapshot, error) in
                 snapshot!.documents.forEach { doc in
                     print(doc)
+                    print(doc.data())
                 }
             }
     }

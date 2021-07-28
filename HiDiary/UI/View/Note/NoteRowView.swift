@@ -57,7 +57,7 @@ struct NoteRowPreviews: PreviewProvider {
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 Fusce gravida nulla tortor, nec sollicitudin tortor.
 """,
-            finished: .draft, postedDate: nil, modifyDate: nil)
+            finished: .draft, postedDate: nil, modifyDate: nil, isPublic: true)
 
         return NoteRow(note: testNote)
     }

@@ -13,7 +13,7 @@ struct Note: Identifiable, NoteEntityProtocol {
     var finished: EditState = .draft
     var postedDate: Date?
     var modifyDate: Date?
-    var isPublic: Bool?
+    var isPublic: Bool
 }
 
 enum EditState {

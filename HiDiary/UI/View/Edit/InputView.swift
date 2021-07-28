@@ -11,9 +11,9 @@ struct InputView: View {
     @Environment(\.presentationMode) var presentation
     @EnvironmentObject var storeService: FirebaseStoreService
     @EnvironmentObject var authService: FirebaseAuthenticationService
-    
+
     @ObservedObject private var vm = EditViewModel()
-    
+
     @State var text: String = ""
     @State var isTappedTranslate = false
 
@@ -50,20 +50,20 @@ struct InputView: View {
                                                         Image(systemName: "lock")
                                                         Text("close")
                                                     }
-                                                    
+
                                                 }
                                                 .padding()
                                             })
 
                                             Button(action: {
                                                 if let user = authService.user {
-                                                    storeService.saveNotes(
+                                                    storeService.postNotes(
                                                         user: user,
                                                         data: Note(
-                                                                   content: vm.memoTextField,
+                                                            content: vm.memoTextField,
                                                             finished: .finish,
-                                                                   postedDate: Date(),
-                                                                   modifyDate: nil,
+                                                            postedDate: Date(),
+                                                            modifyDate: nil,
                                                             isPublic: vm.isPublic
                                                         )
                                                     ) { error in
