@@ -5,6 +5,7 @@
 //  Created by TanakaHirokazu on 2021/07/22.
 //
 
+import FirebaseFirestoreSwift
 import SwiftUI
 
 struct NoteList<T: NoteViewModelProtocol>: View {
@@ -25,19 +26,19 @@ protocol NoteViewModelProtocol: ObservableObject {
     var list: [ListData] { get set }
 }
 protocol NoteEntityProtocol {
-    var id: String { get set }
+    var id: String? { get set }
     var content: String? { get set }
-    var finished: EditState { get set }
+    var finished: Bool { get set }
     var postedDate: Date? { get set }
     var modifyDate: Date? { get set }
 }
 
 class NoteEntity: Identifiable, NoteEntityProtocol {
-    var id: String = UUID().uuidString
+    var id: String?
 
     var content: String?
 
-    var finished: EditState
+    var finished: Bool
 
     var postedDate: Date?
 
@@ -45,7 +46,7 @@ class NoteEntity: Identifiable, NoteEntityProtocol {
 
     init(title: String) {
         self.content = "content"
-        self.finished = .draft
+        self.finished = false
         self.postedDate = Date()
         self.modifyDate = nil
     }

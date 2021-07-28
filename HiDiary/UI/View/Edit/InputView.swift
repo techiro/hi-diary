@@ -57,11 +57,10 @@ struct InputView: View {
 
                                             Button(action: {
                                                 if let user = authService.user {
-                                                    storeService.postNotes(
-                                                        user: user,
-                                                        data: Note(
+                                                    storeService.addNote(
+                                                        note: Note(
                                                             content: vm.memoTextField,
-                                                            finished: .finish,
+                                                            finished: true,
                                                             postedDate: Date(),
                                                             modifyDate: nil,
                                                             isPublic: vm.isPublic

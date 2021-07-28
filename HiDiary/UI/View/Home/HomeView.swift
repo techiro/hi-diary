@@ -12,17 +12,25 @@ struct HomeView: View {
 
     @State var subscriptions = Set<AnyCancellable>()
     @EnvironmentObject var storeService: FirebaseStoreService
-
+    let mockNotes = [SampleNote(), SampleNote()]
     var body: some View {
         TabView(selection: $tabSelection) {
-            Button("Get Public Posts") {
-                storeService.getPublicPosts()
+            VStack {
+                List(storeService.posts) { post in
+                    NoteRow(note: post)
+
+                }
+                Button("Get Public Posts") {
+                    storeService.getCodablePosts { error in
+                        print(error!.localizedDescription)
+                    }
+                }
+                .padding()
+                .tabItem {
+                    Label(Tabs.diary.description, systemImage: Tabs.diary.systemimage)
+                }
+                .tag(Tabs.diary)
             }
-            .padding()
-            .tabItem {
-                Label(Tabs.diary.description, systemImage: Tabs.diary.systemimage)
-            }
-            .tag(Tabs.diary)
 
             Button("Show Third View") {
                 tabSelection = Tabs.notifications

@@ -34,7 +34,7 @@ struct NoteRow<T: NoteEntityProtocol>: View {
         .cornerRadius(12.0)
         .padding()
         .onAppear {
-            self.isCheck = note.finished.isFinish
+            self.isCheck = false
         }
     }
 
@@ -50,14 +50,7 @@ struct NoteRow<T: NoteEntityProtocol>: View {
 #if DEBUG
 struct NoteRowPreviews: PreviewProvider {
     static var previews: some View {
-        let testNote = Note(
-            id: "123",
-            content:
-                """
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Fusce gravida nulla tortor, nec sollicitudin tortor.
-""",
-            finished: .draft, postedDate: nil, modifyDate: nil, isPublic: true)
+        let testNote = SampleNote()
 
         return NoteRow(note: testNote)
     }

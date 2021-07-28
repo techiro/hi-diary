@@ -19,6 +19,11 @@ enum FirebaseAuthError: Error {
 
 }
 
+public enum FirestoreCollectionReference: String {
+    case users = "users"
+    case posts = "posts"
+}
+
 extension FirebaseAuthError: LocalizedError {
     var errorDescription: String? {
         switch self {
