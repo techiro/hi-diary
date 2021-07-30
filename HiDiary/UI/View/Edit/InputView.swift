@@ -56,13 +56,11 @@ struct InputView: View {
                                             })
 
                                             Button(action: {
-                                                if let user = authService.user {
+                                                if authService.user != nil {
                                                     storeService.addNote(
                                                         note: Note(
                                                             content: vm.memoTextField,
-                                                            finished: true,
-                                                            postedDate: Date(),
-                                                            modifyDate: nil,
+                                                            postedDate: Date(), modifyDate: nil, finished: true,
                                                             isPublic: vm.isPublic
                                                         )
                                                     ) { error in

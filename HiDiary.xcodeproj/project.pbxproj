@@ -53,6 +53,7 @@
 		03CAE21F26B13608004790EE /* FireCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CAE21E26B13608004790EE /* FireCodable.swift */; };
 		03CAE22126B13931004790EE /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CAE22026B13931004790EE /* FirestoreService.swift */; };
 		03CAE22626B14EF7004790EE /* SampleNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CAE22526B14EF7004790EE /* SampleNote.swift */; };
+		03CAE22826B3E8DE004790EE /* NoteProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CAE22726B3E8DE004790EE /* NoteProtocol.swift */; };
 		03CEE105269690BB00557BD0 /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CEE104269690BB00557BD0 /* Journal.swift */; };
 		03CEE107269692AF00557BD0 /* JournalsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CEE106269692AF00557BD0 /* JournalsViewModel.swift */; };
 		03CEE1092696965D00557BD0 /* JournalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CEE1082696965D00557BD0 /* JournalListView.swift */; };
@@ -112,6 +113,7 @@
 		03CAE21E26B13608004790EE /* FireCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireCodable.swift; sourceTree = "<group>"; };
 		03CAE22026B13931004790EE /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		03CAE22526B14EF7004790EE /* SampleNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleNote.swift; sourceTree = "<group>"; };
+		03CAE22726B3E8DE004790EE /* NoteProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteProtocol.swift; sourceTree = "<group>"; };
 		03CEE104269690BB00557BD0 /* Journal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
 		03CEE106269692AF00557BD0 /* JournalsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalsViewModel.swift; sourceTree = "<group>"; };
 		03CEE1082696965D00557BD0 /* JournalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalListView.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 			children = (
 				03C8000026A9335C000D5612 /* NoteListView.swift */,
 				03C8FFFE26A93331000D5612 /* NoteRowView.swift */,
+				03CAE22726B3E8DE004790EE /* NoteProtocol.swift */,
 			);
 			path = Note;
 			sourceTree = "<group>";
@@ -578,6 +581,7 @@
 				03AF29A126ABDD7E00F52B88 /* LoginView.swift in Sources */,
 				038B86C8269AB5CF00DE08B8 /* LoginView.swift in Sources */,
 				03DCB936269C7B2E0064420B /* LoginViewModel.swift in Sources */,
+				03CAE22826B3E8DE004790EE /* NoteProtocol.swift in Sources */,
 				03E3915C26A907340084FAF6 /* Makefile in Sources */,
 				03AF299F26ABD75200F52B88 /* Memo.swift in Sources */,
 				03DCB951269D0EFD0064420B /* MemoListView.swift in Sources */,

@@ -25,24 +25,17 @@ protocol NoteViewModelProtocol: ObservableObject {
     associatedtype ListData: NoteEntityProtocol
     var list: [ListData] { get set }
 }
-protocol NoteEntityProtocol {
-    var id: String? { get set }
-    var content: String? { get set }
-    var finished: Bool { get set }
-    var postedDate: Date? { get set }
-    var modifyDate: Date? { get set }
-}
 
 class NoteEntity: Identifiable, NoteEntityProtocol {
+    var icon: String?
     var id: String?
-
     var content: String?
-
     var finished: Bool
-
     var postedDate: Date?
-
     var modifyDate: Date?
+    var like: String?
+    var comments: String?
+    var isPublic: Bool
 
     init(title: String) {
         self.content = "content"

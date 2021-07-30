@@ -23,10 +23,10 @@ struct NoteRow<T: NoteEntityProtocol>: View {
                         .frame(width: 30, height: 30)
                         .background(Color.white)
                         .clipShape(Circle())
-                    Text(note.id)
+                    Text(note.id ?? "none")
                         .font(.title2)
                     Spacer()
-                    Image(note.isPublic! ? "public" : "private")
+                    Image(note.isPublic ? "public" : "private")
                         .resizable()
                         .frame(width: 20, height: 20)
                 })
@@ -34,13 +34,13 @@ struct NoteRow<T: NoteEntityProtocol>: View {
                     .font(.footnote)
                     .multilineTextAlignment(.trailing)
             }
-            
+
             Divider()
                 .foregroundColor(.white)
-            
-            VStack{
+
+            VStack {
                 Text(note.content ?? "")
-                HStack{
+                HStack {
                     Image("heart")
                         .resizable()
                         .frame(width: 30, height: 30)
@@ -64,7 +64,7 @@ struct NoteRow<T: NoteEntityProtocol>: View {
         .padding(10)
         .cornerRadius(12.0)
         .padding()
-        .background(Color.Card_Background)
+        //        .background(Color.Card_Background)
         .onAppear {
             self.isCheck = false
         }
