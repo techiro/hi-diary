@@ -31,9 +31,14 @@ protocol NoteEntityProtocol {
     var finished: Bool { get set }
     var postedDate: Date? { get set }
     var modifyDate: Date? { get set }
+    var like: String? { get set }
+    var icon: String? { get set }
+    var comments: String? { get set }
+    var isPublic: Bool? { get set }
 }
 
 class NoteEntity: Identifiable, NoteEntityProtocol {
+    
     var id: String
 
     var title: String?
@@ -45,6 +50,14 @@ class NoteEntity: Identifiable, NoteEntityProtocol {
     var postedDate: Date?
 
     var modifyDate: Date?
+    
+    var like: String?
+    
+    var icon: String?
+    
+    var comments: String?
+    
+    var isPublic: Bool?
 
     init(title: String) {
         self.id = String(Int.random(in: 1_000 ..< 10_000))
@@ -53,6 +66,10 @@ class NoteEntity: Identifiable, NoteEntityProtocol {
         self.finished = Bool.random()
         self.postedDate = Date()
         self.modifyDate = nil
+        self.like = nil
+        self.icon = "user_icon"
+        self.comments = nil
+        self.isPublic = false
     }
 }
 
