@@ -49,6 +49,10 @@ class NoteEntity: Identifiable, NoteEntityProtocol {
         self.finished = false
         self.postedDate = Date()
         self.modifyDate = nil
+        self.like = nil
+        self.icon = "user_icon"
+        self.comments = nil
+        self.isPublic = false
     }
 }
 

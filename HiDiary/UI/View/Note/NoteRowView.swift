@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+extension Color {
+    static let Card_Background = Color("Card_Background")
+}
+
 struct NoteRow<T: NoteEntityProtocol>: View {
     @State var note: T
     @State var isCheck: Bool = false
@@ -14,25 +18,53 @@ struct NoteRow<T: NoteEntityProtocol>: View {
         VStack {
             VStack(alignment: .trailing) {
                 HStack(alignment: .center, spacing: 16, content: {
-                    Text("fff")
-                        .font(.title)
+                    Image("user_icon")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .background(Color.white)
+                        .clipShape(Circle())
+                    Text(note.id)
+                        .font(.title2)
                     Spacer()
-                    Image(systemName: "checkmark.circle.fill")
-                        .foregroundColor(isCheck ? .green : .gray)
+                    Image(note.isPublic! ? "public" : "private")
+                        .resizable()
+                        .frame(width: 20, height: 20)
                 })
                 Text("2021-7-22")
                     .font(.footnote)
                     .multilineTextAlignment(.trailing)
             }
-
+            
             Divider()
                 .foregroundColor(.white)
-            Text(note.content ?? "")
+            
+            VStack{
+                Text(note.content ?? "")
+                HStack{
+                    Image("heart")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                    Text(note.like ?? "")
+                        .foregroundColor(.black)
+                        .font(.caption)
+                    Spacer()
+                        .frame(width: 30)
+                    Image("comments")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                    Text(note.comments ?? "")
+                        .foregroundColor(.black)
+                        .font(.caption)
+                    Spacer()
+                }
+            }
+            .background(Color.white)
+            .cornerRadius(10)
         }
-        .padding(20)
-        .background(Color.blue)
+        .padding(10)
         .cornerRadius(12.0)
         .padding()
+        .background(Color.Card_Background)
         .onAppear {
             self.isCheck = false
         }
