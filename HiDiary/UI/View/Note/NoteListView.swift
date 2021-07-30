@@ -5,6 +5,7 @@
 //  Created by TanakaHirokazu on 2021/07/22.
 //
 
+import FirebaseFirestoreSwift
 import SwiftUI
 
 struct NoteList<T: NoteViewModelProtocol>: View {
@@ -24,46 +25,21 @@ protocol NoteViewModelProtocol: ObservableObject {
     associatedtype ListData: NoteEntityProtocol
     var list: [ListData] { get set }
 }
-protocol NoteEntityProtocol {
-    var id: String { get set }
-    var title: String? { get set }
-    var content: String? { get set }
-    var finished: Bool { get set }
-    var postedDate: Date? { get set }
-    var modifyDate: Date? { get set }
-    var like: String? { get set }
-    var icon: String? { get set }
-    var comments: String? { get set }
-    var isPublic: Bool? { get set }
-}
 
 class NoteEntity: Identifiable, NoteEntityProtocol {
-    
-    var id: String
-
-    var title: String?
-
-    var content: String?
-
-    var finished: Bool
-
-    var postedDate: Date?
-
-    var modifyDate: Date?
-    
-    var like: String?
-    
     var icon: String?
-    
+    var id: String?
+    var content: String?
+    var finished: Bool
+    var postedDate: Date?
+    var modifyDate: Date?
+    var like: String?
     var comments: String?
-    
-    var isPublic: Bool?
+    var isPublic: Bool
 
     init(title: String) {
-        self.id = String(Int.random(in: 1_000 ..< 10_000))
-        self.title = title
         self.content = "content"
-        self.finished = Bool.random()
+        self.finished = false
         self.postedDate = Date()
         self.modifyDate = nil
         self.like = nil

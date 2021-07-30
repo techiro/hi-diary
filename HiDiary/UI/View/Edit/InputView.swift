@@ -8,20 +8,20 @@
 import SwiftUI
 
 struct InputView: View {
-    @State var text: String = ""
-    @State var isTappedTranslate = false
     @Environment(\.presentationMode) var presentation
     @EnvironmentObject var storeService: FirebaseStoreService
     @EnvironmentObject var authService: FirebaseAuthenticationService
 
     @ObservedObject private var vm = EditViewModel()
 
+    @State var text: String = ""
+    @State var isTappedTranslate = false
+
     var body: some View {
 
         NavigationView {
 
             TextEditingView(contents: $vm.memoTextField, isTappedTranslate: $isTappedTranslate, question: $vm.questionString)
-
                 .navigationBarTitle("Journal Entry", displayMode: .inline)
                 .background(NavigationConfigurator { navcon in
                     navcon.navigationBar.barTintColor = .white
@@ -40,25 +40,28 @@ struct InputView: View {
                                         HStack {
                                             Button(action: {
                                                 // TODO: Open Action Sheet 公開範囲の指定View
+                                                vm.isPublic.toggle()
                                             }, label: {
                                                 HStack {
-                                                    Image(systemName: "lock.open")
-                                                    Text("public")
+                                                    if vm.isPublic {
+                                                        Image(systemName: "lock.open")
+                                                        Text("public")
+                                                    } else {
+                                                        Image(systemName: "lock")
+                                                        Text("close")
+                                                    }
+
                                                 }
                                                 .padding()
                                             })
 
                                             Button(action: {
-                                                if let user = authService.user {
-                                                    storeService.saveNotes(
-                                                        user: user,
-                                                        data: Note(id: "hello",
-                                                                   title: "title",
-                                                                   content: vm.memoTextField,
-                                                                   finished: false,
-                                                                   postedDate: Date(),
-                                                                   modifyDate: nil,
-                                                                   isPublic: true
+                                                if authService.user != nil {
+                                                    storeService.addNote(
+                                                        note: Note(
+                                                            content: vm.memoTextField,
+                                                            postedDate: Date(), modifyDate: nil, finished: true,
+                                                            isPublic: vm.isPublic
                                                         )
                                                     ) { error in
                                                         guard error != nil else { return print("成功") }

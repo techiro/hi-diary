@@ -50,6 +50,10 @@
 		03C8000326A93412000D5612 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C8000226A93412000D5612 /* Note.swift */; };
 		03C8000526A94BE9000D5612 /* FirebaseStoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C8000426A94BE8000D5612 /* FirebaseStoreService.swift */; };
 		03C8FFFF26A93331000D5612 /* NoteRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C8FFFE26A93331000D5612 /* NoteRowView.swift */; };
+		03CAE21F26B13608004790EE /* FireCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CAE21E26B13608004790EE /* FireCodable.swift */; };
+		03CAE22126B13931004790EE /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CAE22026B13931004790EE /* FirestoreService.swift */; };
+		03CAE22626B14EF7004790EE /* SampleNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CAE22526B14EF7004790EE /* SampleNote.swift */; };
+		03CAE22826B3E8DE004790EE /* NoteProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CAE22726B3E8DE004790EE /* NoteProtocol.swift */; };
 		03CEE105269690BB00557BD0 /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CEE104269690BB00557BD0 /* Journal.swift */; };
 		03CEE107269692AF00557BD0 /* JournalsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CEE106269692AF00557BD0 /* JournalsViewModel.swift */; };
 		03CEE1092696965D00557BD0 /* JournalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CEE1082696965D00557BD0 /* JournalListView.swift */; };
@@ -106,6 +110,10 @@
 		03C8000226A93412000D5612 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		03C8000426A94BE8000D5612 /* FirebaseStoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStoreService.swift; sourceTree = "<group>"; };
 		03C8FFFE26A93331000D5612 /* NoteRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRowView.swift; sourceTree = "<group>"; };
+		03CAE21E26B13608004790EE /* FireCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireCodable.swift; sourceTree = "<group>"; };
+		03CAE22026B13931004790EE /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
+		03CAE22526B14EF7004790EE /* SampleNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleNote.swift; sourceTree = "<group>"; };
+		03CAE22726B3E8DE004790EE /* NoteProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteProtocol.swift; sourceTree = "<group>"; };
 		03CEE104269690BB00557BD0 /* Journal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
 		03CEE106269692AF00557BD0 /* JournalsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalsViewModel.swift; sourceTree = "<group>"; };
 		03CEE1082696965D00557BD0 /* JournalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalListView.swift; sourceTree = "<group>"; };
@@ -171,6 +179,7 @@
 			children = (
 				03C8000226A93412000D5612 /* Note.swift */,
 				03E3915926A8072C0084FAF6 /* Tabs.swift */,
+				03CAE22526B14EF7004790EE /* SampleNote.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -256,13 +265,30 @@
 			children = (
 				03C8000026A9335C000D5612 /* NoteListView.swift */,
 				03C8FFFE26A93331000D5612 /* NoteRowView.swift */,
+				03CAE22726B3E8DE004790EE /* NoteProtocol.swift */,
 			);
 			path = Note;
+			sourceTree = "<group>";
+		};
+		03CAE21D26B135ED004790EE /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				03CAE21E26B13608004790EE /* FireCodable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		03CAE22226B13968004790EE /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		03CEE10126968E3800557BD0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				03CAE22026B13931004790EE /* FirestoreService.swift */,
 				03DCB90E269AD0610064420B /* AuthProvider.swift */,
 				03DCB911269AD0620064420B /* AuthProviderProtocol.swift */,
 				03CEE104269690BB00557BD0 /* Journal.swift */,
@@ -302,6 +328,7 @@
 		03CEE10C26969D0000557BD0 /* Sample */ = {
 			isa = PBXGroup;
 			children = (
+				03CAE21D26B135ED004790EE /* Protocols */,
 				03CEE10126968E3800557BD0 /* Model */,
 				03E3915826A7F41A0084FAF6 /* Provider */,
 				03CEE10226968E3F00557BD0 /* View */,
@@ -359,6 +386,7 @@
 		03E3915126A68E230084FAF6 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				03CAE22226B13968004790EE /* Protocols */,
 				03E3915226A68E3E0084FAF6 /* API */,
 				03E3915426A68E7C0084FAF6 /* Model */,
 				03E3915326A68E490084FAF6 /* Service */,
@@ -548,19 +576,23 @@
 				03CEE107269692AF00557BD0 /* JournalsViewModel.swift in Sources */,
 				03AE8A1C26943C0100F8DA64 /* KeyboardView.swift in Sources */,
 				03BFA4312692DA0100283868 /* LandscapeModifier.swift in Sources */,
+				03CAE22626B14EF7004790EE /* SampleNote.swift in Sources */,
 				03DCB932269C1E1E0064420B /* LoginSampleView.swift in Sources */,
 				03AF29A126ABDD7E00F52B88 /* LoginView.swift in Sources */,
 				038B86C8269AB5CF00DE08B8 /* LoginView.swift in Sources */,
 				03DCB936269C7B2E0064420B /* LoginViewModel.swift in Sources */,
+				03CAE22826B3E8DE004790EE /* NoteProtocol.swift in Sources */,
 				03E3915C26A907340084FAF6 /* Makefile in Sources */,
 				03AF299F26ABD75200F52B88 /* Memo.swift in Sources */,
 				03DCB951269D0EFD0064420B /* MemoListView.swift in Sources */,
+				03CAE22126B13931004790EE /* FirestoreService.swift in Sources */,
 				03DCB953269D0F300064420B /* MemoRowView.swift in Sources */,
 				03DCB94E269D049C0064420B /* MemoViewModel.swift in Sources */,
 				03AE89EF2692F66300F8DA64 /* NavigationBarModifier.swift in Sources */,
 				03C8000326A93412000D5612 /* Note.swift in Sources */,
 				03C8000126A9335C000D5612 /* NoteListView.swift in Sources */,
 				03C8FFFF26A93331000D5612 /* NoteRowView.swift in Sources */,
+				03CAE21F26B13608004790EE /* FireCodable.swift in Sources */,
 				03A33A84269042B100A1CB38 /* SceneDelegate.swift in Sources */,
 				038B86C4269AB4BF00DE08B8 /* Session.swift in Sources */,
 				03AF29A426ABDD9000F52B88 /* Session.swift in Sources */,
