@@ -34,6 +34,7 @@ protocol NoteEntityProtocol {
     var like: String? { get set }
     var icon: String? { get set }
     var comments: String? { get set }
+    var isPublic: Bool? { get set }
 }
 
 class NoteEntity: Identifiable, NoteEntityProtocol {
@@ -55,6 +56,8 @@ class NoteEntity: Identifiable, NoteEntityProtocol {
     var icon: String?
     
     var comments: String?
+    
+    var isPublic: Bool?
 
     init(title: String) {
         self.id = String(Int.random(in: 1_000 ..< 10_000))
@@ -66,6 +69,7 @@ class NoteEntity: Identifiable, NoteEntityProtocol {
         self.like = nil
         self.icon = "user_icon"
         self.comments = nil
+        self.isPublic = false
     }
 }
 

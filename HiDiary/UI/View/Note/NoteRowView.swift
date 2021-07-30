@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+extension Color {
+    static let Card_Background = Color("Card_Background")
+}
+
 struct NoteRow<T: NoteEntityProtocol>: View {
     @State var note: T
     @State var isCheck: Bool = false
@@ -22,39 +26,45 @@ struct NoteRow<T: NoteEntityProtocol>: View {
                     Text(note.id)
                         .font(.title2)
                     Spacer()
-                    Image(systemName: "checkmark.circle.fill")
-                        .foregroundColor(isCheck ? .green : .gray)
+                    Image(note.isPublic! ? "public" : "private")
+                        .resizable()
+                        .frame(width: 20, height: 20)
                 })
                 Text("2021-7-22")
                     .font(.footnote)
                     .multilineTextAlignment(.trailing)
             }
-
+            
             Divider()
                 .foregroundColor(.white)
-            Text(note.content ?? "")
             
-            HStack{
-                Image("heart")
-                    .resizable()
-                    .frame(width: 30, height: 30)
-                Text("いいね")
-                Text(note.like ?? "")
-                    .foregroundColor(.black)
-                Spacer()
-                    .frame(width: 30)
-                Image("comments")
-                    .resizable()
-                    .frame(width: 30, height: 30)
-                Text("コメント")
-                Text(note.comments ?? "")
-                    .foregroundColor(.black)
-                Spacer()
+            VStack{
+                Text(note.content ?? "")
+                HStack{
+                    Image("heart")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                    Text(note.like ?? "")
+                        .foregroundColor(.black)
+                        .font(.caption)
+                    Spacer()
+                        .frame(width: 30)
+                    Image("comments")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                    Text(note.comments ?? "")
+                        .foregroundColor(.black)
+                        .font(.caption)
+                    Spacer()
+                }
             }
+            .background(Color.white)
+            .cornerRadius(10)
         }
-        .padding(20)
+        .padding(10)
         .cornerRadius(12.0)
         .padding()
+        .background(Color.Card_Background)
         .onAppear {
             self.isCheck = note.finished
         }
@@ -80,7 +90,7 @@ struct NoteRowPreviews: PreviewProvider {
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 Fusce gravida nulla tortor, nec sollicitudin tortor.
 """,
-            finished: false, postedDate: nil, modifyDate: nil, like: "2", icon: "user_icon", comments: "3")
+            finished: false, postedDate: nil, modifyDate: nil, isPublic: true, like: "2", icon: "user_icon", comments: "3")
 
         return NoteRow(note: testNote)
     }
