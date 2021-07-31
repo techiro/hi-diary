@@ -208,7 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				7390A38826AE779B004E2FD8 /* Configs */,
-				03E3915126A68E230084FAF6 /* Data */,
+				03E3915126A68E230084FAF6 /* Network */,
 				03A33A89269042B300A1CB38 /* Preview Content */,
 				03CEE10C26969D0000557BD0 /* Sample */,
 				03E3915526A68E960084FAF6 /* UI */,
@@ -384,7 +384,7 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
-		03E3915126A68E230084FAF6 /* Data */ = {
+		03E3915126A68E230084FAF6 /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				03CAE22226B13968004790EE /* Protocols */,
@@ -392,7 +392,7 @@
 				03E3915426A68E7C0084FAF6 /* Model */,
 				03E3915326A68E490084FAF6 /* Service */,
 			);
-			path = Data;
+			path = Network;
 			sourceTree = "<group>";
 		};
 		03E3915226A68E3E0084FAF6 /* API */ = {

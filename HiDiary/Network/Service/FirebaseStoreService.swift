@@ -22,7 +22,6 @@ final class FirebaseStoreService: ObservableObject {
     @Published var posts = [Note]()
     @Published var showingAlert = false
 
-
     // MARK: ノートの保存
     func addNote(note: Note, handler: @escaping (Error?) -> Void) {
         let collectionRef = db.collection(FirestoreCollectionReference.posts.rawValue)
