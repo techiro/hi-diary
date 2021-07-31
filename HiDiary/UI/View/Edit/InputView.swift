@@ -44,7 +44,7 @@ struct InputView: View {
                                             }, label: {
                                                 HStack {
                                                     if vm.isPublic {
-                                                        Image(systemName: "lock.open")
+                                                        Image(systemName: "globe")
                                                         Text("public")
                                                     } else {
                                                         Image(systemName: "lock")

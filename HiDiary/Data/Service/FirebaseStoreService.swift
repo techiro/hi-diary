@@ -74,7 +74,7 @@ final class FirebaseStoreService: ObservableObject {
             }
     }
 
-    // フィードの情報を取得
+    // MARK: 公開投稿情報を取得
     func getPublicPosts() {
         db.collection("posts")
             .whereField("isPublic", in: [true])
@@ -102,9 +102,8 @@ final class FirebaseStoreService: ObservableObject {
                     case .success(let note):
                         if let note = note {
                             self.posts.append(note)
-                        } else {
-                            handler(fatalError("DocumentSnapshot was nil."))
                         }
+
                     case .failure(let error):
                         // A Book value could not be initialized from the DocumentSnapshot.
                         switch error {
