@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-extension Color {
-    static let Card_Background = Color("Card_Background")
-}
-
 struct NoteRow<T: NoteEntityProtocol>: View {
     @State var note: T
     @State var isCheck: Bool = false
@@ -18,53 +14,54 @@ struct NoteRow<T: NoteEntityProtocol>: View {
         VStack {
             VStack(alignment: .trailing) {
                 HStack(alignment: .center, spacing: 16, content: {
-                    Image("user_icon")
+                    Image(systemName: "person.fill")
                         .resizable()
-                        .frame(width: 30, height: 30)
-                        .background(Color.white)
+                        .frame(width: 35, height: 35)
                         .clipShape(Circle())
-                    Text(note.id ?? "none")
-                        .font(.title2)
-                    Spacer()
-                    Image(note.isPublic ? "public" : "private")
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                })
-                Text("2021-7-22")
-                    .font(.footnote)
-                    .multilineTextAlignment(.trailing)
-            }
 
-            Divider()
-                .foregroundColor(.white)
+                    Text(note.id ?? "none")
+                        .font(.caption)
+
+                    Spacer()
+                    Image(systemName: note.isPublic ? "globe" : "lock.fill")
+                        .resizable()
+                        .frame(width: 15, height: 15)
+                    Text("2021-7-22")
+                        .font(.footnote)
+                        .multilineTextAlignment(.trailing)
+                }
+
+                )
+            }
+            .padding(10)
 
             VStack {
                 Text(note.content ?? "")
                 HStack {
-                    Image("heart")
+                    Image(systemName: "heart")
                         .resizable()
-                        .frame(width: 30, height: 30)
+                        .frame(width: 15, height: 15)
                     Text(note.like ?? "")
-                        .foregroundColor(.black)
-                        .font(.caption)
+                        .font(.body)
                     Spacer()
                         .frame(width: 30)
-                    Image("comments")
+                    Image(systemName: "ellipsis.bubble")
                         .resizable()
-                        .frame(width: 30, height: 30)
+                        .frame(width: 15, height: 15)
                     Text(note.comments ?? "")
-                        .foregroundColor(.black)
-                        .font(.caption)
+                        .font(.body)
                     Spacer()
                 }
+
             }
-            .background(Color.white)
+            .padding()
+            .background(Color.chat)
             .cornerRadius(10)
+
         }
         .padding(10)
         .cornerRadius(12.0)
         .padding()
-        //        .background(Color.Card_Background)
         .onAppear {
             self.isCheck = false
         }
@@ -84,7 +81,13 @@ struct NoteRowPreviews: PreviewProvider {
     static var previews: some View {
         let testNote = SampleNote()
 
-        return NoteRow(note: testNote)
+        return Group {
+            ZStack {
+
+                NoteRow(note: testNote)
+                    .preferredColorScheme(.light)
+            }
+        }
     }
 }
 #endif

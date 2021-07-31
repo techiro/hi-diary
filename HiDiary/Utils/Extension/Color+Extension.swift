@@ -8,11 +8,13 @@
 import SwiftUI
 
 extension Color {
-    static let action = Color(UIColor(named: "ActionColor") ?? .red)
-    static let background = Color(UIColor(named: "BackGroundColor") ?? .systemPink)
+    static let action = Color(UIColor.action ?? .red)
+    static let background = Color(UIColor.background ?? .systemPink)
+    static let chat = Color(UIColor.chat ?? .systemGroupedBackground)
 }
 
 extension UIColor {
     static let action = UIColor(named: "ActionColor")
     static let background = UIColor(named: "BackGroundColor")
+    static let chat = UIColor(named: "ContentsBackgroundColor")
 }

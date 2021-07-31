@@ -22,7 +22,7 @@ struct SampleNote: Identifiable, NoteEntityProtocol {
         like = "3"
         icon = "user_icon"
         id = "JLKJLGJklf2390KLJ"
-        content = "content"
+        content = "I'm man. Today,I went shopping to Tenjin. I bought a cap."
         finished = true
         postedDate = Date()
         modifyDate = nil
