@@ -54,6 +54,7 @@
 		03CAE22126B13931004790EE /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CAE22026B13931004790EE /* FirestoreService.swift */; };
 		03CAE22626B14EF7004790EE /* SampleNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CAE22526B14EF7004790EE /* SampleNote.swift */; };
 		03CAE22826B3E8DE004790EE /* NoteProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CAE22726B3E8DE004790EE /* NoteProtocol.swift */; };
+		03CAE22926B5643A004790EE /* Makefile in Resources */ = {isa = PBXBuildFile; fileRef = 03E3915B26A907340084FAF6 /* Makefile */; };
 		03CEE105269690BB00557BD0 /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CEE104269690BB00557BD0 /* Journal.swift */; };
 		03CEE107269692AF00557BD0 /* JournalsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CEE106269692AF00557BD0 /* JournalsViewModel.swift */; };
 		03CEE1092696965D00557BD0 /* JournalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CEE1082696965D00557BD0 /* JournalListView.swift */; };
@@ -516,6 +517,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03CAE22926B5643A004790EE /* Makefile in Resources */,
 				03AE8A222695417300F8DA64 /* .gitignore in Resources */,
 				03A33A97269062EF00A1CB38 /* .swiftlint.yml in Resources */,
 				03A33A88269042B300A1CB38 /* Assets.xcassets in Resources */,
