@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-extension Color {
-    static let contents_backgroundColor = Color("contents_backgroundColor")
-}
-
 struct NoteRow<T: NoteEntityProtocol>: View {
     @State var note: T
     @State var isCheck: Bool = false
@@ -18,27 +14,31 @@ struct NoteRow<T: NoteEntityProtocol>: View {
         VStack {
             VStack(alignment: .trailing) {
                 HStack(alignment: .center, spacing: 16, content: {
-                    Image("user_icon")
+                    Image(systemName: "person.fill")
                         .resizable()
-                        .frame(width: 30, height: 30)
-                        .background(Color.white)
+                        .frame(width: 35, height: 35)
                         .clipShape(Circle())
+
                     Text(note.id ?? "none")
-                        .font(.title2)
+                        .font(.caption)
+
                     Spacer()
                     Image(systemName: note.isPublic ? "globe" : "lock.fill")
                         .resizable()
                         .frame(width: 15, height: 15)
-                })
-                Text("2021-7-22")
-                    .font(.footnote)
-                    .multilineTextAlignment(.trailing)
+                    Text("2021-7-22")
+                        .font(.footnote)
+                        .multilineTextAlignment(.trailing)
+                }
+
+                )
             }
             .padding(10)
+
             VStack {
                 Text(note.content ?? "")
                 HStack {
-                    Image(systemName:"heart")
+                    Image(systemName: "heart")
                         .resizable()
                         .frame(width: 15, height: 15)
                     Text(note.like ?? "")
@@ -52,14 +52,16 @@ struct NoteRow<T: NoteEntityProtocol>: View {
                         .font(.body)
                     Spacer()
                 }
+
             }
-            .background(Color.contents_backgroundColor)
+            .padding()
+            .background(Color.chat)
             .cornerRadius(10)
+
         }
         .padding(10)
         .cornerRadius(12.0)
         .padding()
-        //        .background(Color.Card_Background)
         .onAppear {
             self.isCheck = false
         }
@@ -80,9 +82,11 @@ struct NoteRowPreviews: PreviewProvider {
         let testNote = SampleNote()
 
         return Group {
-            NoteRow(note: testNote)
-                .preferredColorScheme(.dark)
-            NoteRow(note: testNote)
+            ZStack {
+
+                NoteRow(note: testNote)
+                    .preferredColorScheme(.light)
+            }
         }
     }
 }
