@@ -11,34 +11,19 @@ import FirebaseFirestoreSwift
 import Foundation
 
 protocol FireStoreProtocolProtocol {
-    func observeNotes() -> Future<[Note], Error>
+    func getPosts() -> AnyPublisher<[Note], Error>
     func stopObservingNotes() -> Future<Void, Error>
 }
 
 final class FirebaseStoreService: ObservableObject {
     let db = Firestore.firestore()
     var ref: DocumentReference?
+
     @Published var posts = [Note]()
+    @Published var showingAlert = false
 
-    func saveNotes(user: User, data: Note, handler: @escaping (Error?) -> Void) {
 
-        do {
-            let encoder = JSONEncoder()
-            let json = try encoder.encode(data)
-            ref = db.collection("users").document(user.uid).collection("history").addDocument(data: [
-                "id": data.id,
-                "timestamp": data.postedDate!,
-                "content": data.content!,
-                "isPublic": data.isPublic
-            ]) { error in
-                handler(error)
-            }
-        } catch {
-            print("Error when trying to encode book: \(error)")
-        }
-
-    }
-
+    // MARK: ノートの保存
     func addNote(note: Note, handler: @escaping (Error?) -> Void) {
         let collectionRef = db.collection(FirestoreCollectionReference.posts.rawValue)
         do {
@@ -49,44 +34,7 @@ final class FirebaseStoreService: ObservableObject {
         }
     }
 
-    func postNotes(user: User, data: Note, handler: @escaping (Error?) -> Void) {
-
-        ref = db.collection("posts").addDocument(data: [
-            "id": data.id,
-            "auther": user.uid,
-            "timestamp": data.postedDate!,
-            "content": data.content!,
-            "isPublic": data.isPublic
-        ]) { error in
-            handler(error)
-        }
-    }
-
-    // ユーザー情報を取得
-    func getUsersPosts(userID: String) {
-        db.collection("users")
-            .whereField("author",
-                        isEqualTo: db.collection("users").document("mono"))
-            .getDocuments { (snapshot, error) in
-                snapshot!.documents.forEach { doc in
-                    print(doc)
-                }
-            }
-    }
-
     // MARK: 公開投稿情報を取得
-    func getPublicPosts() {
-        db.collection("posts")
-            .whereField("isPublic", in: [true])
-            .getDocuments { (snapshot, error) in
-                snapshot!.documents.forEach { doc in
-                    print(doc)
-                    print(doc.data())
-                }
-            }
-    }
-
-    // フィードの情報を取得
     func getCodablePosts(handler: @escaping (Error?) -> Void) {
         let docRef = db.collection("posts")
             .whereField("isPublic", in: [true])

@@ -7,42 +7,6 @@
 import Combine
 import SwiftUI
 
-struct RefreshControl: View {
-
-    @State private var isRefreshing = false
-    var coordinateSpaceName: String
-    var onRefresh: () -> Void
-
-    var body: some View {
-        GeometryReader { geometry in
-            if geometry.frame(in: .named(coordinateSpaceName)).midY > 50 {
-                Spacer()
-                    .onAppear {
-                        isRefreshing = true
-                    }
-            } else if geometry.frame(in: .named(coordinateSpaceName)).maxY < 10 {
-                Spacer()
-                    .onAppear {
-                        if isRefreshing {
-                            isRefreshing = false
-                            onRefresh()
-                        }
-                    }
-            }
-            HStack {
-                Spacer()
-                if isRefreshing {
-                    ProgressView()
-                } else {
-                    Text("⬇︎")
-                        .font(.system(size: 28))
-                }
-                Spacer()
-            }
-        }.padding(.top, -50)
-    }
-}
-
 struct HomeView: View {
     @State var tabSelection: Tabs = Tabs.diary
     @State var isShowToast = false
@@ -51,35 +15,32 @@ struct HomeView: View {
     @State var subscriptions = Set<AnyCancellable>()
 
     @EnvironmentObject var storeService: FirebaseStoreService
-    let mockNotes = [SampleNote(), SampleNote()]
+    let mockNotes = [SampleNote(), SampleNote(), SampleNote(), SampleNote(), SampleNote(), SampleNote()]
     var body: some View {
         TabView(selection: $tabSelection) {
-            ScrollView {
 
-                VStack {
-                    RefreshControl(coordinateSpaceName: "RefreshControl", onRefresh: { print("refresh") })
+            VStack {
 
-                    List(storeService.posts) { post in
-                        NoteRow(note: post)
-
-                    }
-                    .padding()
+                List(mockNotes) { post in
+                    NoteRow(note: post)
 
                 }
+                .padding()
 
             }
-            .coordinateSpace(name: "RefreshControl")
+
             .tabItem {
-                Label(Tabs.diary.description, systemImage: Tabs.diary.systemimage)
+                Label(Tabs.diary.description,
+                      systemImage: Tabs.diary.systemimage)
             }
             .tag(Tabs.diary)
 
             Button("Show Third View") {
                 tabSelection = Tabs.notifications
             }
-            .padding()
             .tabItem {
-                Label(Tabs.correct.description, systemImage: Tabs.correct.systemimage)
+                Label(Tabs.correct.description,
+                      systemImage: Tabs.correct.systemimage)
             }
             .tag(Tabs.correct)
 
@@ -91,14 +52,16 @@ struct HomeView: View {
             }
             .padding()
             .tabItem {
-                Label(Tabs.notifications.description, systemImage: Tabs.notifications.systemimage)
+                Label(Tabs.notifications.description,
+                      systemImage: Tabs.notifications.systemimage)
             }
             .tag(Tabs.notifications)
 
             SignOutView()
                 .padding()
                 .tabItem {
-                    Label(Tabs.settings.description, systemImage: Tabs.settings.systemimage)
+                    Label(Tabs.settings.description,
+                          systemImage: Tabs.settings.systemimage)
                 }
                 .tag(Tabs.settings)
                 .edgesIgnoringSafeArea(.all)
@@ -108,6 +71,7 @@ struct HomeView: View {
         .onAppear {
             storeService.getCodablePosts { error in
                 if let error = error {
+                    print(error.localizedDescription)
                     isShowToast = true
                     errorMessage = error.localizedDescription
                 }
