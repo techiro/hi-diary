@@ -26,7 +26,7 @@ struct NoteRow<T: NoteEntityProtocol>: View {
                     Text(note.id ?? "none")
                         .font(.title2)
                     Spacer()
-                    Image(note.isPublic ? "public" : "private")
+                    Image(systemName: note.isPublic ? "globe" : "lock.fill")
                         .resizable()
                         .frame(width: 20, height: 20)
                 })
@@ -34,10 +34,7 @@ struct NoteRow<T: NoteEntityProtocol>: View {
                     .font(.footnote)
                     .multilineTextAlignment(.trailing)
             }
-
-            Divider()
-                .foregroundColor(.white)
-
+            .padding(10)
             VStack {
                 Text(note.content ?? "")
                 HStack {
