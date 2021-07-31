@@ -8,7 +8,7 @@
 import SwiftUI
 
 extension Color {
-    static let Card_Background = Color("Card_Background")
+    static let contents_backgroundColor = Color("contents_backgroundColor")
 }
 
 struct NoteRow<T: NoteEntityProtocol>: View {
@@ -28,7 +28,7 @@ struct NoteRow<T: NoteEntityProtocol>: View {
                     Spacer()
                     Image(systemName: note.isPublic ? "globe" : "lock.fill")
                         .resizable()
-                        .frame(width: 20, height: 20)
+                        .frame(width: 15, height: 15)
                 })
                 Text("2021-7-22")
                     .font(.footnote)
@@ -38,24 +38,22 @@ struct NoteRow<T: NoteEntityProtocol>: View {
             VStack {
                 Text(note.content ?? "")
                 HStack {
-                    Image("heart")
+                    Image(systemName:"heart")
                         .resizable()
-                        .frame(width: 30, height: 30)
+                        .frame(width: 15, height: 15)
                     Text(note.like ?? "")
-                        .foregroundColor(.black)
-                        .font(.caption)
+                        .font(.body)
                     Spacer()
                         .frame(width: 30)
-                    Image("comments")
+                    Image(systemName: "ellipsis.bubble")
                         .resizable()
-                        .frame(width: 30, height: 30)
+                        .frame(width: 15, height: 15)
                     Text(note.comments ?? "")
-                        .foregroundColor(.black)
-                        .font(.caption)
+                        .font(.body)
                     Spacer()
                 }
             }
-            .background(Color.white)
+            .background(Color.contents_backgroundColor)
             .cornerRadius(10)
         }
         .padding(10)
@@ -81,7 +79,11 @@ struct NoteRowPreviews: PreviewProvider {
     static var previews: some View {
         let testNote = SampleNote()
 
-        return NoteRow(note: testNote)
+        return Group {
+            NoteRow(note: testNote)
+                .preferredColorScheme(.dark)
+            NoteRow(note: testNote)
+        }
     }
 }
 #endif
