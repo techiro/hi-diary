@@ -60,7 +60,6 @@
 		03CEE1092696965D00557BD0 /* JournalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CEE1082696965D00557BD0 /* JournalListView.swift */; };
 		03CEE10B2696977000557BD0 /* JournalRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CEE10A2696977000557BD0 /* JournalRowView.swift */; };
 		03DCB929269AD6320064420B /* AuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DCB928269AD6320064420B /* AuthProvider.swift */; };
-		03DCB92E269ADB5B0064420B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DCB92D269ADB5B0064420B /* HomeViewModel.swift */; };
 		03DCB932269C1E1E0064420B /* LoginSampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DCB931269C1E1E0064420B /* LoginSampleView.swift */; };
 		03DCB934269C29930064420B /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DCB933269C29930064420B /* String+Extension.swift */; };
 		03DCB936269C7B2E0064420B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DCB935269C7B2E0064420B /* LoginViewModel.swift */; };
@@ -127,7 +126,6 @@
 		03DCB919269AD0A70064420B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		03DCB91A269AD0A70064420B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		03DCB928269AD6320064420B /* AuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProvider.swift; sourceTree = "<group>"; };
-		03DCB92D269ADB5B0064420B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		03DCB931269C1E1E0064420B /* LoginSampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSampleView.swift; sourceTree = "<group>"; };
 		03DCB933269C29930064420B /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		03DCB935269C7B2E0064420B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -342,18 +340,9 @@
 		03DCB92A269AD7BC0064420B /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				03DCB92C269ADB380064420B /* ViewModel */,
 				038B86CB269ABA6B00DE08B8 /* HomeView.swift */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		03DCB92C269ADB380064420B /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				03DCB92D269ADB5B0064420B /* HomeViewModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		03DCB937269C84220064420B /* Login */ = {
@@ -570,7 +559,6 @@
 				03BFA42A2692B05300283868 /* FloatingActionButton.swift in Sources */,
 				03AF29A026ABDD7E00F52B88 /* HomeView.swift in Sources */,
 				038B86CC269ABA6B00DE08B8 /* HomeView.swift in Sources */,
-				03DCB92E269ADB5B0064420B /* HomeViewModel.swift in Sources */,
 				03BFA4332692DDB700283868 /* InputView.swift in Sources */,
 				03CEE105269690BB00557BD0 /* Journal.swift in Sources */,
 				03CEE1092696965D00557BD0 /* JournalListView.swift in Sources */,
