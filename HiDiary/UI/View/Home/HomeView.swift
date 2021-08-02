@@ -21,7 +21,7 @@ struct HomeView: View {
 
             VStack {
 
-                List(mockNotes) { post in
+                List(storeService.posts) { post in
                     NoteRow(note: post)
 
                 }
