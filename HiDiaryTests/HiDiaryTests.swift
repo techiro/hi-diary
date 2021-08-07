@@ -6,7 +6,6 @@
 //
 
 import XCTest
-
 class HiDiaryTests: XCTestCase {
 
     override func setUpWithError() throws {

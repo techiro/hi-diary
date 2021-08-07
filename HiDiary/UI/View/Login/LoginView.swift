@@ -58,7 +58,7 @@ struct LoginView: View {
                         .background(Color.accentColor)
                         .cornerRadius(8)
                 })
-                .disabled(!vm.isValidInput())
+                .disabled(!vm.isValidInput)
 
                 NavigationLink("アカウントをお持ちでない方はこちら >", destination: SignUpView().environmentObject(authService))
 
@@ -92,12 +92,15 @@ final class LoginViewModel: ObservableObject {
 
     @Published var state = State()
 
-    func isValidInput() -> Bool {
+    var isValidInput: Bool {
+        get {
+            return isValidEmail() && isValidPassword()
+        }
+    }
+
+    func isValidPassword() -> Bool {
 
         if state.inputPassword.count <= 7 {
-            return false
-        }
-        if !state.inputEmail.contains("@") {
             return false
         }
 
@@ -105,12 +108,25 @@ final class LoginViewModel: ObservableObject {
         print(numString)
         let capitalString = state.inputPassword.components(separatedBy: CharacterSet.uppercaseLetters.inverted).joined().count
         print(capitalString)
-        
+
         if  numString < 1 || capitalString < 1 {
             return false
         }
 
-        if state.inputEmail.isEmpty || state.inputPassword.isEmpty {
+        if state.inputPassword.isEmpty {
+            return false
+        }
+
+        return true
+    }
+
+    func isValidEmail() -> Bool {
+
+        if !state.inputEmail.contains("@") {
+            return false
+        }
+
+        if state.inputEmail.isEmpty {
             return false
         }
 
