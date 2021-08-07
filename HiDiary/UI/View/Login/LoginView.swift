@@ -101,6 +101,14 @@ final class LoginViewModel: ObservableObject {
             return false
         }
 
+        let numString = state.inputPassword.components(separatedBy: CharacterSet.decimalDigits.inverted).joined().count
+        print(numString)
+        let capitalString = state.inputPassword.components(separatedBy: CharacterSet.uppercaseLetters.inverted).joined().count
+        print(capitalString)
+        if  numString < 1 || capitalString < 1 {
+            return false
+        }
+
         if state.inputEmail.isEmpty || state.inputPassword.isEmpty {
             return false
         }
