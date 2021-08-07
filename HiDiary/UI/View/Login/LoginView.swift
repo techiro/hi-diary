@@ -105,6 +105,7 @@ final class LoginViewModel: ObservableObject {
         print(numString)
         let capitalString = state.inputPassword.components(separatedBy: CharacterSet.uppercaseLetters.inverted).joined().count
         print(capitalString)
+        
         if  numString < 1 || capitalString < 1 {
             return false
         }

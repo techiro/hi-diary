@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		036E2CAD26BEB19000FA0D25 /* HiDiaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036E2CAC26BEB19000FA0D25 /* HiDiaryTests.swift */; };
 		038B86C4269AB4BF00DE08B8 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038B86C3269AB4BF00DE08B8 /* Session.swift */; };
 		038B86C6269AB4F300DE08B8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038B86C5269AB4F300DE08B8 /* User.swift */; };
 		038B86C8269AB5CF00DE08B8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038B86C7269AB5CF00DE08B8 /* LoginView.swift */; };
@@ -76,7 +77,20 @@
 		7390A38A26AE77F0004E2FD8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7390A38926AE77F0004E2FD8 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		036E2CAF26BEB19000FA0D25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03A33A76269042B100A1CB38 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 03A33A7D269042B100A1CB38;
+			remoteInfo = HiDiary;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		036E2CAA26BEB19000FA0D25 /* HiDiaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HiDiaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		036E2CAC26BEB19000FA0D25 /* HiDiaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiDiaryTests.swift; sourceTree = "<group>"; };
+		036E2CAE26BEB19000FA0D25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		038B86C3269AB4BF00DE08B8 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		038B86C5269AB4F300DE08B8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		038B86C7269AB5CF00DE08B8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -143,6 +157,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		036E2CA726BEB19000FA0D25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		03A33A7B269042B100A1CB38 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -159,6 +180,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		036E2CAB26BEB19000FA0D25 /* HiDiaryTests */ = {
+			isa = PBXGroup;
+			children = (
+				036E2CAC26BEB19000FA0D25 /* HiDiaryTests.swift */,
+				036E2CAE26BEB19000FA0D25 /* Info.plist */,
+			);
+			path = HiDiaryTests;
+			sourceTree = "<group>";
+		};
 		038B86CD269AC53A00DE08B8 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +220,7 @@
 				03AE8A212695417300F8DA64 /* .gitignore */,
 				03A33A96269062EF00A1CB38 /* .swiftlint.yml */,
 				03A33A80269042B100A1CB38 /* HiDiary */,
+				036E2CAB26BEB19000FA0D25 /* HiDiaryTests */,
 				03A33A7F269042B100A1CB38 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -198,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				03A33A7E269042B100A1CB38 /* HiDiary.app */,
+				036E2CAA26BEB19000FA0D25 /* HiDiaryTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -439,6 +471,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		036E2CA926BEB19000FA0D25 /* HiDiaryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 036E2CB326BEB19100FA0D25 /* Build configuration list for PBXNativeTarget "HiDiaryTests" */;
+			buildPhases = (
+				036E2CA626BEB19000FA0D25 /* Sources */,
+				036E2CA726BEB19000FA0D25 /* Frameworks */,
+				036E2CA826BEB19000FA0D25 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				036E2CB026BEB19000FA0D25 /* PBXTargetDependency */,
+			);
+			name = HiDiaryTests;
+			productName = HiDiaryTests;
+			productReference = 036E2CAA26BEB19000FA0D25 /* HiDiaryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		03A33A7D269042B100A1CB38 /* HiDiary */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03A33A92269042B300A1CB38 /* Build configuration list for PBXNativeTarget "HiDiary" */;
@@ -474,6 +524,10 @@
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					036E2CA926BEB19000FA0D25 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 03A33A7D269042B100A1CB38;
+					};
 					03A33A7D269042B100A1CB38 = {
 						CreatedOnToolsVersion = 12.5;
 					};
@@ -497,11 +551,19 @@
 			projectRoot = "";
 			targets = (
 				03A33A7D269042B100A1CB38 /* HiDiary */,
+				036E2CA926BEB19000FA0D25 /* HiDiaryTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		036E2CA826BEB19000FA0D25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		03A33A7C269042B100A1CB38 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -540,6 +602,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		036E2CA626BEB19000FA0D25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				036E2CAD26BEB19000FA0D25 /* HiDiaryTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		03A33A7A269042B100A1CB38 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -603,6 +673,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		036E2CB026BEB19000FA0D25 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 03A33A7D269042B100A1CB38 /* HiDiary */;
+			targetProxy = 036E2CAF26BEB19000FA0D25 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		03A33A8C269042B300A1CB38 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -615,6 +693,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		036E2CB126BEB19100FA0D25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8U9F7XY8ZC;
+				INFOPLIST_FILE = HiDiaryTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tanakahirokazu.HiDiaryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HiDiary.app/HiDiary";
+			};
+			name = Debug;
+		};
+		036E2CB226BEB19100FA0D25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8U9F7XY8ZC;
+				INFOPLIST_FILE = HiDiaryTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tanakahirokazu.HiDiaryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HiDiary.app/HiDiary";
+			};
+			name = Release;
+		};
 		03A33A90269042B300A1CB38 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -779,6 +897,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		036E2CB326BEB19100FA0D25 /* Build configuration list for PBXNativeTarget "HiDiaryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				036E2CB126BEB19100FA0D25 /* Debug */,
+				036E2CB226BEB19100FA0D25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		03A33A79269042B100A1CB38 /* Build configuration list for PBXProject "HiDiary" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
