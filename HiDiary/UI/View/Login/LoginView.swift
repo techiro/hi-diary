@@ -11,10 +11,8 @@ import SwiftUI
 
 struct LoginView: View {
     @EnvironmentObject var authService: FirebaseAuthenticationService
-    @State var inputEmail: String = ""
-    @State var inputPassword: String = ""
-    @State var isError: Bool = false
-    @State var subTitle = ""
+
+    @ObservedObject var vm: LoginViewModel
 
     let password = "password"
     var body: some View {
@@ -26,11 +24,11 @@ struct LoginView: View {
                                   weight: .heavy))
 
                 VStack(spacing: 24) {
-                    TextField("Mail address", text: $inputEmail)
+                    TextField("Mail address", text: $vm.state.inputEmail)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .frame(maxWidth: 280)
 
-                    SecureField("Password", text: $inputPassword)
+                    SecureField("Password", text: $vm.state.inputPassword)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .frame(maxWidth: 280)
 
@@ -39,12 +37,12 @@ struct LoginView: View {
 
                 Button(action: {
                     print("Login処理")
-                    authService.signIn(email: inputEmail, password: inputPassword) { result, error in
+                    authService.signIn(email: vm.state.inputEmail, password: vm.state.inputPassword) { result, error in
 
                         if let error = error {
-                            subTitle = error.localizedDescription
-                            isError = true
-                            inputPassword = ""
+                            vm.state.subTitle = error.localizedDescription
+                            vm.state.isError = true
+                            vm.state.inputPassword = ""
                             print(error)
                         }
 
@@ -60,7 +58,7 @@ struct LoginView: View {
                         .background(Color.accentColor)
                         .cornerRadius(8)
                 })
-                .disabled(inputEmail.isEmpty || inputPassword.isEmpty)
+                .disabled(!vm.isValidInput())
 
                 NavigationLink("アカウントをお持ちでない方はこちら >", destination: SignUpView().environmentObject(authService))
 
@@ -69,7 +67,7 @@ struct LoginView: View {
             }
         }
         .popup(
-            isPresented: $isError,
+            isPresented: $vm.state.isError,
             type: .toast,
             position: .bottom,
             animation: .easeIn,
@@ -79,13 +77,42 @@ struct LoginView: View {
             closeOnTapOutside: true) {
             // MARK: dismisscallback
             } view: {
-            Toast(title: "ログインエラー", subTitle: subTitle, image: Image(systemName: "xmark.circle"))
+            Toast(title: "ログインエラー", subTitle: vm.state.subTitle, image: Image(systemName: "xmark.circle"))
         }
     }
 }
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView(vm: LoginViewModel())
     }
+}
+
+final class LoginViewModel: ObservableObject {
+
+    @Published var state = State()
+
+    func isValidInput() -> Bool {
+
+        if state.inputPassword.count <= 7 {
+            return false
+        }
+        if !state.inputEmail.contains("@") {
+            return false
+        }
+
+        if state.inputEmail.isEmpty || state.inputPassword.isEmpty {
+            return false
+        }
+
+        return true
+    }
+
+    struct State {
+        var inputEmail: String = ""
+        var inputPassword: String = ""
+        var isError: Bool = false
+        var subTitle = ""
+    }
+
 }

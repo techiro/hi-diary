@@ -13,7 +13,7 @@ struct ContentView: View {
     @State private var tabViewOffset: CGFloat = 0
     var body: some View {
         #if DEBUG
-        HomeView()
+        LoginView(vm: LoginViewModel())
         #elseif RELEASE
         if self.authService.user != nil {
             HomeView()
