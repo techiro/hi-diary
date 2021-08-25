@@ -15,6 +15,7 @@ extension Color {
 
 extension UIColor {
     static let action = UIColor(named: "ActionColor")
-    static let background = UIColor(named: "BackGroundColor")
+    static let background = UIColor(named: "Background")
     static let chat = UIColor(named: "ContentsBackgroundColor")
 }
+
