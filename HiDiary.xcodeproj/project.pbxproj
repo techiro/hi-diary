@@ -75,6 +75,7 @@
 		03E3915C26A907340084FAF6 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 03E3915B26A907340084FAF6 /* Makefile */; };
 		73800BCF26D0E4FB005A7A33 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73800BCE26D0E4FB005A7A33 /* Post.swift */; };
 		7390A38A26AE77F0004E2FD8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7390A38926AE77F0004E2FD8 /* GoogleService-Info.plist */; };
+		7394959E26D5E5B400F20CD6 /* CorrectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7394959D26D5E5B400F20CD6 /* CorrectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -142,6 +143,7 @@
 		03E3915B26A907340084FAF6 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		73800BCE26D0E4FB005A7A33 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		7390A38926AE77F0004E2FD8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7394959D26D5E5B400F20CD6 /* CorrectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 		038B86CD269AC53A00DE08B8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7394959C26D5E59400F20CD6 /* Correction */,
 				73800BCD26D0E4E0005A7A33 /* Post */,
 				03DCB94F269D04A50064420B /* Edit */,
 				03DCB92A269AD7BC0064420B /* Home */,
@@ -447,6 +450,14 @@
 			path = Configs;
 			sourceTree = "<group>";
 		};
+		7394959C26D5E59400F20CD6 /* Correction */ = {
+			isa = PBXGroup;
+			children = (
+				7394959D26D5E5B400F20CD6 /* CorrectionView.swift */,
+			);
+			path = Correction;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -581,6 +592,7 @@
 				03DCB932269C1E1E0064420B /* LoginSampleView.swift in Sources */,
 				03AF29A126ABDD7E00F52B88 /* LoginView.swift in Sources */,
 				038B86C8269AB5CF00DE08B8 /* LoginView.swift in Sources */,
+				7394959E26D5E5B400F20CD6 /* CorrectionView.swift in Sources */,
 				03DCB936269C7B2E0064420B /* LoginViewModel.swift in Sources */,
 				03CAE22826B3E8DE004790EE /* NoteProtocol.swift in Sources */,
 				03E3915C26A907340084FAF6 /* Makefile in Sources */,
