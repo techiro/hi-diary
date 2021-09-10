@@ -16,11 +16,3 @@ jobs:
       run: sudo xcode-select -s "$DEVELOPER_DIR"
     - name: Show Xcode version
       run: xcodebuild -version
-    - name: Cache Swift Packages
-      uses: actions/cache@v1
-      with:
-        path: SourcePackages
-        key: ${{ runner.os }}-spm-${{ hashFiles('*.xcodeproj/project.xcworkspace/ xcshareddata/swiftpm/Package.resolved') }}
-        restore-keys: ${{ runner.os }}-spm-
-    - name: Build # シミュレーター向けにビルド
-      run: xcodebuild -sdk iphonesimulator -configuration Debug build 
