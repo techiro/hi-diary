@@ -315,13 +315,6 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		03CAE22226B13968004790EE /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
 		03CEE10126968E3800557BD0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -414,19 +407,10 @@
 		03E3915126A68E230084FAF6 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				03CAE22226B13968004790EE /* Protocols */,
-				03E3915226A68E3E0084FAF6 /* API */,
 				03E3915426A68E7C0084FAF6 /* Model */,
 				03E3915326A68E490084FAF6 /* Service */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		03E3915226A68E3E0084FAF6 /* API */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = API;
 			sourceTree = "<group>";
 		};
 		03E3915326A68E490084FAF6 /* Service */ = {
