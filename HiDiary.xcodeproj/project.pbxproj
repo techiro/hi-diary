@@ -74,6 +74,7 @@
 		03E3915726A6D9F00084FAF6 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E3915626A6D9EF0084FAF6 /* FirebaseAuthService.swift */; };
 		03E3915A26A8072C0084FAF6 /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E3915926A8072C0084FAF6 /* Tabs.swift */; };
 		03E3915C26A907340084FAF6 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 03E3915B26A907340084FAF6 /* Makefile */; };
+		73800BCF26D0E4FB005A7A33 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73800BCE26D0E4FB005A7A33 /* Post.swift */; };
 		7390A38A26AE77F0004E2FD8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7390A38926AE77F0004E2FD8 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -153,6 +154,7 @@
 		03E3915626A6D9EF0084FAF6 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
 		03E3915926A8072C0084FAF6 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
 		03E3915B26A907340084FAF6 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		73800BCE26D0E4FB005A7A33 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		7390A38926AE77F0004E2FD8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -192,6 +194,7 @@
 		038B86CD269AC53A00DE08B8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				73800BCD26D0E4E0005A7A33 /* Post */,
 				03DCB94F269D04A50064420B /* Edit */,
 				03DCB92A269AD7BC0064420B /* Home */,
 				03DCB937269C84220064420B /* Login */,
@@ -444,6 +447,14 @@
 			path = Provider;
 			sourceTree = "<group>";
 		};
+		73800BCD26D0E4E0005A7A33 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				73800BCE26D0E4FB005A7A33 /* Post.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
 		7390A38826AE779B004E2FD8 /* Configs */ = {
 			isa = PBXGroup;
 			children = (
@@ -632,6 +643,7 @@
 				03CAE22126B13931004790EE /* FirestoreService.swift in Sources */,
 				03DCB953269D0F300064420B /* MemoRowView.swift in Sources */,
 				03DCB94E269D049C0064420B /* MemoViewModel.swift in Sources */,
+				73800BCF26D0E4FB005A7A33 /* Post.swift in Sources */,
 				03AE89EF2692F66300F8DA64 /* NavigationBarModifier.swift in Sources */,
 				03C8000326A93412000D5612 /* Note.swift in Sources */,
 				03C8000126A9335C000D5612 /* NoteListView.swift in Sources */,
