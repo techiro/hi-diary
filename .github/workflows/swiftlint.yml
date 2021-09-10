@@ -1,30 +1,28 @@
-# This is a basic workflow to help you get started with Actions
+name: SwiftLint
 
-name: Swiftlint
-
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on pull request events but only for the main branch
   pull_request:
-    branches: [ main ]
-    # .swiftファイルが変更にない場合は実行しない
     paths:
-      - '**.swift'
+      - '.github/workflows/swiftlint.yml'
+      - '.swiftlint.yml'
+      - '**/*.swift'
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  SwiftLint:
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-      - name: Danger
-        uses: docker://ghcr.io/danger/danger-swift-with-swiftlint:3.10.2
+      - uses: actions/checkout@v1
+      - name: GitHub Action for SwiftLint
+        uses: norio-nomura/action-swiftlint@3.2.1
+      - name: GitHub Action for SwiftLint with --strict
+        uses: norio-nomura/action-swiftlint@3.2.1
         with:
-            args: --failOnErrors --no-publish-check
+          args: --strict
+      - name: GitHub Action for SwiftLint (Only files changed in the PR)
+        uses: norio-nomura/action-swiftlint@3.2.1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DIFF_BASE: ${{ github.base_ref }}
+      - name: GitHub Action for SwiftLint (Different working directory)
+        uses: norio-nomura/action-swiftlint@3.2.1
+        env:
+          WORKING_DIRECTORY: Source
