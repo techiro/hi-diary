@@ -1,28 +1,22 @@
-name: SwiftLint
+name: CI
 
-on:
-  pull_request:
-    paths:
-      - '.github/workflows/swiftlint.yml'
-      - '.swiftlint.yml'
-      - '**/*.swift'
+on: 
+  pull_request: 
+    branches: [ main ]
+    
+env:
+  DEVELOPER_DIR: /Applications/Xcode_12.5.1.app/Contents/Developer
 
 jobs:
-  SwiftLint:
-    runs-on: ubuntu-latest
+  build:
+
+    runs-on: macos-latest
+
     steps:
-      - uses: actions/checkout@v1
-      - name: GitHub Action for SwiftLint
-        uses: norio-nomura/action-swiftlint@3.2.1
-      - name: GitHub Action for SwiftLint with --failOnErrors --no-publish-check
-        uses: norio-nomura/action-swiftlint@3.2.1
-        with:
-          args: --failOnErrors --no-publish-check
-      - name: GitHub Action for SwiftLint (Only files changed in the PR)
-        uses: norio-nomura/action-swiftlint@3.2.1
-        env:
-          DIFF_BASE: ${{ github.base_ref }}
-      - name: GitHub Action for SwiftLint (Different working directory)
-        uses: norio-nomura/action-swiftlint@3.2.1
-        env:
-          WORKING_DIRECTORY: Source
+    - uses: actions/checkout@v1 # ソースコードをcheckout
+    - name: Select Xcode version # Xcode 11.2 を使う
+      run: sudo xcode-select -s "$DEVELOPER_DIR"
+    - name: Show Xcode version
+      run: xcodebuild -version
+    - name: Build # シミュレーター向けにビルド
+      run: xcodebuild -sdk iphonesimulator -configuration Debug build 
