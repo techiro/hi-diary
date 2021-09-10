@@ -14,10 +14,10 @@ jobs:
       - uses: actions/checkout@v1
       - name: GitHub Action for SwiftLint
         uses: norio-nomura/action-swiftlint@3.2.1
-      - name: GitHub Action for SwiftLint with --strict
+      - name: GitHub Action for SwiftLint with --failOnErrors --no-publish-check
         uses: norio-nomura/action-swiftlint@3.2.1
         with:
-          args: --strict
+          args: --failOnErrors --no-publish-check
       - name: GitHub Action for SwiftLint (Only files changed in the PR)
         uses: norio-nomura/action-swiftlint@3.2.1
         env:
