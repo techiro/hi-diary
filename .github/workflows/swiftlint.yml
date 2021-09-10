@@ -2,7 +2,7 @@ name: CI
 
 on: 
   pull_request: 
-    branches: [ main ]
+    branches: [ develop ]
     
 env:
   DEVELOPER_DIR: /Applications/Xcode_12.5.1.app/Contents/Developer
