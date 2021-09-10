@@ -48,6 +48,5 @@ playground.xcworkspace
 
 .build/
 
-
 # Firebase
 GoogleService-Info.plist
