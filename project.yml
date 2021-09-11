@@ -1,0 +1,58 @@
+name: HiDiary
+options:
+  bundleIdPrefix: com.hidiary
+  deploymentTarget:
+    iOS: 14.0
+  generateEmptyDirectories: true
+  
+fileGroups:
+  - .gitignore
+  - README.md
+  - .swiftlint.yml
+  - project.yml
+  - Dangerfile.swift
+  - Makefile
+  - Mintfile
+  - .github/
+
+targets:
+  App:
+    platform: iOS
+    type: application
+    sources:
+      - Sources/
+    postBuildScripts:
+      - name: Mint Build Script
+        script: |
+                if which mint >/dev/null; then
+                  xcrun --sdk macosx mint run swiftlint autocorrect --format
+                  xcrun --sdk macosx mint run swiftlint
+                else
+                  echo "error: Mint not installed, run make mint"
+                  exit 1
+                fi
+
+  Tests:
+    platform: iOS
+    type: bundle.unit-test
+    sources:
+      - Tests/
+      - path: Sources/
+        excludes:
+        - Sample.swift
+    scheme:
+      testTargets:
+        - Tests
+      gatherCoverageData: true
+    dependencies:
+      - target: App
+        
+  UITests:
+    platform: iOS
+    type: bundle.ui-testing
+    sources:
+      - UITests/
+    scheme:
+      testTargets:
+        - UITests
+      gatherCoverageData: true
