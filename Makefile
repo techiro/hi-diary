@@ -1,3 +1,15 @@
+MINT_VERSION = 0.16.0
+
+.PHONY: mint
+mint:
+	git clone https://github.com/yonaskolb/Mint.git -b $(MINT_VERSION)
+	cd Mint && make
+	rm -rf Mint/
+
+.PHONY: xcodegen
+xcodegen:
+	mint run xcodegen
+
 .PHONY: ccache
 ccache:
 	xcodebuild -alltargets clean ; rm -rf ~/Library/Developer/Xcode/DerivedData/ ; :

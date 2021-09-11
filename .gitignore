@@ -91,3 +91,6 @@ iOSInjectionProject/
 
 # Firebase
 GoogleService-Info.plist
+
+# for Xcodegen
+*.xcodeproj
