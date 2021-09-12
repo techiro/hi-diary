@@ -37,34 +37,48 @@ struct NoteRow<T: NoteEntityProtocol>: View {
 
             VStack {
                 Text(note.content ?? "")
+                    .padding(10)
                 HStack {
-                    Image(systemName: "heart")
-                        .resizable()
-                        .frame(width: 15, height: 15)
-                    Text(note.like ?? "")
-                        .font(.body)
+                    Image(systemName: "bookmark")
+                    Image(systemName: "textformat")
+                    
                     Spacer()
-                        .frame(width: 30)
-                    Image(systemName: "ellipsis.bubble")
-                        .resizable()
-                        .frame(width: 15, height: 15)
-                    Text(note.comments ?? "")
-                        .font(.body)
-                    Spacer()
+                    
+                    Image(systemName: "person.2")
                 }
+                .padding(10)
 
             }
             .padding()
-            .background(Color.chat)
+            .background(Color.white)
             .cornerRadius(10)
+            
+            ZStack{
+                HStack{
+                    Rectangle()
+                        .fill(Color.gray)
+                        .frame(width: 392, height: 42)
+                }
+                .cornerRadius(20)
+                
+                HStack{
+                    Spacer()
+                    Image(systemName: "face.smiling")
+                        .frame(width: 20, height: 20)
+                }
+                .padding(10)
+            }
+            
 
         }
         .padding(10)
         .cornerRadius(12.0)
-        .padding()
+        //.padding()
         .onAppear {
             self.isCheck = false
         }
+        
+        
     }
 
     func formatDate(_ date: Date) -> String {
