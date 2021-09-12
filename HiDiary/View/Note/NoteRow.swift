@@ -24,20 +24,21 @@ struct NoteRow: View {
 }
 
 #if DEBUG
-struct NoteRowPreviews: PreviewProvider {
-    static var previews: some View {
-        let testNote = Note(
-            id: "123",
-            title: "This is a test note",
-            content: """
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Fusce gravida nulla tortor, nec sollicitudin tortor.
-""",
-            finished: false)
+    struct NoteRowPreviews: PreviewProvider {
+        static var previews: some View {
+            let testNote = Note(
+                id: "123",
+                title: "This is a test note",
+                content: """
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Fusce gravida nulla tortor, nec sollicitudin tortor.
+                """,
+                finished: false
+            )
 
-        return NoteRow(note: testNote)
+            return NoteRow(note: testNote)
+        }
     }
-}
 #endif
 
 import Foundation
@@ -54,7 +55,6 @@ struct Note: Identifiable {
     /// Maps a dictionary containing a note to a Note object
     /// If the ID is non-existent this will fail.
     static func map(fromDict dict: [String: Any]) -> Note? {
-
         // Make sure that the note has an id
         guard let id = dict["id"] as? String else { return nil }
 

@@ -9,7 +9,6 @@ import Combine
 import Foundation
 
 class MemoViewModel: ObservableObject {
-
     @Published private(set) var memos: [Memo] = Array(Memo.findAll())
     @Published var memoTextField = ""
     @Published var deleteMemo: Memo?
@@ -18,7 +17,7 @@ class MemoViewModel: ObservableObject {
     private var subscriptions = Set<AnyCancellable>()
 
     init() {
-        self.$memoTextField
+        $memoTextField
             .sink { text in
                 guard !text.isEmpty else {
                     return
@@ -30,7 +29,7 @@ class MemoViewModel: ObservableObject {
             }
             .store(in: &subscriptions)
 
-        self.$deleteMemo
+        $deleteMemo
             .sink { memo in
                 guard let memo = memo else {
                     return
@@ -42,7 +41,7 @@ class MemoViewModel: ObservableObject {
             }
             .store(in: &subscriptions)
 
-        self.$isDeleteAllTapped
+        $isDeleteAllTapped
             .sink { isDeleteAllTapped in
                 if isDeleteAllTapped {
                     Memo.delete(self.memos)

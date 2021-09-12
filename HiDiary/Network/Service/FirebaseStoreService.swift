@@ -23,6 +23,7 @@ final class FirebaseStoreService: ObservableObject {
     @Published var showingAlert = false
 
     // MARK: ノートの保存
+
     func addNote(note: Note, handler: @escaping (Error?) -> Void) {
         let collectionRef = db.collection(FirestoreCollectionReference.posts.rawValue)
         do {
@@ -34,6 +35,7 @@ final class FirebaseStoreService: ObservableObject {
     }
 
     // MARK: 公開投稿情報を取得
+
     func getCodablePosts(handler: @escaping (Error?) -> Void) {
         let docRef = db.collection("posts")
             .whereField("isPublic", in: [true])
@@ -46,21 +48,21 @@ final class FirebaseStoreService: ObservableObject {
 
                     let result = Result { try document.data(as: Note.self) }
                     switch result {
-                    case .success(let note):
+                    case let .success(note):
                         if let note = note {
                             self.posts.append(note)
                         }
 
-                    case .failure(let error):
+                    case let .failure(error):
                         // A Book value could not be initialized from the DocumentSnapshot.
                         switch error {
-                        case DecodingError.typeMismatch(_, let context):
+                        case let DecodingError.typeMismatch(_, context):
                             print("\(error.localizedDescription): \(context.debugDescription)")
-                        case DecodingError.valueNotFound(_, let context):
+                        case let DecodingError.valueNotFound(_, context):
                             print("\(error.localizedDescription): \(context.debugDescription)")
-                        case DecodingError.keyNotFound(_, let context):
+                        case let DecodingError.keyNotFound(_, context):
                             print("\(error.localizedDescription): \(context.debugDescription)")
-                        case DecodingError.dataCorrupted(let key):
+                        case let DecodingError.dataCorrupted(key):
                             print("\(error.localizedDescription): \(key)")
                         default:
                             print("Error decoding document: \(error.localizedDescription)")
@@ -70,5 +72,4 @@ final class FirebaseStoreService: ObservableObject {
             }
         }
     }
-
 }

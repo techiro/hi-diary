@@ -23,7 +23,6 @@
 import UIKit
 
 class ObjectUser: FireStorageCodable {
-
     var id = UUID().uuidString
     var name: String?
     var email: String?

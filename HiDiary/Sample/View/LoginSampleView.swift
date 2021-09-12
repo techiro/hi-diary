@@ -8,7 +8,6 @@ import Combine
 import SwiftUI
 
 struct CreateUserView: View {
-
     @StateObject var vm = CreateUserViewModel()
 
     var body: some View {
@@ -20,7 +19,7 @@ struct CreateUserView: View {
                 Button(action: {}, label: {
                     Text("Submit")
                 })
-                .disabled(!vm.readyToCreate)
+                    .disabled(!vm.readyToCreate)
 
                 Section(header: Text("DEBUG")) {
                     Text(vm.readyToCreate ? "Ready to create" : "Waiting input")

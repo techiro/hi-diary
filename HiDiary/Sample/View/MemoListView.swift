@@ -37,9 +37,8 @@ struct MemoListView: View {
                                   message: Text("メモを削除します。\nよろしいですか？"),
                                   primaryButton: .cancel(Text("いいえ")),
                                   secondaryButton: .destructive(Text("はい")) {
-                                    viewModel.deleteMemo = memo
-                                  }
-                            )
+                                      viewModel.deleteMemo = memo
+                                  })
                         }
                     }
                 }
@@ -53,16 +52,14 @@ struct MemoListView: View {
                     }
                     .disabled(viewModel.memos.isEmpty)
                 }
-
             }
             .alert(isPresented: $isDeleteAllAlertPresented) {
                 Alert(title: Text("警告"),
                       message: Text("全てのメモを削除します。\nよろしいですか？"),
                       primaryButton: .cancel(Text("いいえ")),
                       secondaryButton: .destructive(Text("はい")) {
-                        viewModel.isDeleteAllTapped = true
-                      }
-                )
+                          viewModel.isDeleteAllTapped = true
+                      })
             }
         }
     }

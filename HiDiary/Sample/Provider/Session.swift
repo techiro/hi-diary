@@ -12,8 +12,8 @@ final class Session: ObservableObject {
     @Published var user: FirebaseAuth.User?
     var handle: AuthStateDidChangeListenerHandle?
 
-    init(isLogin: Bool = false, user: User? = nil) {
-        handle = Auth.auth().addStateDidChangeListener { [weak self] (auth, user) in
+    init(isLogin _: Bool = false, user: User? = nil) {
+        handle = Auth.auth().addStateDidChangeListener { [weak self] auth, user in
 
             DispatchQueue.main.async {
                 self?.isLogin = (auth.currentUser != nil) ? true : false

@@ -19,7 +19,6 @@ struct LoginView: View {
     let password = "password"
     var body: some View {
         NavigationView {
-
             VStack(alignment: .center) {
                 Text("SwiftUI App")
                     .font(.system(size: 48,
@@ -33,39 +32,36 @@ struct LoginView: View {
                     SecureField("Password", text: $inputPassword)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .frame(maxWidth: 280)
-
                 }
                 .frame(height: 200)
 
                 Button(action: {
-                    print("Login処理")
-                    authService.signIn(email: inputEmail, password: inputPassword) { result, error in
+                           print("Login処理")
+                           authService.signIn(email: inputEmail, password: inputPassword) { _, error in
 
-                        if let error = error {
-                            subTitle = error.localizedDescription
-                            isError = true
-                            inputPassword = ""
-                            print(error)
-                        }
+                               if let error = error {
+                                   subTitle = error.localizedDescription
+                                   isError = true
+                                   inputPassword = ""
+                                   print(error)
+                               }
+                           }
 
-                    }
-
-                },
-                label: {
-                    Text("Login")
-                        .fontWeight(.medium)
-                        .frame(minWidth: 160)
-                        .foregroundColor(.white)
-                        .padding(12)
-                        .background(Color.accentColor)
-                        .cornerRadius(8)
-                })
-                .disabled(inputEmail.isEmpty || inputPassword.isEmpty)
+                       },
+                       label: {
+                           Text("Login")
+                               .fontWeight(.medium)
+                               .frame(minWidth: 160)
+                               .foregroundColor(.white)
+                               .padding(12)
+                               .background(Color.accentColor)
+                               .cornerRadius(8)
+                       })
+                    .disabled(inputEmail.isEmpty || inputPassword.isEmpty)
 
                 NavigationLink("アカウントをお持ちでない方はこちら >", destination: SignUpView().environmentObject(authService))
 
                 Spacer()
-
             }
         }
         .popup(
@@ -76,9 +72,10 @@ struct LoginView: View {
             autohideIn: 1.5,
             dragToDismiss: true,
             closeOnTap: true,
-            closeOnTapOutside: true) {
+            closeOnTapOutside: true
+        ) {
             // MARK: dismisscallback
-            } view: {
+        } view: {
             Toast(title: "ログインエラー", subTitle: subTitle, image: Image(systemName: "xmark.circle"))
         }
     }

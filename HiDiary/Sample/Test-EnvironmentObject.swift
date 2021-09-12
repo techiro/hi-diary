@@ -8,6 +8,7 @@
 import SwiftUI
 
 // MARK: オブザーバブルオブジェクト
+
 class TestUser: ObservableObject {
     var name: String
 
@@ -17,6 +18,7 @@ class TestUser: ObservableObject {
 }
 
 // MARK: 親View
+
 struct TestContentView: View {
     var body: some View {
         VStack {
@@ -29,6 +31,7 @@ struct TestContentView: View {
 }
 
 // MARK: 子View
+
 struct SubView: View {
     var body: some View {
         VStack {
@@ -43,6 +46,7 @@ struct SubView: View {
 }
 
 // MARK: 孫View
+
 struct MagoView: View {
     // 設定されたEnvironmentObjectを取り出す
     @EnvironmentObject var user: TestUser

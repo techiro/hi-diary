@@ -6,7 +6,6 @@
 //
 
 enum Tabs: CustomStringConvertible {
-
     case diary, settings, correct, notifications
 
     var description: String {
@@ -21,6 +20,7 @@ enum Tabs: CustomStringConvertible {
             return "Notifications"
         }
     }
+
     var systemimage: String {
         switch self {
         case .diary:

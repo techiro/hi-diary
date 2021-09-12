@@ -14,12 +14,10 @@ struct TextEditingView: View {
     @Binding var isTappedTranslate: Bool
     @Binding var question: String
     var body: some View {
-
         KeyboardView {
             ZStack {
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack {
-
                         HStack {
                             Image(systemName: "lasso.sparkles")
                             Text(question)
@@ -33,7 +31,7 @@ struct TextEditingView: View {
                         )
                         .padding()
                         .background(Color.action)
-                        .compositingGroup()        // Viewの要素をグループ化
+                        .compositingGroup() // Viewの要素をグループ化
                         .shadow(color: .gray, radius: 2, x: 3, y: 3)
 
                         HStack {
@@ -45,7 +43,6 @@ struct TextEditingView: View {
                             Text("appgrape")
                                 .font(.bold(.subheadline)())
                             Spacer()
-
                         }
                         .padding([.top, .leading])
 
@@ -59,9 +56,7 @@ struct TextEditingView: View {
                                     .font(.caption)
                                     .padding([.bottom, .trailing], 3.0)
                                     .frame(width: 26)
-
                             }
-
                         }
                         .background(Color.white)
                         .lineSpacing(5)
@@ -86,7 +81,6 @@ struct TextEditingView: View {
                                 Text("Translate")
                                     .font(.bold(.subheadline)())
                                 Spacer()
-
                             }
                             .padding(.leading)
 
@@ -111,16 +105,15 @@ struct TextEditingView: View {
         } toolBar: {
             ToolBarView(isTappedTranslate: $isTappedTranslate)
         }
-
     }
 }
 
 struct TextEditingView_Previews: PreviewProvider {
     static var previews: some View {
         TextEditingView(contents: .constant(
-                            "今日は、久しぶりに友達と一緒に食事に行って楽しかった。\n来週の金曜日に最近流行りの映画を見に行く予定！楽しみだなー。"),
-                        isTappedTranslate: .constant(true),
-                        question: .constant("どこか外出しましたか？"))
+            "今日は、久しぶりに友達と一緒に食事に行って楽しかった。\n来週の金曜日に最近流行りの映画を見に行く予定！楽しみだなー。"),
+        isTappedTranslate: .constant(true),
+        question: .constant("どこか外出しましたか？"))
             .background(Color.background)
     }
 }

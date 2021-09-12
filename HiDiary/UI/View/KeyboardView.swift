@@ -8,7 +8,6 @@
 import SwiftUI
 
 final class KeyboardResponder: ObservableObject {
-
     private var notificationCenter: NotificationCenter
     @Published private(set) var currentHeight: CGFloat = 0
 
@@ -32,14 +31,14 @@ final class KeyboardResponder: ObservableObject {
         }
     }
 
-    @objc func keyBoardWillHide(notification: Notification) {
+    @objc func keyBoardWillHide(notification _: Notification) {
         currentHeight = 0
     }
 }
 
 struct KeyboardView<Content, ToolBar>: View where Content: View, ToolBar: View {
-    @StateObject private var keyboard: KeyboardResponder = KeyboardResponder()
-    let toolbarFrame: CGSize = CGSize(width: UIScreen.main.bounds.width, height: 40.0)
+    @StateObject private var keyboard = KeyboardResponder()
+    let toolbarFrame = CGSize(width: UIScreen.main.bounds.width, height: 40.0)
     var content: () -> Content
     var toolBar: () -> ToolBar
 
@@ -53,12 +52,11 @@ struct KeyboardView<Content, ToolBar>: View where Content: View, ToolBar: View {
                     .frame(width: toolbarFrame.width, height: toolbarFrame.height)
                     .background(Color.secondary)
             }.opacity((keyboard.currentHeight == 0) ? 0 : 1)
-            .animation(.easeOut)
+                .animation(.easeOut)
         }
         .padding(.bottom, keyboard.currentHeight)
         .edgesIgnoringSafeArea(.bottom)
         .animation(.easeOut)
-
     }
 }
 
@@ -66,7 +64,6 @@ struct KeyboardToolBar: View {
     @State private var name: String = ""
     @State private var phoneNumber: String = ""
     var body: some View {
-
         NavigationView {
             KeyboardView {
                 ScrollView {
@@ -77,25 +74,23 @@ struct KeyboardToolBar: View {
                         TextField("Name", text: $name)
                             .padding()
                             .overlay(RoundedRectangle(cornerRadius: 8)
-                                        .stroke(Color.secondary, lineWidth: 1)
-                                        .frame(height: 50))
+                                .stroke(Color.secondary, lineWidth: 1)
+                                .frame(height: 50))
                             .keyboardType(.namePhonePad)
 
                         TextField("Phone Number", text: $phoneNumber)
                             .padding()
                             .overlay(RoundedRectangle(cornerRadius: 8)
-                                        .stroke(Color.secondary, lineWidth: 1)
-                                        .frame(height: 50))
+                                .stroke(Color.secondary, lineWidth: 1)
+                                .frame(height: 50))
                             .keyboardType(.numberPad)
 
-                        Button(action: {
-
-                        }, label: {
+                        Button(action: {}, label: {
                             Text("Continue")
                         })
-                        .padding()
-                        .overlay(RoundedRectangle(cornerRadius: 8)
-                                    .stroke(Color.secondary, lineWidth: 1))
+                            .padding()
+                            .overlay(RoundedRectangle(cornerRadius: 8)
+                                .stroke(Color.secondary, lineWidth: 1))
 
                     }.padding()
                 }

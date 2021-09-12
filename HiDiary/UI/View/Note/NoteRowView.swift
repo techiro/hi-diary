@@ -29,9 +29,7 @@ struct NoteRow<T: NoteEntityProtocol>: View {
                     Text("2021-7-22")
                         .font(.footnote)
                         .multilineTextAlignment(.trailing)
-                }
-
-                )
+                })
             }
             .padding(10)
 
@@ -47,7 +45,6 @@ struct NoteRow<T: NoteEntityProtocol>: View {
                     Image(systemName: "person.2")
                 }
                 .padding(10)
-
             }
             .padding()
             .background(Color.white)
@@ -68,7 +65,6 @@ struct NoteRow<T: NoteEntityProtocol>: View {
                 }
                 .padding(10)
             }
-
         }
         .padding(10)
         .cornerRadius(12.0)
@@ -76,7 +72,6 @@ struct NoteRow<T: NoteEntityProtocol>: View {
         .onAppear {
             self.isCheck = false
         }
-
     }
 
     func formatDate(_ date: Date) -> String {
@@ -89,17 +84,16 @@ struct NoteRow<T: NoteEntityProtocol>: View {
 }
 
 #if DEBUG
-struct NoteRowPreviews: PreviewProvider {
-    static var previews: some View {
-        let testNote = SampleNote()
+    struct NoteRowPreviews: PreviewProvider {
+        static var previews: some View {
+            let testNote = SampleNote()
 
-        return Group {
-            ZStack {
-
-                NoteRow(note: testNote)
-                    .preferredColorScheme(.light)
+            return Group {
+                ZStack {
+                    NoteRow(note: testNote)
+                        .preferredColorScheme(.light)
+                }
             }
         }
     }
-}
 #endif

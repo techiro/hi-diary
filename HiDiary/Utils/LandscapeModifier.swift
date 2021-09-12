@@ -22,13 +22,13 @@ struct LandscapeModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .previewLayout(.fixed(width: width, height: height))
-            .environment(\.horizontalSizeClass, isRegularWidth ? .regular: .compact)
-            .environment(\.verticalSizeClass, isPad ? .regular: .compact)
+            .environment(\.horizontalSizeClass, isRegularWidth ? .regular : .compact)
+            .environment(\.verticalSizeClass, isPad ? .regular : .compact)
     }
 }
 
 extension View {
     func landscape() -> some View {
-        self.modifier(LandscapeModifier())
+        modifier(LandscapeModifier())
     }
 }

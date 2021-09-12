@@ -17,7 +17,6 @@ struct FloatingActionButton: View {
             HStack {
                 Spacer()
                 Button(action: {
-
                     self.showingSheet.toggle()
 
                 }, label: {
@@ -25,15 +24,14 @@ struct FloatingActionButton: View {
                         .foregroundColor(.white)
                         .font(.system(size: 30)) // --- 4
                 })
-                .frame(width: 70, height: 70)
-                .background(Color.orange)
-                .cornerRadius(35.0)
-                .shadow(color: .gray, radius: 3, x: 2, y: 2)
-                .padding(EdgeInsets(top: 0, leading: 0, bottom: bottomPadding, trailing: 16.0)) // --- 5
-                .sheet(isPresented: $showingSheet) {
-                    InputView()
-                }
-
+                    .frame(width: 70, height: 70)
+                    .background(Color.orange)
+                    .cornerRadius(35.0)
+                    .shadow(color: .gray, radius: 3, x: 2, y: 2)
+                    .padding(EdgeInsets(top: 0, leading: 0, bottom: bottomPadding, trailing: 16.0)) // --- 5
+                    .sheet(isPresented: $showingSheet) {
+                        InputView()
+                    }
             }
         }
     }

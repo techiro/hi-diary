@@ -9,7 +9,6 @@ import FirebaseFirestoreSwift
 import Foundation
 
 struct Note: Identifiable, Codable, NoteEntityProtocol {
-
     @DocumentID var id: String?
     var like: String?
     var icon: String?
@@ -19,5 +18,4 @@ struct Note: Identifiable, Codable, NoteEntityProtocol {
     var finished: Bool
     var isPublic: Bool
     var comments: String?
-
 }

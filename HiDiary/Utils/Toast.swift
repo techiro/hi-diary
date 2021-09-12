@@ -10,7 +10,7 @@ import SwiftUI
 struct Toast: View {
     var title: String = ""
     var subTitle: String = ""
-    var image: Image = Image(systemName: "sun.min")
+    var image = Image(systemName: "sun.min")
 
     var body: some View {
         ZStack {
@@ -24,7 +24,6 @@ struct Toast: View {
                         .fontWeight(.bold)
                     Text(subTitle)
                 }
-
             }
             .foregroundColor(.white)
             .padding()
@@ -32,13 +31,11 @@ struct Toast: View {
         }
         .cornerRadius(12)
         .padding()
-
     }
 }
 
 struct Toast_Previews: PreviewProvider {
     static var previews: some View {
-
         VStack {
             Toast(title: "タイトル", subTitle: "サブタイトル", image: Image(systemName: "bookmark.fill"))
         }

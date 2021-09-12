@@ -8,7 +8,6 @@ import Combine
 import Foundation
 
 class JournalViewModel: ObservableObject {
-
     @Published private(set) var journals: [Journal] = Array(Journal.findAll())
     @Published var journalTextField = ""
     @Published var deleteJournal: Journal?
@@ -19,7 +18,7 @@ class JournalViewModel: ObservableObject {
     private var deleteAlljournalTask: AnyCancellable?
 
     init() {
-        addJournalTask = self.$journalTextField
+        addJournalTask = $journalTextField
             .sink { text in
                 guard !text.isEmpty else {
                     return
@@ -29,7 +28,7 @@ class JournalViewModel: ObservableObject {
                 self.journals.append(journal)
                 Journal.add(journal)
             }
-        deleteJournalTask = self.$deleteJournal
+        deleteJournalTask = $deleteJournal
             .sink { journal in
                 guard let journal = journal else {
                     return
@@ -39,7 +38,7 @@ class JournalViewModel: ObservableObject {
                     Journal.delete(journal)
                 }
             }
-        deleteAlljournalTask = self.$isDeleteAllTapped
+        deleteAlljournalTask = $isDeleteAllTapped
             .sink { isDeleteAllTapped in
                 if isDeleteAllTapped {
                     Journal.delete(self.journals)

@@ -16,7 +16,6 @@ enum FirebaseAuthError: Error {
     case signUpError
     // サインアウトエラー
     case signOutError
-
 }
 
 extension FirebaseAuthError: LocalizedError {
@@ -35,7 +34,6 @@ extension FirebaseAuthError: LocalizedError {
 }
 
 final class FirebaseAuthViewModel: ObservableObject {
-
     private let auth = Auth.auth()
 
     func signIn(email: String, password: String) {
@@ -45,6 +43,7 @@ final class FirebaseAuthViewModel: ObservableObject {
                 return print("error")
             }
             print("signIn成功")
+
             // MARK: success signIn
         }
     }
@@ -56,6 +55,7 @@ final class FirebaseAuthViewModel: ObservableObject {
                 return print("error")
             }
             print("SignUp成功")
+
             // MARK: success signUp
         })
     }

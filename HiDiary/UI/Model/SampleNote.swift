@@ -27,6 +27,5 @@ struct SampleNote: Identifiable, NoteEntityProtocol {
         postedDate = Date()
         modifyDate = nil
         isPublic = true
-
     }
 }

@@ -44,7 +44,7 @@ struct Post: View {
                             placeholderText = ""
                         }
                     }
-                    .onChange(of: content) { value in
+                    .onChange(of: content) { _ in
                         if content.isEmpty {
                             placeholderText = Self.placeholder
                         } else {

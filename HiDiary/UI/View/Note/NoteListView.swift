@@ -37,29 +37,29 @@ class NoteEntity: Identifiable, NoteEntityProtocol {
     var comments: String?
     var isPublic: Bool
 
-    init(title: String) {
-        self.content = "content"
-        self.finished = false
-        self.postedDate = Date()
-        self.modifyDate = nil
-        self.like = nil
-        self.icon = "user_icon"
-        self.comments = nil
-        self.isPublic = false
+    init(title _: String) {
+        content = "content"
+        finished = false
+        postedDate = Date()
+        modifyDate = nil
+        like = nil
+        icon = "user_icon"
+        comments = nil
+        isPublic = false
     }
 }
 
 struct NoteList_Previews: PreviewProvider {
-
     class NoteViewModelMock: NoteViewModelProtocol {
-        @Published var list: [NoteEntity] = [NoteEntity]()
+        @Published var list = [NoteEntity]()
 
         init() {
-            (0..<10).forEach { i in
+            (0 ..< 10).forEach { i in
                 self.list.append(NoteEntity(title: "card: \(i)"))
             }
         }
     }
+
     static var previews: some View {
         NoteList<NoteViewModelMock>(viewModel: NoteViewModelMock())
     }

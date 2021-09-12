@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct CorrectionView: View {
-
     @State private var content = ""
     private static let placeholder = "思ったことを書いてみよう"
     @State private var placeholderText = placeholder
@@ -24,7 +23,6 @@ struct CorrectionView: View {
                 Text("UserName")
 
                 Spacer()
-
             }
             .padding(20)
 
@@ -46,7 +44,7 @@ struct CorrectionView: View {
                             placeholderText = ""
                         }
                     }
-                    .onChange(of: content) { value in
+                    .onChange(of: content) { _ in
                         if content.isEmpty {
                             placeholderText = Self.placeholder
                         } else {
@@ -79,7 +77,7 @@ struct CorrectionView: View {
                                 placeholderText = ""
                             }
                         }
-                        .onChange(of: content) { value in
+                        .onChange(of: content) { _ in
                             if content.isEmpty {
                                 placeholderText = Self.placeholder
                             } else {
@@ -93,11 +91,9 @@ struct CorrectionView: View {
                 }
                 .frame(width: 370, height: 55, alignment: .center)
                 .background(Color.white)
-
             }
         }
         .background(Color.background)
-
     }
 }
 

@@ -43,9 +43,8 @@ struct JournalListView: View {
                                   message: Text("メモを削除します。\nよろしいですか？"),
                                   primaryButton: .cancel(Text("いいえ")),
                                   secondaryButton: .destructive(Text("はい")) {
-                                    viewModel.deleteJournal = journal
-                                  }
-                            )
+                                      viewModel.deleteJournal = journal
+                                  })
                         }
                     }
                 }
@@ -74,9 +73,8 @@ struct JournalListView: View {
                       message: Text("全てのメモを削除します。\nよろしいですか？"),
                       primaryButton: .cancel(Text("いいえ")),
                       secondaryButton: .destructive(Text("はい")) {
-                        viewModel.isDeleteAllTapped = true
-                      }
-                )
+                          viewModel.isDeleteAllTapped = true
+                      })
             }
         }
     }

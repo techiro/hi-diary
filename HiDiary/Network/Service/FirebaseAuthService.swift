@@ -14,7 +14,7 @@ final class FirebaseAuthenticationService: ObservableObject {
     var cancellable: AuthStateDidChangeListenerHandle?
 
     init() {
-        cancellable = Auth.auth().addStateDidChangeListener { (_, user) in
+        cancellable = Auth.auth().addStateDidChangeListener { _, user in
             if let user = user {
                 self.user = User(
                     uid: user.uid,
@@ -22,7 +22,6 @@ final class FirebaseAuthenticationService: ObservableObject {
                     displayName: user.displayName
                 )
             } else {
-
                 self.user = nil
             }
         }
@@ -46,11 +45,10 @@ final class FirebaseAuthenticationService: ObservableObject {
 
     func signOut() throws {
         try Auth.auth().signOut()
-        self.user = nil
+        user = nil
 
         #if DEBUG
-        throw FirebaseAuthError.signOutError
+            throw FirebaseAuthError.signOutError
         #endif
     }
-
 }

@@ -11,10 +11,8 @@ struct InputView: View {
     @State var text: String = ""
     @Environment(\.presentationMode) var presentation
     var body: some View {
-
-        GeometryReader { geometry in
+        GeometryReader { _ in
             NavigationView {
-
                 TextEditingView()
 
                     .navigationBarTitle("Journal Entry", displayMode: .inline)
@@ -23,28 +21,25 @@ struct InputView: View {
                         navcon.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.black]
                     })
                     .navigationBarItems(leading:
-                                            Button(action: {
-                                                self.presentation.wrappedValue.dismiss()
-                                                #if DEBUG
-                                                print("return Home")
-                                                #endif
-                                            }) {
-                                                Image(systemName: "chevron.backward")
-                                            },
-                                        trailing:
-                                            HStack {
-                                                Button(action: {
-                                                    // TODO: Post Journal
-                                                    print("post Journal")
-                                                }) {
-                                                    Image(systemName: "square.and.pencil")
-                                                }
-                                            }
-                    )
-
+                        Button(action: {
+                            self.presentation.wrappedValue.dismiss()
+                            #if DEBUG
+                                print("return Home")
+                            #endif
+                        }) {
+                            Image(systemName: "chevron.backward")
+                        },
+                        trailing:
+                        HStack {
+                            Button(action: {
+                                // TODO: Post Journal
+                                print("post Journal")
+                            }) {
+                                Image(systemName: "square.and.pencil")
+                            }
+                        })
             }
         }
-
     }
 }
 

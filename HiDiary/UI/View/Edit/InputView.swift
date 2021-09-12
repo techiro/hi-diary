@@ -18,9 +18,7 @@ struct InputView: View {
     @State var isTappedTranslate = false
 
     var body: some View {
-
         NavigationView {
-
             TextEditingView(contents: $vm.memoTextField, isTappedTranslate: $isTappedTranslate, question: $vm.questionString)
                 .navigationBarTitle("Journal Entry", displayMode: .inline)
                 .background(NavigationConfigurator { navcon in
@@ -28,59 +26,55 @@ struct InputView: View {
                     navcon.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.black]
                 })
                 .navigationBarItems(leading:
-                                        Button(action: {
-                                            self.presentation.wrappedValue.dismiss()
-                                            #if DEBUG
-                                            print("return Home")
-                                            #endif
-                                        }) {
-                                            Image(systemName: "chevron.backward")
-                                        },
-                                    trailing:
-                                        HStack {
-                                            Button(action: {
-                                                // TODO: Open Action Sheet 公開範囲の指定View
-                                                vm.isPublic.toggle()
-                                            }, label: {
-                                                HStack {
-                                                    if vm.isPublic {
-                                                        Image(systemName: "globe")
-                                                        Text("public")
-                                                    } else {
-                                                        Image(systemName: "lock")
-                                                        Text("close")
-                                                    }
+                    Button(action: {
+                        self.presentation.wrappedValue.dismiss()
+                        #if DEBUG
+                            print("return Home")
+                        #endif
+                    }) {
+                        Image(systemName: "chevron.backward")
+                    },
+                    trailing:
+                    HStack {
+                        Button(action: {
+                            // TODO: Open Action Sheet 公開範囲の指定View
+                            vm.isPublic.toggle()
+                        }, label: {
+                            HStack {
+                                if vm.isPublic {
+                                    Image(systemName: "globe")
+                                    Text("public")
+                                } else {
+                                    Image(systemName: "lock")
+                                    Text("close")
+                                }
+                            }
+                            .padding()
+                        })
 
-                                                }
-                                                .padding()
-                                            })
+                        Button(action: {
+                            if authService.user != nil {
+                                storeService.addNote(
+                                    note: Note(
+                                        content: vm.memoTextField,
+                                        postedDate: Date(), modifyDate: nil, finished: true,
+                                        isPublic: vm.isPublic
+                                    )
+                                ) { error in
+                                    guard error != nil else { return print("成功") }
 
-                                            Button(action: {
-                                                if authService.user != nil {
-                                                    storeService.addNote(
-                                                        note: Note(
-                                                            content: vm.memoTextField,
-                                                            postedDate: Date(), modifyDate: nil, finished: true,
-                                                            isPublic: vm.isPublic
-                                                        )
-                                                    ) { error in
-                                                        guard error != nil else { return print("成功") }
+                                    fatalError("save失敗")
+                                }
+                            }
 
-                                                        fatalError("save失敗")
-                                                    }
-                                                }
+                            print("post Journal")
+                            self.presentation.wrappedValue.dismiss()
 
-                                                print("post Journal")
-                                                self.presentation.wrappedValue.dismiss()
-
-                                            }) {
-                                                Image(systemName: "square.and.pencil")
-                                            }
-                                        }
-                )
-
+                        }) {
+                            Image(systemName: "square.and.pencil")
+                        }
+                    })
         }
-
     }
 }
 

@@ -28,33 +28,32 @@ struct SignUpView: View {
                     SecureField("Password", text: $inputPassword)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .frame(maxWidth: 280)
-
                 }
                 .frame(height: 200)
 
                 Button(action: {
-                    print("SignUp処理")
-                    authService.signUp(email: inputEmail, password: inputPassword) { result, error in
+                           print("SignUp処理")
+                           authService.signUp(email: inputEmail, password: inputPassword) { _, error in
 
-                        if let error = error {
-                            subTitle = error.localizedDescription
-                            isError = true
-                            inputPassword = ""
-                            print(error)
-                        }
-                    }
+                               if let error = error {
+                                   subTitle = error.localizedDescription
+                                   isError = true
+                                   inputPassword = ""
+                                   print(error)
+                               }
+                           }
 
-                },
-                label: {
-                    Text("Create Account")
-                        .fontWeight(.medium)
-                        .frame(minWidth: 160)
-                        .foregroundColor(.white)
-                        .padding(12)
-                        .background(Color.accentColor)
-                        .cornerRadius(8)
-                })
-                .disabled(inputPassword.isEmpty || inputEmail.isEmpty)
+                       },
+                       label: {
+                           Text("Create Account")
+                               .fontWeight(.medium)
+                               .frame(minWidth: 160)
+                               .foregroundColor(.white)
+                               .padding(12)
+                               .background(Color.accentColor)
+                               .cornerRadius(8)
+                       })
+                    .disabled(inputPassword.isEmpty || inputEmail.isEmpty)
 
                 Spacer()
             }
@@ -67,9 +66,10 @@ struct SignUpView: View {
             autohideIn: 1.5,
             dragToDismiss: true,
             closeOnTap: true,
-            closeOnTapOutside: true) {
+            closeOnTapOutside: true
+        ) {
             // MARK: dismisscallback
-            } view: {
+        } view: {
             Toast(title: "アカウント新規作成エラー", subTitle: subTitle, image: Image(systemName: "xmark.circle"))
         }
     }

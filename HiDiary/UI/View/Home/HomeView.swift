@@ -8,7 +8,7 @@ import Combine
 import SwiftUI
 
 struct HomeView: View {
-    @State var tabSelection: Tabs = Tabs.diary
+    @State var tabSelection = Tabs.diary
     @State var isShowToast = false
     @State var isLoading = false
     @State var errorMessage = ""
@@ -18,15 +18,11 @@ struct HomeView: View {
     let mockNotes = [SampleNote(), SampleNote(), SampleNote(), SampleNote(), SampleNote(), SampleNote()]
     var body: some View {
         TabView(selection: $tabSelection) {
-
             VStack {
-
                 List(storeService.posts) { post in
                     NoteRow(note: post)
-
                 }
                 .padding()
-
             }
 
             .tabItem {

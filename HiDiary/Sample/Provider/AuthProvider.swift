@@ -18,14 +18,13 @@ protocol AuthProviderProtocol {
 
 final class AuthProvider: AuthProviderProtocol {
     func login(userId: String, password: String) -> Future<User, Error> {
-
         return Future<User, Error> { promise in
             // This closure is unexpectedly called synchronously.
             // Therefore, wrap it with DispatchQueue.global().async
             DispatchQueue.global().async {
                 // Intended to network communicate
                 Thread.sleep(forTimeInterval: 1.0)
-                if userId == "A" && password == "A" {
+                if userId == "A", password == "A" {
                     promise(.success(User(uid: "uid", email: "email", displayName: "sample")))
                 } else {
                     promise(.failure(AuthError.invalidIdOrPassword))

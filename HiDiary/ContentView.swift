@@ -13,16 +13,15 @@ struct ContentView: View {
     @State private var tabViewOffset: CGFloat = 0
     var body: some View {
         #if DEBUG
-        HomeView()
-        #elseif RELEASE
-        if self.authService.user != nil {
             HomeView()
-        } else {
-            LoginView()
-        }
+        #elseif RELEASE
+            if self.authService.user != nil {
+                HomeView()
+            } else {
+                LoginView()
+            }
         #endif
     }
-
 }
 
 struct ContentView_Previews: PreviewProvider {

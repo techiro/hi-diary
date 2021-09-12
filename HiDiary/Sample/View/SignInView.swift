@@ -26,25 +26,24 @@ struct SignInView: View {
                     SecureField("Password", text: $password)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .frame(maxWidth: 280)
-
                 }
                 .frame(height: 200)
 
                 Button(action: {
-                    print("Login処理")
-                    vm.signIn(email: email, password: password)
+                           print("Login処理")
+                           vm.signIn(email: email, password: password)
 
-                },
-                label: {
-                    Text("Login")
-                        .fontWeight(.medium)
-                        .frame(minWidth: 160)
-                        .foregroundColor(.white)
-                        .padding(12)
-                        .background(Color.accentColor)
-                        .cornerRadius(8)
-                })
-                .disabled(password.isEmpty || email.isEmpty)
+                       },
+                       label: {
+                           Text("Login")
+                               .fontWeight(.medium)
+                               .frame(minWidth: 160)
+                               .foregroundColor(.white)
+                               .padding(12)
+                               .background(Color.accentColor)
+                               .cornerRadius(8)
+                       })
+                    .disabled(password.isEmpty || email.isEmpty)
 
                 NavigationLink("Create Account", destination: SignUpView())
                 Spacer()
