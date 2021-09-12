@@ -8,32 +8,32 @@
 import SwiftUI
 
 struct CorrectionView: View {
-    
+
     @State private var content = ""
     private static let placeholder = "思ったことを書いてみよう"
     @State private var placeholderText = placeholder
-    
+
     var body: some View {
-        VStack{
-            HStack{
+        VStack {
+            HStack {
                 Image(systemName: "person.fill")
                     .resizable()
                     .frame(width: 40, height: 40)
                     .clipShape(Circle())
-                
+
                 Text("UserName")
-                
+
                 Spacer()
-                
+
             }
             .padding(20)
-            
-            HStack{
+
+            HStack {
                 Text("Time")
-                
-                Spacer().frame(width:300)
+
+                Spacer().frame(width: 300)
             }
-            
+
             ZStack(alignment: .topLeading) {
                 RoundedRectangle(cornerRadius: 10)
                     .strokeBorder().foregroundColor(.gray)
@@ -59,14 +59,14 @@ struct CorrectionView: View {
             }
             .frame(width: 370, height: 338, alignment: .center)
             .background(Color.white)
-            
-            VStack{
-                HStack{
+
+            VStack {
+                HStack {
                     Text("コメント")
-                    
+
                     Spacer().frame(width: 280)
                 }
-                
+
                 ZStack(alignment: .topLeading) {
                     RoundedRectangle(cornerRadius: 10)
                         .strokeBorder().foregroundColor(.gray)
@@ -93,11 +93,11 @@ struct CorrectionView: View {
                 }
                 .frame(width: 370, height: 55, alignment: .center)
                 .background(Color.white)
-                
+
             }
         }
         .background(Color.background)
-        
+
     }
 }
 

@@ -41,9 +41,9 @@ struct NoteRow<T: NoteEntityProtocol>: View {
                 HStack {
                     Image(systemName: "bookmark")
                     Image(systemName: "textformat")
-                    
+
                     Spacer()
-                    
+
                     Image(systemName: "person.2")
                 }
                 .padding(10)
@@ -52,33 +52,31 @@ struct NoteRow<T: NoteEntityProtocol>: View {
             .padding()
             .background(Color.white)
             .cornerRadius(10)
-            
-            ZStack{
-                HStack{
+
+            ZStack {
+                HStack {
                     Rectangle()
                         .fill(Color.gray)
                         .frame(width: 392, height: 42)
                 }
                 .cornerRadius(20)
-                
-                HStack{
+
+                HStack {
                     Spacer()
                     Image(systemName: "face.smiling")
                         .frame(width: 20, height: 20)
                 }
                 .padding(10)
             }
-            
 
         }
         .padding(10)
         .cornerRadius(12.0)
-        //.padding()
+        // .padding()
         .onAppear {
             self.isCheck = false
         }
-        
-        
+
     }
 
     func formatDate(_ date: Date) -> String {
