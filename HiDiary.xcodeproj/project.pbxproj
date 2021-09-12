@@ -66,6 +66,7 @@
 		03DCB94E269D049C0064420B /* MemoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DCB94D269D049C0064420B /* MemoViewModel.swift */; };
 		03DCB951269D0EFD0064420B /* MemoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DCB950269D0EFD0064420B /* MemoListView.swift */; };
 		03DCB953269D0F300064420B /* MemoRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DCB952269D0F300064420B /* MemoRowView.swift */; };
+		03E0EB9C26EE0617000D8A67 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03E0EB9B26EE0617000D8A67 /* GoogleService-Info.plist */; };
 		03E3914326A5BA1E0084FAF6 /* SignOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E3914226A5BA1E0084FAF6 /* SignOutView.swift */; };
 		03E3914826A5EAF60084FAF6 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 03E3914726A5EAF60084FAF6 /* PopupView */; };
 		03E3914A26A5EC3D0084FAF6 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E3914926A5EC3D0084FAF6 /* Toast.swift */; };
@@ -74,7 +75,6 @@
 		03E3915A26A8072C0084FAF6 /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E3915926A8072C0084FAF6 /* Tabs.swift */; };
 		03E3915C26A907340084FAF6 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 03E3915B26A907340084FAF6 /* Makefile */; };
 		73800BCF26D0E4FB005A7A33 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73800BCE26D0E4FB005A7A33 /* Post.swift */; };
-		7390A38A26AE77F0004E2FD8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7390A38926AE77F0004E2FD8 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -134,6 +134,7 @@
 		03DCB94D269D049C0064420B /* MemoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewModel.swift; sourceTree = "<group>"; };
 		03DCB950269D0EFD0064420B /* MemoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListView.swift; sourceTree = "<group>"; };
 		03DCB952269D0F300064420B /* MemoRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoRowView.swift; sourceTree = "<group>"; };
+		03E0EB9B26EE0617000D8A67 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		03E3914226A5BA1E0084FAF6 /* SignOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutView.swift; sourceTree = "<group>"; };
 		03E3914926A5EC3D0084FAF6 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		03E3914B26A63DA00084FAF6 /* TabVarHeightOffsetViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabVarHeightOffsetViewModifier.swift; sourceTree = "<group>"; };
@@ -141,7 +142,6 @@
 		03E3915926A8072C0084FAF6 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
 		03E3915B26A907340084FAF6 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		73800BCE26D0E4FB005A7A33 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		7390A38926AE77F0004E2FD8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,13 +280,6 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		03CAE22226B13968004790EE /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
 		03CEE10126968E3800557BD0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -379,19 +372,10 @@
 		03E3915126A68E230084FAF6 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				03CAE22226B13968004790EE /* Protocols */,
-				03E3915226A68E3E0084FAF6 /* API */,
 				03E3915426A68E7C0084FAF6 /* Model */,
 				03E3915326A68E490084FAF6 /* Service */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		03E3915226A68E3E0084FAF6 /* API */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = API;
 			sourceTree = "<group>";
 		};
 		03E3915326A68E490084FAF6 /* Service */ = {
@@ -442,7 +426,7 @@
 		7390A38826AE779B004E2FD8 /* Configs */ = {
 			isa = PBXGroup;
 			children = (
-				7390A38926AE77F0004E2FD8 /* GoogleService-Info.plist */,
+				03E0EB9B26EE0617000D8A67 /* GoogleService-Info.plist */,
 			);
 			path = Configs;
 			sourceTree = "<group>";
@@ -523,7 +507,7 @@
 				03A33A88269042B300A1CB38 /* Assets.xcassets in Resources */,
 				03A33A8E269042B300A1CB38 /* LaunchScreen.storyboard in Resources */,
 				03A33A8B269042B300A1CB38 /* Preview Assets.xcassets in Resources */,
-				7390A38A26AE77F0004E2FD8 /* GoogleService-Info.plist in Resources */,
+				03E0EB9C26EE0617000D8A67 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,19 +11,19 @@ struct Post: View {
     @State private var content = ""
     private static let placeholder = "思ったことを書いてみよう"
     @State private var placeholderText = placeholder
-    
+
     var body: some View {
-        VStack{
-            HStack{
+        VStack {
+            HStack {
                 Image(systemName: "person.fill")
                     .resizable()
                     .frame(width: 40, height: 40)
                     .clipShape(Circle())
-                
+
                 Text("UserName")
-                
+
                 Spacer()
-                
+
                 Image(systemName: "globe")
                     .resizable()
                     .frame(width: 16, height: 17)
@@ -31,7 +31,7 @@ struct Post: View {
                     .font(.caption)
             }
             .padding(20)
-            
+
             ZStack(alignment: .topLeading) {
                 RoundedRectangle(cornerRadius: 10)
                     .strokeBorder().foregroundColor(.gray)
