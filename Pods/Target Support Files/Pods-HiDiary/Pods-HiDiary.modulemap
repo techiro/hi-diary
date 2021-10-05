@@ -1,0 +1,6 @@
+framework module Pods_HiDiary {
+  umbrella header "Pods-HiDiary-umbrella.h"
+
+  export *
+  module * { export * }
+}

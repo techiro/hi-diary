@@ -4,10 +4,18 @@ packages:
     url: https://github.com/exyte/PopupView.git
     exactVersion: 1.0.2
 options:
-  bundleIdPrefix: com.hidiary
+  xcodeVersion: 13.0 # 12.5は使用不可
+  bundleIdPrefix: com.appgrape.hidiary
   deploymentTarget:
     iOS: "14.0"
   generateEmptyDirectories: true
+  postGenCommand: |
+                  set -e
+                  pod install
+  
+configs:
+  HiDiary Debug: debug
+  HiDiary Release: release
   
 fileGroups:
   - .gitignore
@@ -21,7 +29,7 @@ fileGroups:
   - Podfile
 
 targets:
-  App:
+  HiDiary:
     platform: iOS
     type: application
     sources:
@@ -44,5 +52,14 @@ targets:
                   echo "error: Not exists Mintfile, Please run \"make mint\"."
                   exit 1
                 fi
+
     dependencies:
       - package: PopupView
+  Tests:
+    platform: iOS
+    type: bundle.unit-test
+    sources:
+      - Tests/
+    scheme:
+      testTargets:
+        - Tests
