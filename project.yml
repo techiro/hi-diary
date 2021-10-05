@@ -1,45 +1,66 @@
 name: HiDiary
+packages:
+  PopupView:
+    url: https://github.com/exyte/PopupView.git
+    exactVersion: 1.0.2
 options:
-  bundleIdPrefix: com.hidiary
+  xcodeVersion: 13.0 # 12.5は使用不可
+  bundleIdPrefix: com.appgrape.hidiary
   deploymentTarget:
-    iOS: 14.0
+    iOS: "14.0"
   generateEmptyDirectories: true
-
+  postGenCommand: |
+                  set -e
+                  pod install
+  
+configs:
+  HiDiary Debug: debug
+  HiDiary Release: release
+  
 fileGroups:
   - .gitignore
   - README.md
   - .swiftlint.yml
   - project.yml
-  - Dangerfile.swift
   - Makefile
   - Mintfile
   - .github/
+  - Sample/
+  - Podfile
 
 targets:
-  App:
+  HiDiary:
     platform: iOS
     type: application
     sources:
-      - Sources
+      - Source/
     postBuildScripts:
       - name: Mint Build Script
         script: |
-          if which mint >/dev/null; then
-            xcrun --sdk macosx mint run swiftlint autocorrect --format
-            xcrun --sdk macosx mint run swiftlint
-          else
-            echo "error: Mint not installed, run make mint"
-            exit 1
-          fi
+                if [[ -f ./Mintfile ]] ; then
+                  xcrun --sdk macosx mint run swiftlint autocorrect --format
+                  xcrun --sdk macosx mint run swiftlint
+                else
+                  echo "error: Not exists Mintfile, Please run \"make mint\"."
+                  exit 1
+                fi
+      - name: Swift Format
+        script: |
+                if [[ -f ./Mintfile ]] ; then
+                  xcrun --sdk macosx mint run nicklockwood/SwiftFormat swiftformat .
+                else
+                  echo "error: Not exists Mintfile, Please run \"make mint\"."
+                  exit 1
+                fi
 
+
+    dependencies:
+      - package: PopupView
   Tests:
     platform: iOS
     type: bundle.unit-test
     sources:
-      - Tests
+      - Tests/
     scheme:
       testTargets:
         - Tests
-      gatherCoverageData: true
-    dependencies:
-      - target: App
