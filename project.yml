@@ -1,0 +1,48 @@
+name: HiDiary
+packages:
+  PopupView:
+    url: https://github.com/exyte/PopupView.git
+    exactVersion: 1.0.2
+options:
+  bundleIdPrefix: com.hidiary
+  deploymentTarget:
+    iOS: "14.0"
+  generateEmptyDirectories: true
+  
+fileGroups:
+  - .gitignore
+  - README.md
+  - .swiftlint.yml
+  - project.yml
+  - Makefile
+  - Mintfile
+  - .github/
+  - Sample/
+  - Podfile
+
+targets:
+  App:
+    platform: iOS
+    type: application
+    sources:
+      - Source/
+    postBuildScripts:
+      - name: Mint Build Script
+        script: |
+                if [[ -f ./Mintfile ]] ; then
+                  xcrun --sdk macosx mint run swiftlint autocorrect --format
+                  xcrun --sdk macosx mint run swiftlint
+                else
+                  echo "error: Not exists Mintfile, Please run \"make mint\"."
+                  exit 1
+                fi
+      - name: Swift Format
+        script: |
+                if [[ -f ./Mintfile ]] ; then
+                  xcrun --sdk macosx mint run nicklockwood/SwiftFormat swiftformat .
+                else
+                  echo "error: Not exists Mintfile, Please run \"make mint\"."
+                  exit 1
+                fi
+    dependencies:
+      - package: PopupView
