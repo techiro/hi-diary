@@ -88,9 +88,9 @@ struct KeyboardToolBar: View {
                         Button(action: {}, label: {
                             Text("Continue")
                         })
-                            .padding()
-                            .overlay(RoundedRectangle(cornerRadius: 8)
-                                .stroke(Color.secondary, lineWidth: 1))
+                        .padding()
+                        .overlay(RoundedRectangle(cornerRadius: 8)
+                            .stroke(Color.secondary, lineWidth: 1))
 
                     }.padding()
                 }

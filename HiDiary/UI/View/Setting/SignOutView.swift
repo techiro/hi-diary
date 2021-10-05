@@ -51,21 +51,21 @@ struct SignOutView: View {
                     .cornerRadius(8)
             })
 
-                .popup(
-                    isPresented: $isShowToast,
-                    type: .toast,
-                    position: .bottom,
-                    animation: .easeIn,
-                    autohideIn: 1,
-                    dragToDismiss: true,
-                    closeOnTap: true,
-                    closeOnTapOutside: true
-                ) {
-                    // MARK: dismisscallback
-                } view: {
-                    Toast(title: "サインアウト", subTitle: subTitle, image: Image(systemName: "xmark.circle"))
-                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 100, trailing: 0))
-                }
+            .popup(
+                isPresented: $isShowToast,
+                type: .toast,
+                position: .bottom,
+                animation: .easeIn,
+                autohideIn: 1,
+                dragToDismiss: true,
+                closeOnTap: true,
+                closeOnTapOutside: true
+            ) {
+                // MARK: dismisscallback
+            } view: {
+                Toast(title: "サインアウト", subTitle: subTitle, image: Image(systemName: "xmark.circle"))
+                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 100, trailing: 0))
+            }
         }
     }
 }

@@ -43,7 +43,7 @@ struct SignInView: View {
                                .background(Color.accentColor)
                                .cornerRadius(8)
                        })
-                    .disabled(password.isEmpty || email.isEmpty)
+                       .disabled(password.isEmpty || email.isEmpty)
 
                 NavigationLink("Create Account", destination: SignUpView())
                 Spacer()

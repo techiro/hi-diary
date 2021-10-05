@@ -53,7 +53,7 @@ struct SignUpView: View {
                                .background(Color.accentColor)
                                .cornerRadius(8)
                        })
-                    .disabled(inputPassword.isEmpty || inputEmail.isEmpty)
+                       .disabled(inputPassword.isEmpty || inputEmail.isEmpty)
 
                 Spacer()
             }

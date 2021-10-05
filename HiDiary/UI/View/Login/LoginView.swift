@@ -57,7 +57,7 @@ struct LoginView: View {
                                .background(Color.accentColor)
                                .cornerRadius(8)
                        })
-                    .disabled(inputEmail.isEmpty || inputPassword.isEmpty)
+                       .disabled(inputEmail.isEmpty || inputPassword.isEmpty)
 
                 NavigationLink("アカウントをお持ちでない方はこちら >", destination: SignUpView().environmentObject(authService))
 
