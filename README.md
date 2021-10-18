@@ -5,6 +5,7 @@ Hidiaryディレクトリに移動
 ```
 xcodegen
 open HiDiary.xcworkspace
+make setup-mint
 ```
 
 ## バージョン
