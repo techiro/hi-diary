@@ -5,6 +5,7 @@ PROJECT_NAME := ${PRODUCT_NAME}.xcodeproj
 
 .PHONY: setup-mint
 setup-mint: # setup Mint package dependencies.
+	rm -rf Mint/
 	git clone https://github.com/yonaskolb/Mint.git -b ${MINT_VERSION}
 	cd Mint && make
 	rm -rf Mint/
@@ -47,6 +48,7 @@ clean: # Delete cache
 help: # help: Outputs each task and the comment
 	@grep -E '^[a-zA-Z_-]+:.*?# .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":[^#]*? #| #"}; {printf "%-42s%s\n", $$1 $$3, $$2}'
 
+#carthage用
 .PHONY: update-carthage
 update-carthage: # update carthage
 	mint run carthage update --platform iOS
