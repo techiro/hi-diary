@@ -7,7 +7,7 @@ options:
   xcodeVersion: 13.0 # 12.5は使用不可
   bundleIdPrefix: com.appgrape.hidiary
   deploymentTarget:
-    iOS: "14.0"
+    iOS: "15.0"
   generateEmptyDirectories: true
   postGenCommand: |
                   set -e
