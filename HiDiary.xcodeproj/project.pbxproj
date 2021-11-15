@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00834282C44FFA96D995BC88 /* Pods_HiDiary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E468A3793E0229D28EF0B8AD /* Pods_HiDiary.framework */; };
 		046AFFA7C2F98E80BDDAA650 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B417102F83AF07D12ADC6502 /* String+Extension.swift */; };
 		0B6767803228DD0F6EDC203A /* NoteRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D298AA68678CA66B74FD733A /* NoteRowView.swift */; };
 		0C888911DE829205817D3341 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3BED03CAF0615E58C7AC46 /* FirebaseAuthService.swift */; };
@@ -27,7 +28,6 @@
 		5570B6AD604E0FFB12F3EF68 /* LandscapeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7993907DCB0D9B99DD0F9D79 /* LandscapeModifier.swift */; };
 		61D492A2A01E902959864D14 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74B1A4CA9030982E2FB08E8 /* LoginView.swift */; };
 		65B628C80D7FEB8EBE03D3C4 /* TabVarHeightOffsetViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08966A8335D4B5C04911FACF /* TabVarHeightOffsetViewModifier.swift */; };
-		68AAD0479D909A72110D417F /* Pods_HiDiary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B203B39FC0D066961C5A1A4 /* Pods_HiDiary.framework */; };
 		6B686CC213ECBDEDDB2379E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD55D5365E34429011EE258A /* SceneDelegate.swift */; };
 		729294981743F4029538F3CC /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECC40D1053E8072C6C0FA58 /* InputView.swift */; };
 		838EF5EF6312B41A2C7080B7 /* TextEditingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB438A0DD50DB5CD93162F68 /* TextEditingView.swift */; };
@@ -91,19 +91,17 @@
 		820B2B2DC0E3452FAA49FF99 /* Makefile */ = {isa = PBXFileReference; path = Makefile; sourceTree = "<group>"; };
 		8327D230863167CA593999B7 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
 		8E8DA86A87B12CB2A37B6C46 /* FIrebaseAuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIrebaseAuthError.swift; sourceTree = "<group>"; };
-		8F7C98DB19B1217F466A1E49 /* Pods-HiDiary.hidiary release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiDiary.hidiary release.xcconfig"; path = "Target Support Files/Pods-HiDiary/Pods-HiDiary.hidiary release.xcconfig"; sourceTree = "<group>"; };
 		93D15EBCED577943960D82B4 /* FireCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireCodable.swift; sourceTree = "<group>"; };
 		94EE24DFABC9EA903CC588C6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		94F99FAC6DAE49EB580C327D /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = project.yml; sourceTree = "<group>"; };
 		98967F270E5411817E3A0FFF /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
-		9B203B39FC0D066961C5A1A4 /* Pods_HiDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HiDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CE470C172DCA632FB1AF09C /* FloatingActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingActionButton.swift; sourceTree = "<group>"; };
 		9D1F5BA7820D95E181EF2B7B /* ToolBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarView.swift; sourceTree = "<group>"; };
 		9FCC3355E6771206A3D8F969 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A09833D13D4C456F8E6050E9 /* CorrectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectionView.swift; sourceTree = "<group>"; };
 		A1899A81F77E810AD1306E15 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		A5D20DD301DC0CC40D2365B9 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
-		AC1BCC764DA6CE53336255A1 /* Pods-HiDiary.hidiary debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiDiary.hidiary debug.xcconfig"; path = "Target Support Files/Pods-HiDiary/Pods-HiDiary.hidiary debug.xcconfig"; sourceTree = "<group>"; };
+		A8088B97C3972DA56DD7390B /* Pods-HiDiary.hidiary release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiDiary.hidiary release.xcconfig"; path = "Target Support Files/Pods-HiDiary/Pods-HiDiary.hidiary release.xcconfig"; sourceTree = "<group>"; };
 		AD55D5365E34429011EE258A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AECC40D1053E8072C6C0FA58 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		B167A9A0A9B5F89ECC6A976F /* ci.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = ci.yml; sourceTree = "<group>"; };
@@ -124,10 +122,12 @@
 		D298AA68678CA66B74FD733A /* NoteRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRowView.swift; sourceTree = "<group>"; };
 		DAFB38C1C0F8A7935101B51C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E13BCA5784D60569DD6F63C5 /* FirebaseAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthViewModel.swift; sourceTree = "<group>"; };
+		E468A3793E0229D28EF0B8AD /* Pods_HiDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HiDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEA3FD8122B1EB6A98354D2D /* NavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModifier.swift; sourceTree = "<group>"; };
 		F2FE4FBCFD9D0BAF26442605 /* Mintfile */ = {isa = PBXFileReference; path = Mintfile; sourceTree = "<group>"; };
 		F95F1D823FED46B4D0B0A42C /* JournalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalListView.swift; sourceTree = "<group>"; };
 		FAEEBA25888A5442E628EB46 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		FBB37E07BA466A6F3074FD5D /* Pods-HiDiary.hidiary debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiDiary.hidiary debug.xcconfig"; path = "Target Support Files/Pods-HiDiary/Pods-HiDiary.hidiary debug.xcconfig"; sourceTree = "<group>"; };
 		FFCB981B93E6EEB13EFD83A3 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,7 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD1ADD2FA09BF6573EF7F357 /* PopupView in Frameworks */,
-				68AAD0479D909A72110D417F /* Pods_HiDiary.framework in Frameworks */,
+				00834282C44FFA96D995BC88 /* Pods_HiDiary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,9 +274,19 @@
 				18AB1B61395BFB4214BDE4A5 /* Source */,
 				F5CAAECC5954BA76B6EEAC68 /* Tests */,
 				F5EF185A768E0B566426529F /* Products */,
-				C1735DBE9143E649AADC310B /* Pods */,
-				E67EF75B0B67C148A5FBA337 /* Frameworks */,
+				4B890A7F2C115B57C03B9F6D /* Pods */,
+				AD498024B4CB03782896B872 /* Frameworks */,
 			);
+			sourceTree = "<group>";
+		};
+		4B890A7F2C115B57C03B9F6D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FBB37E07BA466A6F3074FD5D /* Pods-HiDiary.hidiary debug.xcconfig */,
+				A8088B97C3972DA56DD7390B /* Pods-HiDiary.hidiary release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		52B35156A7AAFCA2844832F2 /* Utils */ = {
@@ -386,21 +396,19 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		AD498024B4CB03782896B872 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E468A3793E0229D28EF0B8AD /* Pods_HiDiary.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BA2305926CDAD872B5F5DC42 /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		C1735DBE9143E649AADC310B /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				AC1BCC764DA6CE53336255A1 /* Pods-HiDiary.hidiary debug.xcconfig */,
-				8F7C98DB19B1217F466A1E49 /* Pods-HiDiary.hidiary release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
 			sourceTree = "<group>";
 		};
 		C1813D3CB121D5EB1C28A4B1 /* Protocols */ = {
@@ -432,14 +440,6 @@
 				F45793A1A80EC23C3C4E93F1 /* Service */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		E67EF75B0B67C148A5FBA337 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				9B203B39FC0D066961C5A1A4 /* Pods_HiDiary.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		EC72BEE21F84B78D76658806 /* .github */ = {
@@ -534,13 +534,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 86F7AE2975B6F69510487BAA /* Build configuration list for PBXNativeTarget "HiDiary" */;
 			buildPhases = (
-				2009E2FB15436C0CDD515CA1 /* [CP] Check Pods Manifest.lock */,
+				860181C2E82A2D5078E2923A /* [CP] Check Pods Manifest.lock */,
 				35AB9F950CB18A1FCC9624F5 /* Sources */,
 				41A1D41024D79456E37759B1 /* Resources */,
 				7A4EADB0A91A2A358CF27DF1 /* Frameworks */,
 				9A20C0A836E83AFCBFBA03C5 /* Mint Build Script */,
 				BE84888E2BE86627E8A515CF /* Swift Format */,
-				C0B42CA81B78957394A0A50A /* [CP] Embed Pods Frameworks */,
+				A00B7B29B7F4D9CEC35348C3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -602,7 +602,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2009E2FB15436C0CDD515CA1 /* [CP] Check Pods Manifest.lock */ = {
+		860181C2E82A2D5078E2923A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -642,6 +642,23 @@
 			shellPath = /bin/sh;
 			shellScript = "if [[ -f ./Mintfile ]] ; then\n  xcrun --sdk macosx mint run swiftlint autocorrect --format\n  xcrun --sdk macosx mint run swiftlint\nelse\n  echo \"error: Not exists Mintfile, Please run \\\"make mint\\\".\"\n  exit 1\nfi\n";
 		};
+		A00B7B29B7F4D9CEC35348C3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HiDiary/Pods-HiDiary-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HiDiary/Pods-HiDiary-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HiDiary/Pods-HiDiary-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		BE84888E2BE86627E8A515CF /* Swift Format */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -659,23 +676,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if [[ -f ./Mintfile ]] ; then\n  xcrun --sdk macosx mint run nicklockwood/SwiftFormat swiftformat .\nelse\n  echo \"error: Not exists Mintfile, Please run \\\"make mint\\\".\"\n  exit 1\nfi\n";
-		};
-		C0B42CA81B78957394A0A50A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HiDiary/Pods-HiDiary-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HiDiary/Pods-HiDiary-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HiDiary/Pods-HiDiary-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -771,7 +771,7 @@
 		};
 		2013F3A43582E12130ED53B6 /* HiDiary Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8F7C98DB19B1217F466A1E49 /* Pods-HiDiary.hidiary release.xcconfig */;
+			baseConfigurationReference = A8088B97C3972DA56DD7390B /* Pods-HiDiary.hidiary release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -907,7 +907,7 @@
 		};
 		41854C922E6EDC53456F5EA1 /* HiDiary Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AC1BCC764DA6CE53336255A1 /* Pods-HiDiary.hidiary debug.xcconfig */;
+			baseConfigurationReference = FBB37E07BA466A6F3074FD5D /* Pods-HiDiary.hidiary debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
