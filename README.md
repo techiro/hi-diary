@@ -1,5 +1,12 @@
 # Hi👋 Diary ~ つながる英語日記 ~
 
+## セットアップ方法
+Hidiaryディレクトリに移動
+```
+xcodegen
+open HiDiary.xcworkspace
+make setup-mint
+```
 
 ## バージョン
 
